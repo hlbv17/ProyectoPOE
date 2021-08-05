@@ -48,7 +48,7 @@
       <Project>{f339c83a-d3e3-4c85-9867-b502cab11b04}</Project>
       <Name>Datos</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Proyecto_Dentalig\Model.csproj">
+    <ProjectReference Include="..\Model\Model.csproj">
       <Project>{400040a1-3ffb-4b08-9a29-918aa42e4197}</Project>
       <Name>Model</Name>
     </ProjectReference>
