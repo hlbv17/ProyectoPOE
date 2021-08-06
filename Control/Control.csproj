@@ -40,7 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Adm_AtencionMedica.cs" />
+    <Compile Include="Adm_Cita.cs" />
+    <Compile Include="Adm_HistoriaClinica.cs" />
+    <Compile Include="Adm_Odontologo.cs" />
+    <Compile Include="Adm_Paciente.cs" />
+    <Compile Include="Validacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
