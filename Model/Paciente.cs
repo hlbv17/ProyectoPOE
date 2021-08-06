@@ -4,21 +4,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Model
-{
-    class Paciente : Persona
-    {
-        private int edad;
-        private string estadoBucal;
-        private Antecedente antecedente;
+namespace Model {
+    class Paciente : Persona {
 
-        public int Edad { get => edad; set => edad = value; }
-        public string EstadoBucal { get => estadoBucal; set => estadoBucal = value; }
-        internal Antecedente Antecedente { get => antecedente; set => antecedente = value; }
+        // Variables
+        private string discapacidad;
 
-        public override string ToString()
-        {
-            return "";
+        // Constructor: default
+        public Paciente () : base () {
+            this.discapacidad = "";
+        }
+
+        // Constructor: parameterized
+        public Paciente (string discapacidad, string cedula, char sexo, string nombre, DateTime fechaNacimiento) : base (cedula, sexo, nombre, fechaNacimiento) {
+            this.discapacidad = discapacidad;
+        }
+
+        public string Discapacidad { get => discapacidad; set => discapacidad = value; }    // Getter & Setter: discapacidad
+
+        // Method: ToString
+        public override string ToString () {
+            return base.ToString () + 
+                "\r\nDiscapacidad: " + discapacidad;
         }
     }
 }

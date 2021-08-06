@@ -3,40 +3,42 @@ using Model;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Proyecto_Dentalig;
 
 namespace Model {
     class HistoriaClinica {
-        private string numero;
-        private PiezaDental [] dientes;
+
         private Paciente paciente;
+        private string antecedenteFamiliar;
+        private string antecedentePersonal;
+        private List<AtencionMedica> atencionMedica;
 
         public HistoriaClinica () {
-            numero = "";
-            dientes = new PiezaDental [1];
-            paciente = new Paciente ();
+            this.paciente = null;
+            this.antecedenteFamiliar = null;
+            this.antecedentePersonal = null;
+            this.atencionMedica = null;
         }
 
-        public HistoriaClinica (string numero, PiezaDental [] dientes, Paciente paciente) {
-            this.numero = numero;
-            this.dientes = dientes;
+        public HistoriaClinica (Paciente paciente, string antecedenteFamiliar, string antecedentePersonal, List<AtencionMedica> atencionMedica) {
             this.paciente = paciente;
+            this.antecedenteFamiliar = antecedenteFamiliar;
+            this.antecedentePersonal = antecedentePersonal;
+            this.atencionMedica = atencionMedica;
         }
 
-        public string Numero { get => numero; set => numero = value; }
-        internal PiezaDental [] Dientes { get => dientes; set => dientes = value; }
+        public string AntecedenteFamiliar { get => antecedenteFamiliar; set => antecedenteFamiliar = value; }
+        public string AntecedentePersonal { get => antecedentePersonal; set => antecedentePersonal = value; }
         internal Paciente Paciente { get => paciente; set => paciente = value; }
-
-        public string VerDientes () {
-            string salida = "";
-            for (int i = 0; i < dientes.Length; i++) {
-                salida += dientes [i].ToString ();
-            }
-            return salida;
-        }
+        internal List<AtencionMedica> AtencionMedica { get => atencionMedica; set => atencionMedica = value; }
 
         public override string ToString () {
-            return "\r\nNro. de Historia Clínica: " + numero + "\r\n" + Paciente.ToString () +
-                    "\r\n" + VerDientes ();
+            return
+                "\r\nPaciente: " + paciente.Nombre +
+                "\r\nAntecedente Familiar: " + antecedenteFamiliar +
+                "\r\nAntecedente Personal: " + antecedentePersonal +
+                "\r\nAtención Médica: " + atencionMedica;
         }
+
     }
 }
