@@ -5,26 +5,32 @@ using System.Text;
 
 namespace Model {
     abstract class Persona {
-        private char sexo;
+        private string cedula;
         private string nombre;
-        private DateTime fechaNac;
+        private char sexo;
+        private DateTime fechanac;
 
-        public Persona () {
-            this.sexo = ' ';
-            this.nombre = "";
-            this.fechaNac = DateTime.Now;
+        public Persona()
+        {
         }
 
-        public char Sexo { get => sexo; set => sexo = value; }
+        public Persona(string cedula, string nombre, char sexo, DateTime fechanac)
+        {
+            this.cedula = cedula;
+            this.nombre = nombre;
+            this.sexo = sexo;
+            this.fechanac = fechanac;
+        }
+
         public string Nombre { get => nombre; set => nombre = value; }
-        public DateTime FechaNac { get => fechaNac; set => fechaNac = value; }
+        public char Sexo { get => sexo; set => sexo = value; }
+        public DateTime Fechanac { get => fechanac; set => fechanac = value; }
+        public string Cedula { get => cedula; set => cedula = value; }
 
-        public string leerSexo () {
-            return "";
-        }
-
-        public override string ToString () {
-            return base.ToString ();
+        public override string ToString()
+        {
+            return "\nCedula: "+ cedula+"\nNombre: " + nombre + "\nFecha Nacimiento: " + fechanac +
+                "\nSexo: " + sexo;
         }
 
 

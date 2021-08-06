@@ -5,22 +5,31 @@ using System.Text;
 
 namespace Model {
     class Antecedente {
-        private string familiar;
-        private string personal;
+                private string Cod_Antecedente;
+        private string nAntecedente;
+        private string Descripcion;
 
-        public Antecedente () {
+
+        public Antecedente()
+        {
         }
 
-        public string Familiar { get => familiar; set => familiar = value; }
-        public string Personal { get => personal; set => personal = value; }
-
-        public Antecedente (string familiar, string personal) {
-            Familiar = familiar;
-            Personal = personal;
+        public Antecedente(string cod_Antecedente, string nAntecedente, string descripcion)
+        {
+            Cod_Antecedente = cod_Antecedente;
+            this.nAntecedente = nAntecedente;
+            Descripcion = descripcion;
         }
 
-        public override string ToString () {
-            return base.ToString ();
+        public string Cod_Antecedente1 { get => Cod_Antecedente; set => Cod_Antecedente = value; }
+        public string NAntecedente { get => nAntecedente; set => nAntecedente = value; }
+        public string Descripcion1 { get => Descripcion; set => Descripcion = value; }
+
+        public override String ToString()
+        {
+            return "\nAntecedente: " + nAntecedente +
+                    "\nDescripcion: " + Descripcion;
         }
+       
     }
 }
