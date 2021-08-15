@@ -4,6 +4,6 @@ using System.Linq;
 using System.Text;
 
 namespace Control {
-    class Adm_AtencionMedica {
+    class Class1 {
     }
 }
