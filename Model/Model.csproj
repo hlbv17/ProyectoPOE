@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="AtencionMedica.cs" />
     <Compile Include="Cita.cs" />
+    <Compile Include="Antecedente.cs" />
     <Compile Include="Dias.cs" />
     <Compile Include="HistoriaClinica.cs" />
     <Compile Include="Horario.cs" />

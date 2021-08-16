@@ -16,7 +16,8 @@ namespace Model {
         }
 
         // Constructor: parameterized
-        public Paciente (string discapacidad, string cedula, char sexo, string nombre, DateTime fechaNacimiento) : base (cedula, sexo, nombre, fechaNacimiento) {
+        public Paciente(string discapacidad, string cedula, char sexo, string nombre, DateTime fechaNacimiento, string telefono, string correo) : base(cedula, sexo, nombre, fechaNacimiento, telefono, correo)
+        {
             this.discapacidad = discapacidad;
         }
 

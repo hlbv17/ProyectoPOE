@@ -7,36 +7,35 @@ using Proyecto_Dentalig;
 
 namespace Model {
     class HistoriaClinica {
-
+        // Variables
         private Paciente paciente;
-        private string antecedenteFamiliar;
-        private string antecedentePersonal;
+        private Antecedente antecedente;
         private List<AtencionMedica> atencionMedica;
 
+        // Constructor: defautl
         public HistoriaClinica () {
             this.paciente = null;
-            this.antecedenteFamiliar = null;
-            this.antecedentePersonal = null;
+            this.antecedente= null;
             this.atencionMedica = null;
         }
 
-        public HistoriaClinica (Paciente paciente, string antecedenteFamiliar, string antecedentePersonal, List<AtencionMedica> atencionMedica) {
+        // Constructor: parameterized
+        public HistoriaClinica (Paciente paciente, Antecedente antecedente, List<AtencionMedica> atencionMedica) {
             this.paciente = paciente;
-            this.antecedenteFamiliar = antecedenteFamiliar;
-            this.antecedentePersonal = antecedentePersonal;
+            this.antecedente = antecedente;
             this.atencionMedica = atencionMedica;
         }
-
-        public string AntecedenteFamiliar { get => antecedenteFamiliar; set => antecedenteFamiliar = value; }
-        public string AntecedentePersonal { get => antecedentePersonal; set => antecedentePersonal = value; }
+       
         internal Paciente Paciente { get => paciente; set => paciente = value; }
         internal List<AtencionMedica> AtencionMedica { get => atencionMedica; set => atencionMedica = value; }
+        internal Antecedente Antecedente { get => antecedente; set => antecedente = value; }
 
+        // Method: ToString
         public override string ToString () {
             return
                 "\r\nPaciente: " + paciente.Nombre +
-                "\r\nAntecedente Familiar: " + antecedenteFamiliar +
-                "\r\nAntecedente Personal: " + antecedentePersonal +
+                "\r\nAntecedente Familiar: " + antecedente.AntecedenteFamiliar +
+                "\r\nAntecedente Personal: " + antecedente.AntecedentePersonal +
                 "\r\nAtención Médica: " + atencionMedica;
         }
 
