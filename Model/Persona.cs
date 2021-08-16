@@ -11,6 +11,9 @@ namespace Model {
         private char sexo;
         private string nombre;
         private DateTime fechaNacimiento;
+        private string telefono;
+        private string correo;
+        
 
         // Constructor: defautl
         public Persona () {
@@ -18,20 +21,26 @@ namespace Model {
             this.sexo = ' ';
             this.nombre = "";
             this.fechaNacimiento = DateTime.Now;
+            this.telefono = "";
+            this.correo = "";            
         }
 
         // Constructor: parameterized
-        protected Persona (string cedula, char sexo, string nombre, DateTime fechaNacimiento) {
+        protected Persona (string cedula, char sexo, string nombre, DateTime fechaNacimiento, string telefono, string correo) {
             this.cedula = cedula;
             this.sexo = sexo;
             this.nombre = nombre;
             this.fechaNacimiento = fechaNacimiento;
+            this.telefono = telefono;
+            this.correo = correo;
         }
 
         public string Cedula { get => cedula; set => cedula = value; }                              // Getter & Setter: cedula
         public char Sexo { get => sexo; set => sexo = value; }                                      // Getter & Setter: sexo
         public string Nombre { get => nombre; set => nombre = value; }                              // Getter & Setter: nombre
         public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; } // Getter & Setter: fechaNacimiento
+        public string Correo { get => correo; set => correo = value; }
+        public string Telefono { get => telefono; set => telefono = value; }
 
 
         // Method: LeerEdad
@@ -60,7 +69,9 @@ namespace Model {
                 "\r\nSexo: " + LeerSexo () +
                 "\r\nNombre: " + nombre +
                 "\r\nFecha de nacimiento: " + fechaNacimiento+
-                "\r\nEdad: " + LeerEdad ();
+                "\r\nEdad: " + LeerEdad ()+
+                "\r\nTeléfono: " + telefono +
+                "\r\nCorreo: " + correo ;
         }
 
     }
