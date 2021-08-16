@@ -44,7 +44,7 @@ namespace Proyecto_Dentalig {
                 "\r\nPaciente: " + paciente.Nombre +
                 "\r\nFecha: " + fecha +
                 "\r\nHora: " + hora +
-                "\r\nOdontólogo: " + odontologo.Nombre+
+                "\r\nOdontólogo: " + odontologo.Nombre +
                 "\r\nConsultorio: " + odontologo.Consultorio;
                 
         }
