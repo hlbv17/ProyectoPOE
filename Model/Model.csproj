@@ -45,6 +45,7 @@
     <Compile Include="Dias.cs" />
     <Compile Include="HistoriaClinica.cs" />
     <Compile Include="Horario.cs" />
+    <Compile Include="IOdontologo.cs" />
     <Compile Include="Odontologo.cs" />
     <Compile Include="Paciente.cs" />
     <Compile Include="Persona.cs" />
