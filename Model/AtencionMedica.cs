@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 
 namespace Proyecto_Dentalig {
-    class AtencionMedica {
+    public class AtencionMedica {
 
         // Variables
         private Cita cita;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace Proyecto_Dentalig {
-    class Dias {
+    public class Dias {
 
         private string dia;
         private DateTime horaEntrada;

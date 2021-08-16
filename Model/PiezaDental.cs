@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 
 namespace Model {
-    class PiezaDental {
+    public class PiezaDental {
 
         // Variables
         private int numeroPieza;

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Model {
 
-    class Horario {
+    public class Horario {
 
         private List<Dias> dias;
 

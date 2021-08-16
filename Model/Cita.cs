@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 
 namespace Proyecto_Dentalig {
-    class Cita
+    public class Cita
     {
 
         private int id_cita;

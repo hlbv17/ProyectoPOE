@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 namespace Model {
-    abstract class Persona {
+    public abstract class Persona {
 
         // Variables
         private string cedula;
@@ -73,6 +73,8 @@ namespace Model {
                 "\r\nTeléfono: " + telefono +
                 "\r\nCorreo: " + correo ;
         }
+
+        
 
     }
 }

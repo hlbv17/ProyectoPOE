@@ -6,7 +6,7 @@ using System.Text;
 using Proyecto_Dentalig;
 
 namespace Model {
-    class HistoriaClinica {
+    public class HistoriaClinica {
         // Variables
         private Paciente paciente;
         private Antecedente antecedente;
