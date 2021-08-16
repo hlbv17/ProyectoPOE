@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Proyecto_Dentalig
 {
-    interface IOdontologo
+    public interface IOdontologo
     {
         String Estado(int consultorio);
     }
