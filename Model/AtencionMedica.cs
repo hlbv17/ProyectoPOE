@@ -7,37 +7,39 @@ using System.Text;
 namespace Proyecto_Dentalig {
     class AtencionMedica {
 
-        private DateTime fecha;
-        private Odontologo odontologo;
-        private string diagnostico;
+        // Variables
+        private Cita cita;
         private PiezaDental piezaDental;
+        private string motivoConsulta;
+        private string diagnostico;
 
         public AtencionMedica () {
-            this.fecha = DateTime.Now;
-            this.odontologo = null;
-            this.diagnostico = "";
+            this.cita = null;
             this.piezaDental = null;
+            this.motivoConsulta = "";
+            this.diagnostico = "";
         }
 
-        public AtencionMedica (DateTime fecha, Odontologo odontologo, string diagnostico, PiezaDental piezaDental) {
-            this.fecha = fecha;
-            this.odontologo = odontologo;
-            this.diagnostico = diagnostico;
+        // Constructor: Parameterized
+        public AtencionMedica (Cita cita, PiezaDental piezaDental, string motivoConsulta, string diagnostico) {
+            this.cita = cita;
             this.piezaDental = piezaDental;
+            this.motivoConsulta = motivoConsulta;
+            this.diagnostico = diagnostico;
         }
 
-        public DateTime Fecha { get => fecha; set => fecha = value; }
-        public string Diagnostico { get => diagnostico; set => diagnostico = value; }
-        internal Odontologo Odontologo { get => odontologo; set => odontologo = value; }
-        internal PiezaDental PiezaDental { get => piezaDental; set => piezaDental = value; }
-
+        public string MotivoConsulta { get => motivoConsulta; set => motivoConsulta = value; }  // Getter & Setter: cita
+        public string Diagnostico { get => diagnostico; set => diagnostico = value; }           // Getter & Setter: piezaDental
+        internal Cita Cita { get => cita; set => cita = value; }                                // Getter & Setter: motivoConsulta
+        internal PiezaDental PiezaDental { get => piezaDental; set => piezaDental = value; }    // Getter & Setter: diagnostico
+        
+        // Method: ToString
         public override string ToString () {
-            return
-                "\r\nFecha: " + fecha +
-                "\r\nOdontólogo: " + odontologo.Nombre +
-                "\r\nDiagnostico: " + diagnostico +
-                "\r\nPieza Dental" + piezaDental.ToString ();
+            return 
+                "\r\nCita: "+ cita.ToString()+
+                "\r\nPieca Dental: " + piezaDental.ToString ()+
+                "\r\nMotivo de Consulta: "+ motivoConsulta+
+                "\r\nDiagnostico:"+ diagnostico;
         }
-
     }
 }

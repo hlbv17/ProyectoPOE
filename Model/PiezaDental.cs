@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,36 +7,35 @@ using System.Text;
 namespace Model {
     class PiezaDental {
 
-        private string nombrePieza;
-        private string seccion;
+        // Variables
         private int numeroPieza;
-        private string estado;
+        private string cuadrantePieza;
+        private string nombrePieza;
 
+        // Constructor: default
         public PiezaDental () {
-            this.nombrePieza = "";
-            this.seccion = "";
             this.numeroPieza = 0;
-            this.estado = "";
+            this.cuadrantePieza = "";
+            this.nombrePieza = "";
         }
 
-        public PiezaDental (string nombrePieza, string seccion, int numeroPieza, string estado) {
-            this.nombrePieza = nombrePieza;
-            this.seccion = seccion;
+        // Constructor: Parameterized
+        public PiezaDental (int numeroPieza, string cuadrantePieza, string nombrePieza) {
             this.numeroPieza = numeroPieza;
-            this.estado = estado;
+            this.cuadrantePieza = cuadrantePieza;
+            this.nombrePieza = nombrePieza;
         }
 
-        public string NombrePieza { get => nombrePieza; set => nombrePieza = value; }
-        public string Seccion { get => seccion; set => seccion = value; }
-        public int NumeroPieza { get => numeroPieza; set => numeroPieza = value; }
-        public string Estado { get => estado; set => estado = value; }
+        public int NumeroPieza { get => numeroPieza; set => numeroPieza = value; }              // Getter & Setter: numeroPieza
+        public string CuadrantePieza { get => cuadrantePieza; set => cuadrantePieza = value; }  // Getter & Setter: cuadrantePieza
+        public string NombrePieza { get => nombrePieza; set => nombrePieza = value; }           // Getter & Setter: nombrePieza
 
+        // Method: ToString
         public override string ToString () {
             return
-                "\r\nNompbre de Pieza: " + nombrePieza +
-                "\r\nSección: " + seccion +
-                "\r\nNumero de Pieza: " + numeroPieza +
-                "\r\nEstado: " + estado;
+                "\r\nNumero de Pieza:" + numeroPieza +
+                "\r\nCuadrante de Pieza: " + cuadrantePieza +
+                "\r\nNombre Pieza: " + nombrePieza;
         }
 
     }
