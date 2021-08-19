@@ -35,8 +35,8 @@ namespace Proyecto_Dentalig {
         public DateTime Fecha { get => fecha; set => fecha = value; }
         public DateTime Hora { get => hora; set => hora = value; }
         public int Id_cita { get => id_cita; set => id_cita = value; }
-        internal Odontologo Odontologo { get => odontologo; set => odontologo = value; }
-        internal Paciente Paciente { get => paciente; set => paciente = value; }
+        public Odontologo Odontologo { get => odontologo; set => odontologo = value; }
+        public Paciente Paciente { get => paciente; set => paciente = value; }
 
         public override string ToString()
         {
@@ -45,8 +45,7 @@ namespace Proyecto_Dentalig {
                 "\r\nFecha: " + fecha +
                 "\r\nHora: " + hora +
                 "\r\nOdontólogo: " + odontologo.Nombre +
-                "\r\nConsultorio: " + odontologo.Consultorio;
-                
+                "\r\nConsultorio: " + odontologo.Consultorio;       
         }
     }
 }

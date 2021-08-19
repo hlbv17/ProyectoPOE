@@ -30,8 +30,8 @@ namespace Proyecto_Dentalig {
 
         public string MotivoConsulta { get => motivoConsulta; set => motivoConsulta = value; }  // Getter & Setter: cita
         public string Diagnostico { get => diagnostico; set => diagnostico = value; }           // Getter & Setter: piezaDental
-        internal Cita Cita { get => cita; set => cita = value; }                                // Getter & Setter: motivoConsulta
-        internal PiezaDental PiezaDental { get => piezaDental; set => piezaDental = value; }    // Getter & Setter: diagnostico
+        public Cita Cita { get => cita; set => cita = value; }                                // Getter & Setter: motivoConsulta
+        public PiezaDental PiezaDental { get => piezaDental; set => piezaDental = value; }    // Getter & Setter: diagnostico
         
         // Method: ToString
         public override string ToString () {

@@ -26,7 +26,7 @@ namespace Model {
         }
 
         // Constructor: parameterized
-        protected Persona (string cedula, char sexo, string nombre, DateTime fechaNacimiento, string telefono, string correo) {
+        public Persona (string cedula, char sexo, string nombre, DateTime fechaNacimiento, string telefono, string correo) {
             this.cedula = cedula;
             this.sexo = sexo;
             this.nombre = nombre;

@@ -18,7 +18,7 @@ namespace Model {
             this.dias = dias;
         }
 
-        internal List<Dias> Dias { get => dias; set => dias = value; }
+        public List<Dias> Dias { get => dias; set => dias = value; }
 
         public override string ToString () {
             return base.ToString ();

@@ -26,9 +26,9 @@ namespace Model {
             this.atencionMedica = atencionMedica;
         }
        
-        internal Paciente Paciente { get => paciente; set => paciente = value; }
-        internal List<AtencionMedica> AtencionMedica { get => atencionMedica; set => atencionMedica = value; }
-        internal Antecedente Antecedente { get => antecedente; set => antecedente = value; }
+        public Paciente Paciente { get => paciente; set => paciente = value; }
+        public List<AtencionMedica> AtencionMedica { get => atencionMedica; set => atencionMedica = value; }
+        public Antecedente Antecedente { get => antecedente; set => antecedente = value; }
 
         // Method: ToString
         public override string ToString () {
