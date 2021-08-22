@@ -10,6 +10,7 @@ namespace Model {
 
         private List<Dias> dias;
         private string tipo;
+   
 
         public Horario () {
             this.dias = null;

@@ -18,8 +18,8 @@ namespace Model
         public Odontologo()
         {
             this.especialidad = " ";
-            this.id_Odontologo = 04;
-            this.consultorio = 1;
+            this.id_Odontologo = 0;
+            this.consultorio = 0;
             this.horario = null;
         }
 
@@ -32,7 +32,7 @@ namespace Model
         public Odontologo(int id_Odontologo, string nombre, string cedula, string especialidad, char sexo, DateTime fechaNacimiento, string correo, string telefono, int consultorio) : base(cedula, sexo, nombre, fechaNacimiento, correo, telefono)
         {
             this.Especialidad = especialidad;
-
+            this.horario = new Horario();
             this.Id_Odontologo = id_Odontologo;
             this.consultorio = consultorio;
         }
