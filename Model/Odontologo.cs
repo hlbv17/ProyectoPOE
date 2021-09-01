@@ -8,14 +8,14 @@ namespace Model {
     public class Odontologo : Persona, IOdontologo {
 
         // Variables
-        private int id_Odontologo;
+        private int idOdontologo;
         private string especialidad;
         private int consultorio;
         private Horario horario;
 
         // Constructor: Default
         public Odontologo () {
-            this.id_Odontologo = 0;
+            this.idOdontologo = 0;
             this.especialidad = "";
             this.consultorio = 0;
             this.horario = new Horario ();
@@ -23,13 +23,13 @@ namespace Model {
 
         // Constructor: Parameterized
         public Odontologo (int id_Odontologo, string especialidad, int consultorio, Horario horario, string cedula, char sexo, string nombre, DateTime fechaNacimiento, string telefono, string correo) : base (cedula, sexo, nombre, fechaNacimiento, telefono, correo) {
-            this.id_Odontologo = id_Odontologo;
+            this.idOdontologo = id_Odontologo;
             this.especialidad = especialidad;
             this.consultorio = consultorio;
             this.horario = horario;
         }
 
-        public int Id_Odontologo { get => id_Odontologo; set => id_Odontologo = value; }    // Getter & Setter: id_Odontologo
+        public int Id_Odontologo { get => idOdontologo; set => idOdontologo = value; }    // Getter & Setter: id_Odontologo
         public string Especialidad { get => especialidad; set => especialidad = value; }    // Getter & Setter: especialida
         public int Consultorio { get => consultorio; set => consultorio = value; }          // Getter & Setter: consultorio
         public Horario Horario { get => horario; set => horario = value; }                  // Getter & Setter: horario

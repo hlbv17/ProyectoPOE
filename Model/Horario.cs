@@ -24,8 +24,8 @@ namespace Model {
             this.dias = dias;
         }
 
-        public List<Dias> Dias { get => dias; set => dias = value; }    // Getter & Setter: dias
         public string Tipo { get => tipo; set => tipo = value; }        // Getter & Setter: tipo
+        public List<Dias> Dias { get => dias; set => dias = value; }    // Getter & Setter: dias
 
         // Method: ToString
         public override string ToString () {

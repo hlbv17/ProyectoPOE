@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Proyecto_Dentalig {
     public class Antecedente {
+
         // Variables
         private string antecedenteFamiliar;
         private string antecedentePersonal;

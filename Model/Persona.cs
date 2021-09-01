@@ -42,14 +42,6 @@ namespace Model {
         public string Telefono { get => telefono; set => telefono = value; }                        // Getter & Setter: telefono
         public string Correo { get => correo; set => correo = value; }                              // Getter & Setter: correo
 
-        // Method: LeerEdad
-        public int LeerEdad () {
-            int output = 0;
-            output = (int)Math.Round ((DateTime.Now.Date - fechaNacimiento.Date).TotalDays, MidpointRounding.AwayFromZero);
-            output = output / 365;
-            return output;
-        }
-
         // Method: Leersexo
         public string LeerSexo () {
             String output = "";
@@ -61,19 +53,24 @@ namespace Model {
             return output;
         }
 
+        // Method: LeerEdad
+        public int LeerEdad () {
+            int output = 0;
+            output = (int)Math.Round ((DateTime.Now.Date - fechaNacimiento.Date).TotalDays, MidpointRounding.AwayFromZero);
+            output = output / 365;
+            return output;
+        }
+
         // Method: ToString
         public override string ToString () {
             return
                 "\r\nCédula: " + cedula +
                 "\r\nSexo: " + LeerSexo () +
                 "\r\nNombre: " + nombre +
-                "\r\nFecha de nacimiento: " + fechaNacimiento +
                 "\r\nEdad: " + LeerEdad () +
                 "\r\nTeléfono: " + telefono +
                 "\r\nCorreo: " + correo;
         }
-
-
 
     }
 }
