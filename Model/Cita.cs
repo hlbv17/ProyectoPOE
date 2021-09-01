@@ -8,43 +8,44 @@ namespace Proyecto_Dentalig {
     public class Cita {
 
         // Variables
-        private int idCita;
-        private Paciente paciente;
-        private Odontologo odontologo;
+        private int id_cita;
         private DateTime fecha;
         private DateTime hora;
+        private Odontologo odontologo;
+        private Paciente paciente;
 
-        // Constructor: Default
-        public Cita () {
-            this.idCita = 0;
-            this.paciente = new Paciente ();
-            this.odontologo = new Odontologo ();
-            this.fecha = DateTime.Now;
-            this.hora = DateTime.Now;
+        public Cita()
+        {
+            this.id_cita = 0;
+            this.fecha = new DateTime();
+            this.hora = new DateTime();
+            this.odontologo = new Odontologo();
+            this.paciente = new Paciente();
         }
 
-        // Constructor: Parameterized
-        public Cita (int id_cita, DateTime fecha, DateTime hora, Odontologo odontologo, Paciente paciente) {
-            this.idCita = id_cita;
-            this.paciente = paciente;
-            this.odontologo = odontologo;
+        public Cita(int id_cita, DateTime fecha, DateTime hora, Odontologo odontologo, Paciente paciente)
+        {
+            this.id_cita = id_cita;
             this.fecha = fecha;
             this.hora = hora;
+            this.odontologo = odontologo;
+            this.paciente = paciente;
         }
 
-        public int Id_cita { get => idCita; set => idCita = value; }                  // Getter & Setter: id_cita
-        public Paciente Paciente { get => paciente; set => paciente = value; }          // Getter & Setter: paciente
-        public Odontologo Odontologo { get => odontologo; set => odontologo = value; }  // Getter & Setter: odontologo
-        public DateTime Fecha { get => fecha; set => fecha = value; }                   // Getter & Setter: fecha
-        public DateTime Hora { get => hora; set => hora = value; }                      // Getter & Setter: hora
+        public DateTime Fecha { get => fecha; set => fecha = value; }
+        public DateTime Hora { get => hora; set => hora = value; }
+        public int Id_cita { get => id_cita; set => id_cita = value; }
+        public Odontologo Odontologo { get => odontologo; set => odontologo = value; }
+        public Paciente Paciente { get => paciente; set => paciente = value; }
 
-        // Method: ToString
-        public override string ToString () {
+        public override string ToString()
+        {
             return
+                "\r\nCédula: " + paciente.Cedula +
                 "\r\nPaciente: " + paciente.Nombre +
+                "\r\nFecha: " + fecha.ToString("yyyy-MM-dd") +
+                "\r\nHora: " + hora.ToString("HH:mm:ss") +
                 "\r\nOdontólogo: " + odontologo.Nombre +
-                "\r\nFecha: " + fecha +
-                "\r\nHora: " + hora +
                 "\r\nConsultorio: " + odontologo.Consultorio;
         }
     }
