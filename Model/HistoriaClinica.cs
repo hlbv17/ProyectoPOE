@@ -7,6 +7,7 @@ using Proyecto_Dentalig;
 
 namespace Model {
     public class HistoriaClinica {
+
         // Variables
         private Paciente paciente;
         private Antecedente antecedente;
@@ -14,9 +15,9 @@ namespace Model {
 
         // Constructor: defautl
         public HistoriaClinica () {
-            this.paciente = null;
-            this.antecedente= null;
-            this.atencionMedica = null;
+            this.paciente = new Paciente ();
+            this.antecedente = new Antecedente ();
+            this.atencionMedica = new List<AtencionMedica> ();
         }
 
         // Constructor: parameterized
@@ -25,18 +26,17 @@ namespace Model {
             this.antecedente = antecedente;
             this.atencionMedica = atencionMedica;
         }
-       
-        public Paciente Paciente { get => paciente; set => paciente = value; }
-        public List<AtencionMedica> AtencionMedica { get => atencionMedica; set => atencionMedica = value; }
-        public Antecedente Antecedente { get => antecedente; set => antecedente = value; }
+
+        public Paciente Paciente { get => paciente; set => paciente = value; }                                  // Getter & Setter: paciente
+        public Antecedente Antecedente { get => antecedente; set => antecedente = value; }                      // Getter & Setter: antecedente
+        public List<AtencionMedica> AtencionMedica { get => atencionMedica; set => atencionMedica = value; }    // Getter & Setter: atencionMedica
 
         // Method: ToString
         public override string ToString () {
             return
                 "\r\nPaciente: " + paciente.Nombre +
-                "\r\nAntecedente Familiar: " + antecedente.AntecedenteFamiliar +
-                "\r\nAntecedente Personal: " + antecedente.AntecedentePersonal +
-                "\r\nAtención Médica: " + atencionMedica;
+                "\r\nAntecedentes " + antecedente.ToString () +
+                "\r\nAtención Médica: " + atencionMedica.Count;
         }
 
     }

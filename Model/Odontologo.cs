@@ -4,68 +4,57 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Model
-{
-    public class Odontologo : Persona, IOdontologo
-    {
+namespace Model {
+    public class Odontologo : Persona, IOdontologo {
 
+        // Variables
+        private int id_Odontologo;
         private string especialidad;
         private int consultorio;
         private Horario horario;
-        private int id_Odontologo;
 
-
-        public Odontologo()
-        {
-            this.especialidad = " ";
+        // Constructor: Default
+        public Odontologo () {
             this.id_Odontologo = 0;
+            this.especialidad = "";
             this.consultorio = 0;
-            this.horario = null;
+            this.horario = new Horario ();
         }
 
-
-        public string Especialidad { get => especialidad; set => especialidad = value; }
-        public  Horario Horario { get => horario; set => horario = value; }
-        public int Consultorio { get => consultorio; set => consultorio = value; }
-        public int Id_Odontologo { get => id_Odontologo; set => id_Odontologo = value; }
-
-        public Odontologo(int id_Odontologo, string nombre, string cedula, string especialidad, char sexo, DateTime fechaNacimiento, string correo, string telefono, int consultorio) : base(cedula, sexo, nombre, fechaNacimiento, correo, telefono)
-        {
-            this.Especialidad = especialidad;
-            this.horario = new Horario();
-            this.Id_Odontologo = id_Odontologo;
+        // Constructor: Parameterized
+        public Odontologo (int id_Odontologo, string especialidad, int consultorio, Horario horario, string cedula, char sexo, string nombre, DateTime fechaNacimiento, string telefono, string correo) : base (cedula, sexo, nombre, fechaNacimiento, telefono, correo) {
+            this.id_Odontologo = id_Odontologo;
+            this.especialidad = especialidad;
             this.consultorio = consultorio;
+            this.horario = horario;
         }
-        public String Estado(int consultorio)
-        {
-            string estado;
 
-            Random r = new Random();
+        public int Id_Odontologo { get => id_Odontologo; set => id_Odontologo = value; }    // Getter & Setter: id_Odontologo
+        public string Especialidad { get => especialidad; set => especialidad = value; }    // Getter & Setter: especialida
+        public int Consultorio { get => consultorio; set => consultorio = value; }          // Getter & Setter: consultorio
+        public Horario Horario { get => horario; set => horario = value; }                  // Getter & Setter: horario
+
+        // Methodd: Estado
+        public String Estado (int consultorio) {
+            string estado;
+            Random r = new Random ();
             int e;
-            e = r.Next(1, 6);
-            if (consultorio == e)
-            {
+            e = r.Next (1, 6);
+            if (consultorio == e) {
                 estado = "Disponible";
-            }
-            else
-            {
+            } else {
                 estado = "Ocupado";
             }
-
             return estado;
-
         }
 
-
-
-        public override string ToString()
-        {
-            return base.ToString() +
+        // Method: ToString
+        public override string ToString () {
+            return base.ToString () +
+                "\r\nEstado: " + Estado (consultorio) +
                 "\r\nEspecialidad: " + especialidad +
-                "\r\nHorario: " + horario.ToString() +
-                "\r\nEstado: " + Estado(consultorio) +
-                "\r\nConsultorio:" + consultorio;
-
+                "\r\nConsultorio:" + consultorio +
+                "\r\nHorario: " + horario.ToString ();
         }
     }
 }

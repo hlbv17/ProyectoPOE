@@ -8,26 +8,30 @@ namespace Model {
 
     public class Horario {
 
-        private List<Dias> dias;
+        // Varialbes
         private string tipo;
-   
-
+        private List<Dias> dias;
+        
+        // Constructor: Default
         public Horario () {
-            this.dias = null;
-            this.Tipo = "";
+            this.tipo = "";
+            this.dias = new List<Dias> ();
         }
 
+        // Constructor: Parameterized
         public Horario (List<Dias> dias, string tipo) {
+            this.tipo = tipo;
             this.dias = dias;
-            this.Tipo = tipo;
-            
         }
 
-        public List<Dias> Dias { get => dias; set => dias = value; }
-        public string Tipo { get => tipo; set => tipo = value; }
+        public List<Dias> Dias { get => dias; set => dias = value; }    // Getter & Setter: dias
+        public string Tipo { get => tipo; set => tipo = value; }        // Getter & Setter: tipo
 
+        // Method: ToString
         public override string ToString () {
-            return base.ToString ();
+            return 
+                "\r\nTipo: " + tipo +
+                "\r\nDías: " + dias.Count;
         }
     }
 }

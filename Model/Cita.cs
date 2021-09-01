@@ -5,17 +5,17 @@ using System.Linq;
 using System.Text;
 
 namespace Proyecto_Dentalig {
-    public class Cita
-    {
+    public class Cita {
 
+        // Variables
         private int id_cita;
         private DateTime fecha;
         private DateTime hora;
         private Odontologo odontologo;
         private Paciente paciente;
 
-        public Cita()
-        {
+        // Constructor: Default
+        public Cita () {
             this.id_cita = 1;
             this.fecha = DateTime.Now;
             this.hora = DateTime.Now;
@@ -23,8 +23,8 @@ namespace Proyecto_Dentalig {
             this.paciente = null;
         }
 
-        public Cita(int id_cita, DateTime fecha, DateTime hora, Odontologo odontologo, Paciente paciente)
-        {
+        // Constructor: Parameterized
+        public Cita (int id_cita, DateTime fecha, DateTime hora, Odontologo odontologo, Paciente paciente) {
             this.id_cita = id_cita;
             this.fecha = fecha;
             this.hora = hora;
@@ -32,20 +32,20 @@ namespace Proyecto_Dentalig {
             this.paciente = paciente;
         }
 
-        public DateTime Fecha { get => fecha; set => fecha = value; }
-        public DateTime Hora { get => hora; set => hora = value; }
-        public int Id_cita { get => id_cita; set => id_cita = value; }
-        public Odontologo Odontologo { get => odontologo; set => odontologo = value; }
-        public Paciente Paciente { get => paciente; set => paciente = value; }
+        public int Id_cita { get => id_cita; set => id_cita = value; }                  // Getter & Setter: id_cita
+        public DateTime Fecha { get => fecha; set => fecha = value; }                   // Getter & Setter: fecha
+        public DateTime Hora { get => hora; set => hora = value; }                      // Getter & Setter: hora
+        public Odontologo Odontologo { get => odontologo; set => odontologo = value; }  // Getter & Setter: odontologo
+        public Paciente Paciente { get => paciente; set => paciente = value; }          // Getter & Setter: paciente
 
-        public override string ToString()
-        {
+        // Method: ToString
+        public override string ToString () {
             return
-                "\r\nPaciente: " + paciente.Nombre +
                 "\r\nFecha: " + fecha +
                 "\r\nHora: " + hora +
                 "\r\nOdontólogo: " + odontologo.Nombre +
-                "\r\nConsultorio: " + odontologo.Consultorio;       
+                "\r\nPaciente: " + paciente.Nombre +
+                "\r\nConsultorio: " + odontologo.Consultorio;
         }
     }
 }
