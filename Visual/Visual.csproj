@@ -50,8 +50,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEditarVLRS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarVLRS.Designer.cs">
+      <DependentUpon>FrmEditarVLRS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFiltrarVLRS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFiltrarVLRS.Designer.cs">
+      <DependentUpon>FrmFiltrarVLRS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmIngresoHisClinicaVLRS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmIngresoHisClinicaVLRS.Designer.cs">
+      <DependentUpon>FrmIngresoHisClinicaVLRS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmEditarVLRS.resx">
+      <DependentUpon>FrmEditarVLRS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFiltrarVLRS.resx">
+      <DependentUpon>FrmFiltrarVLRS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmIngresoHisClinicaVLRS.resx">
+      <DependentUpon>FrmIngresoHisClinicaVLRS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +102,14 @@
     <ProjectReference Include="..\Control\Control.csproj">
       <Project>{1658847b-8acd-492b-8984-6a3352cac3f9}</Project>
       <Name>Control</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{F339C83A-D3E3-4C85-9867-B502CAB11B04}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{400040A1-3FFB-4B08-9A29-918AA42E4197}</Project>
+      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

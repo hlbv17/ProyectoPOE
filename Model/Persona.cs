@@ -13,10 +13,13 @@ namespace Model {
         private DateTime fechaNacimiento;
         private string telefono;
         private string correo;
+        private long id_persona;
+
 
 
         // Constructor: defautl
-        public Persona () {
+        public Persona()
+        {
             this.cedula = "";
             this.sexo = ' ';
             this.nombre = "";
@@ -26,7 +29,8 @@ namespace Model {
         }
 
         // Constructor: parameterized
-        public Persona (string cedula, char sexo, string nombre, DateTime fechaNacimiento, string telefono, string correo) {
+        public Persona(string cedula, char sexo, string nombre, DateTime fechaNacimiento, string telefono, string correo)
+        {
             this.cedula = cedula;
             this.sexo = sexo;
             this.nombre = nombre;
@@ -39,37 +43,47 @@ namespace Model {
         public char Sexo { get => sexo; set => sexo = value; }                                      // Getter & Setter: sexo
         public string Nombre { get => nombre; set => nombre = value; }                              // Getter & Setter: nombre
         public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; } // Getter & Setter: fechaNacimiento
-        public string Telefono { get => telefono; set => telefono = value; }                        // Getter & Setter: telefono
-        public string Correo { get => correo; set => correo = value; }                              // Getter & Setter: correo
+        public string Telefono { get => telefono; set => telefono = value; }
+        public string Correo { get => correo; set => correo = value; }
+        public long Id_persona { get => id_persona; set => id_persona = value; }
+
+
+        // Method: LeerEdad
+        public int LeerEdad()
+        {
+            int output = 0;
+            // ¿?
+            output = (int)Math.Round((DateTime.Now.Date - fechaNacimiento.Date).TotalDays, MidpointRounding.AwayFromZero);
+            output = output / 365;
+            return output;
+        }
 
         // Method: Leersexo
-        public string LeerSexo () {
+        public string LeerSexo()
+        {
             String output = "";
-            if (sexo == 'F') {
+            if (sexo == 'F')
+            {
                 output = "Femenino";
-            } else if (sexo == 'M') {
+            }
+            else if (sexo == 'M')
+            {
                 output = "Masculino";
             }
             return output;
         }
 
-        // Method: LeerEdad
-        public int LeerEdad () {
-            int output = 0;
-            output = (int)Math.Round ((DateTime.Now.Date - fechaNacimiento.Date).TotalDays, MidpointRounding.AwayFromZero);
-            output = output / 365;
-            return output;
-        }
-
         // Method: ToString
-        public override string ToString () {
+        public override string ToString()
+        {
             return
-                "\r\nCédula: " + cedula +
-                "\r\nSexo: " + LeerSexo () +
                 "\r\nNombre: " + nombre +
-                "\r\nEdad: " + LeerEdad () +
+                "\r\nCedula: " + cedula +
+                "\r\nFecha de nacimiento: " + fechaNacimiento.ToShortDateString() +
+                "\r\nEdad: " + LeerEdad() +
+                "\r\nSexo: " + LeerSexo() +
                 "\r\nTeléfono: " + telefono +
-                "\r\nCorreo: " + correo;
+                "\r\nCorreo: " + correo; ;
         }
 
     }

@@ -7,29 +7,35 @@ namespace Proyecto_Dentalig {
     public class Antecedente {
 
         // Variables
-        private string antecedenteFamiliar;
-        private string antecedentePersonal;
+        private string antecedenteFam;
+        private string antecedenteper;
+        private long id_antecedente;
 
-        // Constructor: defautl
-        public Antecedente () {
-            this.antecedenteFamiliar = "";
-            this.antecedentePersonal = "";
+
+
+        public string AntecedenteFam { get => antecedenteFam; set => antecedenteFam = value; }
+        public string Antecedenteper { get => antecedenteper; set => antecedenteper = value; }
+        public long Id_antecedente { get => id_antecedente; set => id_antecedente = value; }
+
+        public Antecedente()
+        {
+            this.antecedenteFam = "";
+            this.antecedenteper = "";
         }
 
-        // Constructor: parameterized
-        public Antecedente (string antecedenteFamiliar, string antecedentePersonal) {
-            this.antecedenteFamiliar = antecedenteFamiliar;
-            this.antecedentePersonal = antecedentePersonal;
-        }
+        // Constructor: Parameterized
 
-        public string AntecedenteFamiliar { get => antecedenteFamiliar; set => antecedenteFamiliar = value; }   // Getter & Setter: antecedenteFamiliar
-        public string AntecedentePersonal { get => antecedentePersonal; set => antecedentePersonal = value; }   // Getter & Setter: antecedentePersonal
+        public Antecedente(string antecedenteFam, string antecedenteper)
+        {
+            this.antecedenteFam = antecedenteFam;
+            this.antecedenteper = antecedenteper;
+        }
 
         // Method: ToString
         public override string ToString () {
             return
-                "\r\nAntecedente Familiar: " + antecedenteFamiliar +
-                "\r\nAntecedente Personal: " + antecedentePersonal;
+                "\r\nAntecedente Familiar: " + antecedenteFam +
+                "\r\nAntecedente Personal: " + antecedenteper;
         }
 
     }
