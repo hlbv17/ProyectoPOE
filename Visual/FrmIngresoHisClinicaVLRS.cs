@@ -39,32 +39,17 @@ namespace Visual
 
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char c = e.KeyChar;
-            if (!char.IsDigit(c) && (e.KeyChar != Convert.ToChar(Keys.Back)))
-            {
-                e.Handled = true;
-                return;
-            }
+
         }
 
         private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char c = e.KeyChar;
-            if (!char.IsLetter(c) && !char.IsDigit(c) && c != '@' && c != '.' && c != '-' && c != '_' && (e.KeyChar != Convert.ToChar(Keys.Back)))
-            {
-                e.Handled = true;
-                return;
-            }
+
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char c = e.KeyChar;
-            if (!char.IsLetter(c) && c != ' ' && (e.KeyChar != Convert.ToChar(Keys.Back)))
-            {
-                e.Handled = true;
-                return;
-            }
+
         }
     }
 }

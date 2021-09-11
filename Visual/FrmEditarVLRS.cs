@@ -25,18 +25,7 @@ namespace Visual
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            string cedula = txtCedulaAct.Text.Trim(), nombre = txtNombreact.Text.Trim(), sexo = cmbSexoAct.Text,
-                   telefono = txtTelefonoAct.Text.Trim(), correo = txtCorreoAct.Text.Trim(), discapacidad = cmbDiscAct.Text,
-                   APersonales = txtAntPersAct.Text.Trim(), AFamiliares = txtAntFamAct.Text.Trim();
-            DateTime fechaNac = dtpFnaciAct.Value.Date;
-            if (val.is_validate(errorP, txtCorreoAct, txtNombreact, txtCedulaAct, txtTelefonoAct, txtAntPersAct, txtAntFamAct, cmbDiscAct,
-                cmbSexoAct, dtpFnaciAct) && val.validarEmail(correo) && admPac.EsCorrecto(cedula, nombre, sexo, telefono, correo,
-                discapacidad, APersonales, AFamiliares, fechaNac, errorP, btnEditar))
-            {
-                errorP.Clear();
-                admPac.Guardar(cedula, nombre, sexo, telefono, correo, discapacidad, APersonales, AFamiliares, fechaNac, 2);
-                admPac.Agregar(txtPresentar);
-            }
+
         }
 
 
