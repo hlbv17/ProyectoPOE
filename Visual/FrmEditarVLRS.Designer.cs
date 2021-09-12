@@ -174,6 +174,7 @@ namespace Visual
             this.txtCorreoAct.Name = "txtCorreoAct";
             this.txtCorreoAct.Size = new System.Drawing.Size(302, 27);
             this.txtCorreoAct.TabIndex = 90;
+            //this.txtCorreoAct.TextChanged += new System.EventHandler(this.txtCorreoAct_TextChanged);
             // 
             // txtTelefonoAct
             // 
@@ -188,10 +189,11 @@ namespace Visual
             // 
             // dtpFnaciAct
             // 
+            this.dtpFnaciAct.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFnaciAct.Location = new System.Drawing.Point(720, 203);
             this.dtpFnaciAct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpFnaciAct.Name = "dtpFnaciAct";
-            this.dtpFnaciAct.Size = new System.Drawing.Size(302, 22);
+            this.dtpFnaciAct.Size = new System.Drawing.Size(302, 27);
             this.dtpFnaciAct.TabIndex = 88;
             // 
             // cmbSexoAct
@@ -392,10 +394,11 @@ namespace Visual
             // dtpFNacimiento
             // 
             this.dtpFNacimiento.Enabled = false;
+            this.dtpFNacimiento.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFNacimiento.Location = new System.Drawing.Point(183, 199);
             this.dtpFNacimiento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpFNacimiento.Name = "dtpFNacimiento";
-            this.dtpFNacimiento.Size = new System.Drawing.Size(297, 22);
+            this.dtpFNacimiento.Size = new System.Drawing.Size(297, 27);
             this.dtpFNacimiento.TabIndex = 70;
             // 
             // cmbSexo
