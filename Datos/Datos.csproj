@@ -41,9 +41,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ConexionHLBV.cs" />
     <Compile Include="ConexionVLRS.cs" />
     <Compile Include="DatosAntecedentesVLRS.cs" />
+    <Compile Include="DatosCitaHLBV.cs" />
     <Compile Include="DatosHistoriaClinicaVLRS.cs" />
+    <Compile Include="DatosOdontologoEGGM.cs" />
     <Compile Include="DatosPacienteVLRS.cs" />
     <Compile Include="DatosPersonaVLRS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
