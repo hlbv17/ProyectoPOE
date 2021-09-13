@@ -274,7 +274,7 @@ namespace Visual
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Visual.Properties.Resources.Q;
+            this.pictureBox1.Image = global::Visual.Properties.Resources.q3;
             this.pictureBox1.Location = new System.Drawing.Point(0, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(799, 423);
