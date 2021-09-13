@@ -170,7 +170,7 @@
       <Name>Control</Name>
     </ProjectReference>
     <ProjectReference Include="..\Datos\Datos.csproj">
-      <Project>{F339C83A-D3E3-4C85-9867-B502CAB11B04}</Project>
+      <Project>{f339c83a-d3e3-4c85-9867-b502cab11b04}</Project>
       <Name>Datos</Name>
     </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">

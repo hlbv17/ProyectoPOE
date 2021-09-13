@@ -56,8 +56,7 @@ namespace Visual
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmAcercaDeHLBV frmA = new FrmAcercaDeHLBV();
-            frmA.ShowDialog();
+           
         }
     }
 }
