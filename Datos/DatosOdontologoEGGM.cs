@@ -11,7 +11,7 @@ namespace Datos
     public class DatosOdontologoEGGM
     {
         
-        List<OdontologoEGGM> odontologo = new List<OdontologoEGGM>();
+        List<Odontologo> odontologo = new List<Odontologo>();
         ConexionEGGM con = new ConexionEGGM();
         SqlCommand cmd = new SqlCommand();
         DatosHorarioEGGM datosHorario = null;
@@ -49,18 +49,18 @@ namespace Datos
             
             return count;
         }
-        public OdontologoEGGM ConsultarPersonaOdont(string cedula)
+        public Odontologo ConsultarPersonaOdont(string cedula)
         {
             List<Persona> p = new List<Persona>();
             
-            List<DiasEGGM> dia = new List<DiasEGGM>();
-            OdontologoEGGM o = null;
+            List<Dias> dia = new List<Dias>();
+            Odontologo o = null;
             string sql = "Select * from Odontologo where cedula = '" + cedula + "'";
             string cossultaprueba = "Select * from Persona where cedula = " + cedula ;
             SqlDataReader dr = null;
             SqlDataReader dr2 = null;
             Console.WriteLine(cossultaprueba); 
-            o = new OdontologoEGGM(0, "", "", "", 'F', DateTime.Now, "", "", 0);
+            o = new Odontologo(0, "", 0, null, "", 'F',"", DateTime.Now, "", "");
             string mensaje = "";
             mensaje = con.conectar();
             if (mensaje[0] == '1')
@@ -168,7 +168,7 @@ namespace Datos
             return mensaje;
         }
 
-        public String insertarPersonas(OdontologoEGGM odo)
+        public String insertarPersonas(Odontologo odo)
         {
 
             string sql1 = "INSERT INTO Persona(cedula, nombre, sexo, fechaNac, correo, telefono) VALUES("
@@ -202,7 +202,7 @@ namespace Datos
 
         }
 
-        public String insertarOdontologo(OdontologoEGGM odo, int especialidad, int horario)
+        public String insertarOdontologo(Odontologo odo, int especialidad, int horario)
         {
 
 
@@ -236,12 +236,12 @@ namespace Datos
         }
         
 
-        public List<OdontologoEGGM> ConsultarPersonaOdontTodos()
+        public List<Odontologo> ConsultarPersonaOdontTodos()
         {
-            List<OdontologoEGGM> p = new List<OdontologoEGGM>();
+            List<Odontologo> p = new List<Odontologo>();
 
-            List<DiasEGGM> dia = new List<DiasEGGM>();
-            OdontologoEGGM o = null, o2 = null;
+            List<Dias> dia = new List<Dias>();
+            Odontologo o = null, o2 = null;
 
             string cossultaprueba = "Select * from Odontologo";
             SqlDataReader dr = null;
@@ -260,7 +260,7 @@ namespace Datos
 
                     while (dr.Read())
                     {
-                        o = new OdontologoEGGM(0, "", "", "", 'F', DateTime.Now, "", "", 0);
+                        o = new Odontologo(0, "", 0, null, "", 'F', "", DateTime.Now, "", "");
                         DatosEspecialidadEGGM espec = new DatosEspecialidadEGGM();
                         DatosHorarioEGGM datosHorario = new DatosHorarioEGGM();
                         o.Cedula = dr["cedula"].ToString();
@@ -299,10 +299,10 @@ namespace Datos
         }
 
 
-        public OdontologoEGGM ConsultaparaEditar(string cedula, string nombre)
+        public Odontologo ConsultaparaEditar(string cedula, string nombre)
         {
             List<Persona> p = new List<Persona>();
-            OdontologoEGGM o = null;
+            Odontologo o = null;
             string sql = "Select * from Odontologo where cedula ='" + cedula + "'";
             string consulta = "SELECT Odontologo.id_odontologo, Persona.cedula, Persona.nombre, Horario.tipo, Especialidad2.especialidad, Persona.sexo, Persona.fechaNac, Persona.correo, Persona.telefono, Odontologo.consultorio, Odontologo.cedula" +
            " FROM Odontologo INNER JOIN" +
@@ -324,7 +324,7 @@ namespace Datos
                     if (dr.Read())
                     {
 
-                        o = new OdontologoEGGM(0, "", "", "", 'F', DateTime.Now, "", "", 0);
+                        o = new Odontologo(0, "", 0, null, "", 'F', "", DateTime.Now, "", "");
 
                         o.Id_Odontologo = Convert.ToInt32(dr["id_odontologo"]);
 
@@ -354,18 +354,18 @@ namespace Datos
             return o;
         }
 
-        public OdontologoEGGM consultarodontologp(string cedula)
+        public Odontologo consultarodontologp(string cedula)
         {
             List<Persona> p = new List<Persona>();
 
-            List<DiasEGGM> dia = new List<DiasEGGM>();
-            OdontologoEGGM o = null;
+            List<Dias> dia = new List<Dias>();
+            Odontologo o = null;
             string sql = "Select * from Persona where cedula = '" + cedula + "'";
 
             SqlDataReader dr = null;
 
             Console.WriteLine(odontologo);
-            o = new OdontologoEGGM(0, "", "", "", 'F', DateTime.Now, "", "", 0);
+            o = new Odontologo(0, "", 0, null, "", 'F', "", DateTime.Now, "", "");
             string mensaje = "";
             mensaje = con.conectar();
             if (mensaje[0] == '1')
@@ -441,7 +441,7 @@ namespace Datos
             return mensaje;
         }
 
-        public string ACtualizar(OdontologoEGGM odo)
+        public string ACtualizar(Odontologo odo)
         {
             string sql1 = "UPDATE Persona set  cedula = '" + odo.Cedula + "',nombre = '" + odo.Nombre + "', sexo = '" + odo.Sexo + "', fechaNac = '" + odo.FechaNacimiento + "', correo = '" + odo.Telefono + "', telefono = '" + odo.Correo +
             "' WHERE cedula = " + odo.Cedula;
@@ -471,7 +471,7 @@ namespace Datos
             con.cerrar();
             return mensaje;
         }
-        public string ACtualizar2(OdontologoEGGM odo, int tipo, int espe)
+        public string ACtualizar2(Odontologo odo, int tipo, int espe)
         {
             DatosHorarioEGGM datosHorario = new DatosHorarioEGGM();
             DatosEspecialidadEGGM espec = new DatosEspecialidadEGGM();
@@ -505,13 +505,13 @@ namespace Datos
             return mensaje;
         }
 
-        public List<OdontologoEGGM> ConsultarPersonaOdontTodosF(string jornada, string especialidad, int consultorio)
+        public List<Odontologo> ConsultarPersonaOdontTodosF(string jornada, string especialidad, int consultorio)
         {
-            List<OdontologoEGGM> p = new List<OdontologoEGGM>();
+            List<Odontologo> p = new List<Odontologo>();
 
 
-            List<DiasEGGM> dia = new List<DiasEGGM>();
-            OdontologoEGGM o = null, o2 = null;
+            List<Dias> dia = new List<Dias>();
+            Odontologo o = null, o2 = null;
             string sql = filtro(jornada, especialidad, consultorio);
   
             SqlDataReader dr = null;
@@ -530,7 +530,7 @@ namespace Datos
 
                     while (dr.Read())
                     {
-                        o = new OdontologoEGGM(0, "", "", "", 'F', DateTime.Now, "", "", 0);
+                        o = new Odontologo(0, "", 0, null, "", 'F', "", DateTime.Now, "", "");
 
                         DatosEspecialidadEGGM espec = new DatosEspecialidadEGGM();
                         DatosHorarioEGGM datosHorario = new DatosHorarioEGGM();
@@ -687,18 +687,18 @@ namespace Datos
 
 
 
-        public List<OdontologoEGGM> consultarodontologpFiltro2(string cedula)
+        public List<Odontologo> consultarodontologpFiltro2(string cedula)
         {
-            List<OdontologoEGGM> p = new List<OdontologoEGGM>();
+            List<Odontologo> p = new List<Odontologo>();
 
-            List<DiasEGGM> dia = new List<DiasEGGM>();
-            OdontologoEGGM o = null;
+            List<Dias> dia = new List<Dias>();
+            Odontologo o = null;
             string sql = "Select * from Odontologo where cedula = '" + cedula + "'";
 
             SqlDataReader dr = null;
 
             Console.WriteLine(odontologo);
-            o = new OdontologoEGGM(0, "", "", "", 'F', DateTime.Now, "", "", 0);
+            o = new Odontologo(0, "", 0, null, "", 'F', "", DateTime.Now, "", "");
             string mensaje = "";
             mensaje = con.conectar();
             if (mensaje[0] == '1')
