@@ -79,11 +79,10 @@ namespace Visual
         private void btnEditar_Click(object sender, EventArgs e)
         {
             int posicion = dgvCitas.Rows.Count;
-            if (posicion != 1)
+            if (posicion >= 1)
             {
                 FrmEditar2HLBV frmE = new FrmEditar2HLBV(dgvCitas);
                 frmE.Visible = true;
-                
             }
             else
             {
