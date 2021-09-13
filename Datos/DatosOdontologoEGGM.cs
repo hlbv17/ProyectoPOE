@@ -38,6 +38,7 @@ namespace Datos {
             return count;
         }
 
+        //---------------------------------HELEN-------------------------------------------------------
         // Method: ConsultarOdontologos
         public List<Odontologo> ConsultarOdontologos (string dia, DateTime hora) {
             List<Odontologo> odontologos = new List<Odontologo> ();
@@ -111,7 +112,7 @@ namespace Datos {
             con2.Cerrar ();
             return o;
         }
-
+        //----------------------------------------------------------------------------------------------
         // Method: ConsultarPersonaOdont
         public Odontologo ConsultarPersonaOdont (string cedula) {
             List<Persona> p = new List<Persona> ();
