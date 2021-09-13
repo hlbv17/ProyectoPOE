@@ -49,6 +49,7 @@ namespace Control
             return admO;
         }
 
+
         public void ConsultarOdontologos(DateTime fecha, DateTime hora, ComboBox cmbHora,
             ComboBox cmbOdontologo)
         {
@@ -238,7 +239,7 @@ namespace Control
             ACtDBB(od, hora, espe);
         }
 
-        public void guardarprueba(int id_Odontologo, string nombre, string cedula, string especialidad, char sexo, DateTime fechaNacimiento, string correo, string telefono, int consultorio, HorarioEGGM e, Label label)
+        public void guardarprueba(int id_Odontologo, string nombre, string cedula, string especialidad, char sexo, DateTime fechaNacimiento, string correo, string telefono, int consultorio, Horario e, Label label)
         {
             Odontologo od = null;
             od = new Odontologo(id_Odontologo, especialidad, consultorio, e, cedula, sexo, nombre, fechaNacimiento, telefono, correo);
