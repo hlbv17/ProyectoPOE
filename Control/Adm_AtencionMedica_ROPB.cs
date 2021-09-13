@@ -30,7 +30,7 @@ namespace Control {
         //private Conexion_ROPB con = new Conexion_ROPB ();
         Datos_AtencionMedica dam = new Datos_AtencionMedica ();
         DatosCitaHLBV dc = new DatosCitaHLBV ();
-        Datos_PiezaDental_ROPB dpd = new Datos_PiezaDental_ROPB ();
+        Datos_PiezaDental dpd = new Datos_PiezaDental ();
         DatosPacienteVLRS dp = new DatosPacienteVLRS ();
         DatosOdontologoEGGM don = new DatosOdontologoEGGM ();
         DatosHistoriaClinicaVLRS dhc = new DatosHistoriaClinicaVLRS ();

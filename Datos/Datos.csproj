@@ -54,7 +54,7 @@
     <Compile Include="DatosPacienteVLRS.cs" />
     <Compile Include="DatosPersonaVLRS.cs" />
     <Compile Include="Datos_AtencionMedica.cs" />
-    <Compile Include="Datos_PiezaDental_ROPB.cs" />
+    <Compile Include="Datos_PiezaDental.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReporteHisClinicaVLRS.cs" />
   </ItemGroup>

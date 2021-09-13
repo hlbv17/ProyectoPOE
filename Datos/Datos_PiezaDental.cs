@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 
 namespace Datos {
-    public class Datos_PiezaDental_ROPB {
+    public class Datos_PiezaDental {
 
 
 
