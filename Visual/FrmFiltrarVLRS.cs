@@ -158,6 +158,11 @@ namespace Visual
 
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
         private void rbtxfechas_CheckedChanged(object sender, EventArgs e)
         {
             rbindex = 3;

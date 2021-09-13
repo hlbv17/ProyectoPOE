@@ -84,7 +84,7 @@ namespace Visual
             this.panel1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.panel1.Controls.Add(this.label20);
             this.panel1.ForeColor = System.Drawing.Color.GhostWhite;
-            this.panel1.Location = new System.Drawing.Point(-1, -1);
+            this.panel1.Location = new System.Drawing.Point(-1, -7);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1378, 63);
@@ -110,7 +110,7 @@ namespace Visual
             this.btnEditar.Location = new System.Drawing.Point(562, 653);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(128, 56);
+            this.btnEditar.Size = new System.Drawing.Size(128, 42);
             this.btnEditar.TabIndex = 95;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -118,8 +118,8 @@ namespace Visual
             // txtPresentar
             // 
             this.txtPresentar.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPresentar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtPresentar.Location = new System.Drawing.Point(1092, 77);
+            this.txtPresentar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.txtPresentar.Location = new System.Drawing.Point(1092, 71);
             this.txtPresentar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPresentar.Multiline = true;
             this.txtPresentar.Name = "txtPresentar";
@@ -129,8 +129,8 @@ namespace Visual
             // txtAntFamAct
             // 
             this.txtAntFamAct.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAntFamAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtAntFamAct.Location = new System.Drawing.Point(720, 530);
+            this.txtAntFamAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.txtAntFamAct.Location = new System.Drawing.Point(720, 524);
             this.txtAntFamAct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAntFamAct.Multiline = true;
             this.txtAntFamAct.Name = "txtAntFamAct";
@@ -141,8 +141,8 @@ namespace Visual
             // txtAntPersAct
             // 
             this.txtAntPersAct.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAntPersAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtAntPersAct.Location = new System.Drawing.Point(720, 391);
+            this.txtAntPersAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.txtAntPersAct.Location = new System.Drawing.Point(720, 385);
             this.txtAntPersAct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAntPersAct.Multiline = true;
             this.txtAntPersAct.Name = "txtAntPersAct";
@@ -154,12 +154,12 @@ namespace Visual
             // 
             this.cmbDiscAct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDiscAct.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbDiscAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cmbDiscAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cmbDiscAct.FormattingEnabled = true;
             this.cmbDiscAct.Items.AddRange(new object[] {
             "Sí",
             "No"});
-            this.cmbDiscAct.Location = new System.Drawing.Point(720, 341);
+            this.cmbDiscAct.Location = new System.Drawing.Point(720, 335);
             this.cmbDiscAct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbDiscAct.Name = "cmbDiscAct";
             this.cmbDiscAct.Size = new System.Drawing.Size(302, 28);
@@ -168,19 +168,18 @@ namespace Visual
             // txtCorreoAct
             // 
             this.txtCorreoAct.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreoAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtCorreoAct.Location = new System.Drawing.Point(720, 295);
+            this.txtCorreoAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.txtCorreoAct.Location = new System.Drawing.Point(720, 289);
             this.txtCorreoAct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCorreoAct.Name = "txtCorreoAct";
             this.txtCorreoAct.Size = new System.Drawing.Size(302, 27);
             this.txtCorreoAct.TabIndex = 90;
-            //this.txtCorreoAct.TextChanged += new System.EventHandler(this.txtCorreoAct_TextChanged);
             // 
             // txtTelefonoAct
             // 
             this.txtTelefonoAct.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefonoAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtTelefonoAct.Location = new System.Drawing.Point(720, 249);
+            this.txtTelefonoAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.txtTelefonoAct.Location = new System.Drawing.Point(720, 243);
             this.txtTelefonoAct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTelefonoAct.MaxLength = 10;
             this.txtTelefonoAct.Name = "txtTelefonoAct";
@@ -189,23 +188,22 @@ namespace Visual
             // 
             // dtpFnaciAct
             // 
-            this.dtpFnaciAct.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFnaciAct.Location = new System.Drawing.Point(720, 203);
+            this.dtpFnaciAct.Location = new System.Drawing.Point(720, 197);
             this.dtpFnaciAct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpFnaciAct.Name = "dtpFnaciAct";
-            this.dtpFnaciAct.Size = new System.Drawing.Size(302, 27);
+            this.dtpFnaciAct.Size = new System.Drawing.Size(302, 22);
             this.dtpFnaciAct.TabIndex = 88;
             // 
             // cmbSexoAct
             // 
             this.cmbSexoAct.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSexoAct.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSexoAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cmbSexoAct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
             this.cmbSexoAct.FormattingEnabled = true;
             this.cmbSexoAct.Items.AddRange(new object[] {
             "Femenino",
             "Masculino"});
-            this.cmbSexoAct.Location = new System.Drawing.Point(720, 158);
+            this.cmbSexoAct.Location = new System.Drawing.Point(720, 152);
             this.cmbSexoAct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbSexoAct.Name = "cmbSexoAct";
             this.cmbSexoAct.Size = new System.Drawing.Size(302, 28);
@@ -214,8 +212,8 @@ namespace Visual
             // txtNombreact
             // 
             this.txtNombreact.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtNombreact.Location = new System.Drawing.Point(720, 118);
+            this.txtNombreact.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.txtNombreact.Location = new System.Drawing.Point(720, 112);
             this.txtNombreact.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombreact.Name = "txtNombreact";
             this.txtNombreact.Size = new System.Drawing.Size(302, 27);
@@ -224,7 +222,7 @@ namespace Visual
             // txtCedulaAct
             // 
             this.txtCedulaAct.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedulaAct.Location = new System.Drawing.Point(720, 78);
+            this.txtCedulaAct.Location = new System.Drawing.Point(720, 72);
             this.txtCedulaAct.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCedulaAct.MaxLength = 10;
             this.txtCedulaAct.Name = "txtCedulaAct";
@@ -237,7 +235,7 @@ namespace Visual
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label10.Location = new System.Drawing.Point(569, 531);
+            this.label10.Location = new System.Drawing.Point(569, 525);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(123, 46);
             this.label10.TabIndex = 84;
@@ -248,7 +246,7 @@ namespace Visual
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label11.Location = new System.Drawing.Point(569, 391);
+            this.label11.Location = new System.Drawing.Point(569, 385);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(123, 46);
             this.label11.TabIndex = 83;
@@ -259,7 +257,7 @@ namespace Visual
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label12.Location = new System.Drawing.Point(569, 341);
+            this.label12.Location = new System.Drawing.Point(569, 335);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(121, 23);
             this.label12.TabIndex = 82;
@@ -270,7 +268,7 @@ namespace Visual
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label13.Location = new System.Drawing.Point(569, 295);
+            this.label13.Location = new System.Drawing.Point(569, 289);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 23);
             this.label13.TabIndex = 81;
@@ -281,7 +279,7 @@ namespace Visual
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label14.Location = new System.Drawing.Point(569, 252);
+            this.label14.Location = new System.Drawing.Point(569, 246);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(83, 23);
             this.label14.TabIndex = 80;
@@ -292,7 +290,7 @@ namespace Visual
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label15.Location = new System.Drawing.Point(569, 188);
+            this.label15.Location = new System.Drawing.Point(569, 182);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(104, 46);
             this.label15.TabIndex = 79;
@@ -303,7 +301,7 @@ namespace Visual
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label16.Location = new System.Drawing.Point(569, 158);
+            this.label16.Location = new System.Drawing.Point(569, 152);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(53, 23);
             this.label16.TabIndex = 78;
@@ -314,7 +312,7 @@ namespace Visual
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label17.Location = new System.Drawing.Point(569, 118);
+            this.label17.Location = new System.Drawing.Point(569, 112);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(81, 23);
             this.label17.TabIndex = 77;
@@ -325,7 +323,7 @@ namespace Visual
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label18.Location = new System.Drawing.Point(569, 78);
+            this.label18.Location = new System.Drawing.Point(569, 72);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(70, 23);
             this.label18.TabIndex = 76;
@@ -334,7 +332,7 @@ namespace Visual
             // txtAntecFam
             // 
             this.txtAntecFam.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAntecFam.Location = new System.Drawing.Point(183, 530);
+            this.txtAntecFam.Location = new System.Drawing.Point(183, 524);
             this.txtAntecFam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAntecFam.Multiline = true;
             this.txtAntecFam.Name = "txtAntecFam";
@@ -346,7 +344,7 @@ namespace Visual
             // txtAntecPers
             // 
             this.txtAntecPers.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAntecPers.Location = new System.Drawing.Point(183, 387);
+            this.txtAntecPers.Location = new System.Drawing.Point(183, 381);
             this.txtAntecPers.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAntecPers.Multiline = true;
             this.txtAntecPers.Name = "txtAntecPers";
@@ -364,7 +362,7 @@ namespace Visual
             this.cmbDiscapacidad.Items.AddRange(new object[] {
             "Sí",
             "No"});
-            this.cmbDiscapacidad.Location = new System.Drawing.Point(183, 337);
+            this.cmbDiscapacidad.Location = new System.Drawing.Point(183, 331);
             this.cmbDiscapacidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbDiscapacidad.Name = "cmbDiscapacidad";
             this.cmbDiscapacidad.Size = new System.Drawing.Size(297, 28);
@@ -373,7 +371,7 @@ namespace Visual
             // txtCorreo
             // 
             this.txtCorreo.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(183, 291);
+            this.txtCorreo.Location = new System.Drawing.Point(183, 285);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.ReadOnly = true;
@@ -383,7 +381,7 @@ namespace Visual
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(183, 245);
+            this.txtTelefono.Location = new System.Drawing.Point(183, 239);
             this.txtTelefono.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTelefono.MaxLength = 10;
             this.txtTelefono.Name = "txtTelefono";
@@ -394,11 +392,10 @@ namespace Visual
             // dtpFNacimiento
             // 
             this.dtpFNacimiento.Enabled = false;
-            this.dtpFNacimiento.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFNacimiento.Location = new System.Drawing.Point(183, 199);
+            this.dtpFNacimiento.Location = new System.Drawing.Point(183, 193);
             this.dtpFNacimiento.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpFNacimiento.Name = "dtpFNacimiento";
-            this.dtpFNacimiento.Size = new System.Drawing.Size(297, 27);
+            this.dtpFNacimiento.Size = new System.Drawing.Size(297, 22);
             this.dtpFNacimiento.TabIndex = 70;
             // 
             // cmbSexo
@@ -410,7 +407,7 @@ namespace Visual
             this.cmbSexo.Items.AddRange(new object[] {
             "Femenino",
             "Masculino"});
-            this.cmbSexo.Location = new System.Drawing.Point(183, 154);
+            this.cmbSexo.Location = new System.Drawing.Point(183, 148);
             this.cmbSexo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(297, 28);
@@ -419,7 +416,7 @@ namespace Visual
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(183, 114);
+            this.txtNombre.Location = new System.Drawing.Point(183, 108);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
@@ -429,7 +426,7 @@ namespace Visual
             // txtCedula
             // 
             this.txtCedula.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCedula.Location = new System.Drawing.Point(183, 74);
+            this.txtCedula.Location = new System.Drawing.Point(183, 68);
             this.txtCedula.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtCedula.MaxLength = 10;
             this.txtCedula.Name = "txtCedula";
@@ -442,7 +439,7 @@ namespace Visual
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label9.Location = new System.Drawing.Point(32, 530);
+            this.label9.Location = new System.Drawing.Point(32, 524);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(123, 46);
             this.label9.TabIndex = 66;
@@ -453,7 +450,7 @@ namespace Visual
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label8.Location = new System.Drawing.Point(32, 387);
+            this.label8.Location = new System.Drawing.Point(32, 381);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(123, 46);
             this.label8.TabIndex = 65;
@@ -464,7 +461,7 @@ namespace Visual
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label7.Location = new System.Drawing.Point(32, 337);
+            this.label7.Location = new System.Drawing.Point(32, 331);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(121, 23);
             this.label7.TabIndex = 64;
@@ -475,7 +472,7 @@ namespace Visual
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label6.Location = new System.Drawing.Point(32, 291);
+            this.label6.Location = new System.Drawing.Point(32, 285);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 23);
             this.label6.TabIndex = 63;
@@ -486,7 +483,7 @@ namespace Visual
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label5.Location = new System.Drawing.Point(32, 248);
+            this.label5.Location = new System.Drawing.Point(32, 242);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 23);
             this.label5.TabIndex = 62;
@@ -497,7 +494,7 @@ namespace Visual
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label4.Location = new System.Drawing.Point(32, 184);
+            this.label4.Location = new System.Drawing.Point(32, 178);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 46);
             this.label4.TabIndex = 61;
@@ -508,7 +505,7 @@ namespace Visual
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label3.Location = new System.Drawing.Point(32, 154);
+            this.label3.Location = new System.Drawing.Point(32, 148);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 23);
             this.label3.TabIndex = 60;
@@ -519,7 +516,7 @@ namespace Visual
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label2.Location = new System.Drawing.Point(32, 114);
+            this.label2.Location = new System.Drawing.Point(32, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 23);
             this.label2.TabIndex = 59;
@@ -530,7 +527,7 @@ namespace Visual
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.label1.Location = new System.Drawing.Point(32, 74);
+            this.label1.Location = new System.Drawing.Point(32, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(70, 23);
             this.label1.TabIndex = 58;
