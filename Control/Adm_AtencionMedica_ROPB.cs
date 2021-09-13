@@ -17,7 +17,6 @@ using System.Windows.Forms;
 namespace Control {
     public class Adm_AtencionMedica_ROPB {
 
-
         // Variables
         private static Adm_AtencionMedica_ROPB adm = null;
         List<AtencionMedica_ROPB> listaAM = null;
@@ -29,12 +28,12 @@ namespace Control {
         List<string> listaNP = null;
 
         //private Conexion_ROPB con = new Conexion_ROPB ();
-        Datos_AtencionMedica_ROPB dam = new Datos_AtencionMedica_ROPB ();
-        Datos_Cita_ROPB dc = new Datos_Cita_ROPB ();
+        Datos_AtencionMedica dam = new Datos_AtencionMedica ();
+        DatosCitaHLBV dc = new DatosCitaHLBV ();
         Datos_PiezaDental_ROPB dpd = new Datos_PiezaDental_ROPB ();
-        Datos_Paciente_ROPB dp = new Datos_Paciente_ROPB ();
-        Datos_Odontologo_ROPB don = new Datos_Odontologo_ROPB ();
-        Datos_HistoriaClinica_ROPB dhc = new Datos_HistoriaClinica_ROPB ();
+        DatosPacienteVLRS dp = new DatosPacienteVLRS ();
+        DatosOdontologoEGGM don = new DatosOdontologoEGGM ();
+        DatosHistoriaClinicaVLRS dhc = new DatosHistoriaClinicaVLRS ();
 
         // Constructor: Adm_AtencionMedica_ROPB
         private Adm_AtencionMedica_ROPB () {
@@ -464,7 +463,6 @@ namespace Control {
                 Console.WriteLine ("---!!!");
             }
         }
-
 
     }
 }

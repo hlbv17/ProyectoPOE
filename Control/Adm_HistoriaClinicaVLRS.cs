@@ -57,7 +57,7 @@ namespace Control
         }
 
 
-        public ConexionVLRS con = new ConexionVLRS();
+        public Conexion con = new Conexion();
         public void Conectar()
         {
             string mensaje = "";

@@ -9,7 +9,7 @@ namespace Datos
 {
     public class DatosAntecedentesVLRS
     {
-        ConexionVLRS con = new ConexionVLRS();
+        Conexion con = new Conexion();
         SqlCommand cmd = new SqlCommand();
 
         public String insertar(Antecedente anteced)

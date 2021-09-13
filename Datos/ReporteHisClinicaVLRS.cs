@@ -5,47 +5,38 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace Datos
-{
-    public class ReporteHisClinicaVLRS
-    {
+namespace Datos {
+    public class ReporteHisClinicaVLRS {
+
         SqlCommand cmd = null;
         SqlDataAdapter da = null;
-        ConexionVLRS con = null;
+        Conexion con = null;
 
-
-        private DataSet Consultar(string sentenciaSQL)
-        {
+        //
+        private DataSet Consultar (string sentenciaSQL) {
             DataSet ds = null; //tabla virtual
-            cmd = new SqlCommand();
+            cmd = new SqlCommand ();
             string msj = "";
-            try
-            {
-                con = new ConexionVLRS();
-                msj = con.Conectar();
-                if (msj[0] == '1')
-                {
+            try {
+                con = new Conexion ();
+                msj = con.Conectar ();
+                if (msj [0] == '1') {
                     cmd.Connection = con.Cn;
                     cmd.CommandText = sentenciaSQL;
-                    da = new SqlDataAdapter(cmd.CommandText, cmd.Connection);
-                    ds = new DataSet();
-                    da.Fill(ds);
-                    con.Cerrar();
-                }
-                else if (msj[0] == '0')
-                    con.Cerrar();
-            }
-            catch (SqlException e)
-            {
-                Console.WriteLine(e.Message);
+                    da = new SqlDataAdapter (cmd.CommandText, cmd.Connection);
+                    ds = new DataSet ();
+                    da.Fill (ds);
+                    con.Cerrar ();
+                } else if (msj [0] == '0')
+                    con.Cerrar ();
+            } catch (SqlException e) {
+                Console.WriteLine (e.Message);
             }
             return ds;
-
-
         }
 
-        public DataSet Buscar(char sexo, string cedula, DateTime fechaDesde, DateTime fechaHasta, int index, int rbindex)
-        {
+        //
+        public DataSet Buscar (char sexo, string cedula, DateTime fechaDesde, DateTime fechaHasta, int index, int rbindex) {
             string sentenciaSQL = "";
 
             string sql = "SELECT Historia_Clinica.id_historiaClinica, Persona.cedula, Persona.nombre, Persona.id_sexo, Persona.fechaNacimiento, " +
@@ -57,44 +48,31 @@ namespace Datos
                             " EtapaEdad ON Paciente.id_etapaEdad = EtapaEdad.id_etapaEdad \n";
             string sqlsexo = " (Persona.id_sexo = '" + sexo + "') \n";
             string sqlcedula = " (Persona.cedula = '" + cedula + "') \n";
-            string sqlfechas = " Persona.fechaNacimiento BETWEEN' " + fechaDesde.ToString("yyyy-MM-dd") + "' AND '" + fechaHasta.ToString("yyyy-MM-dd") + "'";
+            string sqlfechas = " Persona.fechaNacimiento BETWEEN' " + fechaDesde.ToString ("yyyy-MM-dd") + "' AND '" + fechaHasta.ToString ("yyyy-MM-dd") + "'";
 
 
-            if (index == 0)
-            {
-                if (cedula != "")
-                {
+            if (index == 0) {
+                if (cedula != "") {
                     sentenciaSQL = sql + " Where " + sqlcedula;
-                    Console.WriteLine("1 reporte " + sentenciaSQL);
+                    Console.WriteLine ("1 reporte " + sentenciaSQL);
                 }
-            }
-            else if (index == 1 && rbindex == 2)
-            {
-                if (sexo != ' ')
-                {
+            } else if (index == 1 && rbindex == 2) {
+                if (sexo != ' ') {
                     sentenciaSQL = sql + " Where " + sqlsexo;
-                    Console.WriteLine("2 reporte " + sentenciaSQL);
+                    Console.WriteLine ("2 reporte " + sentenciaSQL);
                 }
-            }
-            else if (index == 1 && rbindex == 3)
-            {
-                if (fechaDesde != null && fechaHasta != null)
-                {
+            } else if (index == 1 && rbindex == 3) {
+                if (fechaDesde != null && fechaHasta != null) {
                     sentenciaSQL = sql + " Where " + sqlfechas;
-                    Console.WriteLine("3 reporte " + sentenciaSQL);
+                    Console.WriteLine ("3 reporte " + sentenciaSQL);
                 }
-            }
-            else if (index == 1 && rbindex == 4)
-            {
-                if (sexo != ' ' && fechaDesde != null && fechaHasta != null)
-                {
+            } else if (index == 1 && rbindex == 4) {
+                if (sexo != ' ' && fechaDesde != null && fechaHasta != null) {
                     sentenciaSQL = sql + " Where " + sqlsexo + " And " + sqlfechas;
-                    Console.WriteLine("4 reporte" + sentenciaSQL);
+                    Console.WriteLine ("4 reporte" + sentenciaSQL);
                 }
             }
-
-
-            return Consultar(sentenciaSQL);
+            return Consultar (sentenciaSQL);
         }
     }
 }

@@ -7,15 +7,18 @@ using System.Text;
 namespace Datos {
     public class Conexion {
 
-
         // Variables
-        // Conexion: ROPB
-        private static string cadena = "Data Source=DESKTOP-F0FU8NS\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Dentalig";
-        // Conexion: EGGM
+
+        //----------------------------------------EGGM------------------------------------------------------
         //private static string cadena = "Data Source=desktop-ek3b3mp\\sqlexpress;Initial Catalog = DentalingE2GM; Integrated Security = True";
-        // Conexion: HLBV
+
+        //----------------------------------------HLBV------------------------------------------------------
         //private static string cadena = "Data Source=HEBE\\SQLEXPRESS;Initial Catalog=dentalig;Integrated Security=True";
-        // Conexion: VLRS
+
+        //----------------------------------------ROPB------------------------------------------------------
+        private static string cadena = "Data Source=DESKTOP-F0FU8NS\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Dentalig";
+
+        //----------------------------------------VLRS------------------------------------------------------
         //private static string cadena = "Data Source=DESKTOP-K0G9OCM\\SQLEXPRESS;Initial Catalog=PoyectoDentPOE;Integrated Security=True";
 
         private SqlConnection cn = null;
@@ -45,7 +48,6 @@ namespace Datos {
                 return "0 " + ex.Message;
             }
         }
-
 
     }
 }

@@ -6,18 +6,17 @@ using System.Linq;
 using System.Text;
 
 namespace Datos {
-    public class Datos_AtencionMedica_ROPB {
+    public class Datos_AtencionMedica {
 
 
         // Variable
         Conexion con = new Conexion ();
         SqlCommand cmd = new SqlCommand ();
-        //SqlDataAdapter da = null;
 
         // Method: InsertarAteniconMedica
         public string InsertarAteniconMedica (AtencionMedica_ROPB am) {
-            Datos_HistoriaClinica_ROPB dhc = new Datos_HistoriaClinica_ROPB ();
-            Datos_Cita_ROPB dc = new Datos_Cita_ROPB ();
+            DatosHistoriaClinicaVLRS dhc = new DatosHistoriaClinicaVLRS ();
+            DatosCitaHLBV dc = new DatosCitaHLBV ();
             string sql = "INSERT INTO AtencionMedica (id_historiaClinica, id_cita,  id_piezaDental, motivoConsulta, diagnostico) \n" +
                 "VALUES ('" + dhc.ConsultarIdHistoriaClinica (am.Cita.Paciente.Nombre) + "','" + dc.CosultarIdCita (am.Cita.Paciente.Nombre, am.Cita.Fecha, am.Cita.Hora.ToString ("HH:mm")) + "','" + am.PiezaDental.NumeroPieza + "','" + am.MotivoConsulta + "','" + am.Diagnostico + "')";
             Console.WriteLine (sql);
@@ -374,7 +373,6 @@ namespace Datos {
             }
             return listaAM;
         }
-
 
     }
 }
