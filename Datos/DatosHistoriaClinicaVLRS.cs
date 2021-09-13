@@ -92,19 +92,19 @@ namespace Datos {
             return mensaje;
         }
 
+
         // Method: ConsultarTodos
         public List<HistoriaClinica> ConsultarTodos () {
             HistoriaClinica hclinic = null;
             Paciente paciente = null;
             Antecedente antecedente = null;
             List<HistoriaClinica> listaHclinicas = new List<HistoriaClinica> ();
-            string sql = "SELECT Historia_Clinica.id_historiaClinica, Persona.cedula, Persona.nombre, Persona.id_sexo, Persona.fechaNacimiento," +
-                                "Paciente.discapacidad, EtapaEdad.etapa, Antecedentes.antecedentePersonal, Antecedentes.antecedenteFamiliar" +
-                        " FROM Antecedentes INNER JOIN" +
-                            " Historia_Clinica ON Antecedentes.id_antecedentes = Historia_Clinica.id_antecedentes INNER JOIN" +
-                            " Paciente ON Historia_Clinica.id_paciente = Paciente.id_paciente INNER JOIN" +
-                            " Persona ON Paciente.id_persona = Persona.id_persona INNER JOIN" +
-                            " EtapaEdad ON Paciente.id_etapaEdad = EtapaEdad.id_etapaEdad";
+            string sql = "SELECT Historia_Clinica.id_historiaClinica, Persona.cedula, Persona.nombres, Persona.id_sexo, Persona.fechaNacimiento, Paciente.discapacidad, EtapaEdad.etapa, Antecedentes.antecedentePersonal, Antecedentes.antecedenteFamiliar \n" +
+                "FROM Antecedentes \n" +
+                "INNER JOIN HistoriaClinica Historia_Clinica ON Antecedentes.id_antecedentes = Historia_Clinica.id_antecedentes \n" +
+                "INNER JOIN Paciente ON Historia_Clinica.id_paciente = Paciente.id_paciente \n" +
+                "INNER JOIN Persona ON Paciente.id_paciente = Persona.id_persona \n" +
+                "INNER JOIN EtapaEdad ON Paciente.id_etapaEdad = EtapaEdad.id_etapaEdad \n";
             SqlDataReader dr = null; //tabla virtual
             Console.WriteLine (sql);
             string mensaje = "";
@@ -114,8 +114,7 @@ namespace Datos {
                     cmd.Connection = con.Cn;
                     cmd.CommandText = sql;
                     dr = cmd.ExecuteReader ();
-                    while (dr.Read ()) //porq son varios regsitros se cambia a while
-                    {
+                    while (dr.Read ()) { //porq son varios regsitros se cambia a while
                         paciente = new Paciente ();
                         antecedente = new Antecedente ();
                         hclinic = new HistoriaClinica ();
@@ -123,7 +122,7 @@ namespace Datos {
                         hclinic.Paciente = paciente;
                         hclinic.Id_hclinica = Convert.ToInt32 (dr ["id_historiaClinica"]);
                         hclinic.Paciente.Cedula = dr ["cedula"].ToString ();
-                        hclinic.Paciente.Nombre = dr ["nombre"].ToString ();
+                        hclinic.Paciente.Nombre = dr ["nombres"].ToString ();
                         hclinic.Paciente.Sexo = Convert.ToChar (dr ["id_sexo"]);
                         hclinic.Paciente.FechaNacimiento = Convert.ToDateTime (dr ["fechaNacimiento"]);
                         hclinic.Paciente.Discapacidad = dr ["discapacidad"].ToString ();

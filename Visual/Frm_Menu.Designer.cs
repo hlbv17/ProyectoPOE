@@ -1,7 +1,7 @@
 ﻿
 namespace Visual
 {
-    partial class FrmMenuHLBV
+    partial class Frm_Menu
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -224,28 +224,28 @@ namespace Visual
             // mni_AM_Registrar
             // 
             this.mni_AM_Registrar.Name = "mni_AM_Registrar";
-            this.mni_AM_Registrar.Size = new System.Drawing.Size(180, 22);
+            this.mni_AM_Registrar.Size = new System.Drawing.Size(125, 22);
             this.mni_AM_Registrar.Text = "Registrar";
             this.mni_AM_Registrar.Click += new System.EventHandler(this.mni_AM_Registrar_Click);
             // 
             // mni_AM_Editar
             // 
             this.mni_AM_Editar.Name = "mni_AM_Editar";
-            this.mni_AM_Editar.Size = new System.Drawing.Size(180, 22);
+            this.mni_AM_Editar.Size = new System.Drawing.Size(125, 22);
             this.mni_AM_Editar.Text = "Editar";
             this.mni_AM_Editar.Click += new System.EventHandler(this.mni_AM_Editar_Click);
             // 
             // mni_AM_Eliminar
             // 
             this.mni_AM_Eliminar.Name = "mni_AM_Eliminar";
-            this.mni_AM_Eliminar.Size = new System.Drawing.Size(180, 22);
+            this.mni_AM_Eliminar.Size = new System.Drawing.Size(125, 22);
             this.mni_AM_Eliminar.Text = "Eliminar";
             this.mni_AM_Eliminar.Click += new System.EventHandler(this.mni_AM_Eliminar_Click);
             // 
             // mni_AM_Consultar
             // 
             this.mni_AM_Consultar.Name = "mni_AM_Consultar";
-            this.mni_AM_Consultar.Size = new System.Drawing.Size(180, 22);
+            this.mni_AM_Consultar.Size = new System.Drawing.Size(125, 22);
             this.mni_AM_Consultar.Text = "Consultar";
             this.mni_AM_Consultar.Click += new System.EventHandler(this.mni_AM_Consultar_Click);
             // 
@@ -282,7 +282,7 @@ namespace Visual
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // FrmMenuHLBV
+            // Frm_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -291,8 +291,8 @@ namespace Visual
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "FrmMenuHLBV";
-            this.Text = "Menu -  HELEN LISBETH BERNAL VERA";
+            this.Name = "Frm_Menu";
+            this.Text = "Dentaling - Menú";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
