@@ -138,7 +138,7 @@ namespace Control
                 txtNombre.ReadOnly = false;
                 txttelfono.ReadOnly = false;
                 txtCorreo.ReadOnly = false;
-                int c, e;
+                int c;
                 string espe = odontologo.Especialidad;
                 char se = odontologo.Sexo;
                 c = odontologo.Consultorio;
@@ -293,7 +293,7 @@ namespace Control
 
         public void ACtDBB(Odontologo od, int tipo, int espe)
         {
-            string mensaje = "", mensaje2 = "";
+            string mensaje = "";
             datosodo.ACtualizar2(od, tipo, espe);
             mensaje = datosodo.ACtualizar(od);
             if (mensaje[0] == '1')
@@ -323,7 +323,7 @@ namespace Control
         {
             consultarDBBFC(cedulas);
             int i = 1;
-            Odontologo od = null;
+          
             foreach (Odontologo x in odontologos)
             {
                 dgvOdontologo.Rows.Add(i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado(x.Consultorio), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);
@@ -335,7 +335,7 @@ namespace Control
         {
             consultarDBB();
             int i = 1;
-            Odontologo od = null;
+          
             foreach (Odontologo x in odontologos)
             {
                 dgvOdontologo.Rows.Add(i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado(x.Consultorio), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);
@@ -348,7 +348,7 @@ namespace Control
             dgvOdontologo.Rows.Clear();
             consultarDBBFiltrar(jornada, especialidad, consultorio);
             int i = 1;
-            Odontologo od = null;
+        
             foreach (Odontologo x in odontologos)
             {
                 dgvOdontologo.Rows.Add(i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado(x.Consultorio), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);

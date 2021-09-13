@@ -30,9 +30,6 @@ namespace Visual
             admHisClinica.LlenarGrid(dgvPacientes, lblTotal);
         }
 
-
-
-
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             dgvPacientes.Rows.Clear();
@@ -56,7 +53,7 @@ namespace Visual
             }
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
             FrmEditarVLRS frm = new FrmEditarVLRS();
             var filaSeleccionada = dgvPacientes.CurrentRow;
@@ -99,7 +96,6 @@ namespace Visual
             {
                 MessageBox.Show("Escoja correctamente el campo a filtrar");
             }
-
         }
 
         private void cmbFiltro_SelectedIndexChanged(object sender, EventArgs e)
@@ -136,8 +132,6 @@ namespace Visual
             lblsexo.Visible = true;
         }
 
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             sexo = cmbSexo.Text;
@@ -155,12 +149,20 @@ namespace Visual
             {
                 MessageBox.Show("Escoja correctamente el campo a filtrar");
             }
-
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void rbtambos_CheckedChanged(object sender, EventArgs e)
         {
-
+            rbindex = 4;
+            cmbSexo.Visible = true;
+            dtpFnac1.Visible = true;
+            dtpFnac2.Visible = true;
+            lblsexo.Visible = true;
+            lblfechas.Visible = true; cmbSexo.Visible = false;
+            dtpFnac1.Visible = true;
+            dtpFnac2.Visible = true;
+            lblsexo.Visible = false;
+            lblfechas.Visible = true;
         }
 
         private void rbtxfechas_CheckedChanged(object sender, EventArgs e)
@@ -173,16 +175,6 @@ namespace Visual
             lblfechas.Visible = true;
         }
 
-        private void rbtambos_CheckedChanged(object sender, EventArgs e)
-        {
-            rbindex = 4;
-            cmbSexo.Visible = true;
-            dtpFnac1.Visible = true;
-            dtpFnac2.Visible = true;
-            lblsexo.Visible = true;
-            lblfechas.Visible = true;
-        }
-
         private void btnImprimir_Click(object sender, EventArgs e)
         {
             char Csexo = ' ';
@@ -192,5 +184,13 @@ namespace Visual
             }
             admHisClinica.ReporteiText(Csexo, cedula, fechaDesde, fechaHasta, index, rbindex);
         }
+    
+
+
+
+
+
+
+
     }
 }

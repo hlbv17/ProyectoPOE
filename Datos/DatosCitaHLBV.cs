@@ -410,5 +410,57 @@ namespace Datos
             return idCita;
         }
 
+        //----------------------------------------------------------------------------------
+        public Cita ConsultarCitaxCedula(string cedula)
+        {
+            //List<Cita> citas = new List<Cita>();
+            Cita c = null;
+            Odontologo o = null;
+            Paciente pa = null;
+            string sql = "SELECT Persona.cedula, Cita.id_cita, Cita.id_paciente" +
+                         " FROM Persona INNER JOIN \n" +
+                         "Paciente ON Persona.id_persona = Paciente.id_persona INNER JOIN" +
+                         " Cita ON Paciente.id_paciente = Cita.id_paciente" +
+                         " WHERE Persona.cedula = '" + cedula + "'";
+            SqlDataReader dr = null;
+            Console.WriteLine(sql);
+            string mensaje = "";
+            mensaje = con.Conectar();
+            if (mensaje[0] == '1')
+            {
+                try
+                {
+                    cmd.Connection = con.Cn;
+                    cmd.CommandText = sql;
+                    dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        c = new Cita();
+                        pa = new Paciente();
+                        o = new Odontologo();
+
+                        c.Id_cita = Convert.ToInt32(dr["id_cita"]);
+                        pa.Cedula = dr["cedula"].ToString();
+                        c.Paciente.Cedula = pa.Cedula;
+                        pa.Nombre = dr["paciente"].ToString();
+                        c.Paciente.Nombre = pa.Nombre;
+                        o.Nombre = dr["odontologo"].ToString();
+                        c.Odontologo.Nombre = o.Nombre;
+                        c.Fecha = DateTime.Parse(dr["fecha"].ToString());
+                        string hour = dr["hora"].ToString();
+                        c.Hora = DateTime.ParseExact(hour, "HH:mm:ss", CultureInfo.InvariantCulture);
+                        o.Consultorio = Convert.ToInt32(dr["consultorio"]);
+                        c.Odontologo.Consultorio = o.Consultorio;
+                        //citas.Add(c);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al consultar en la tabla Cita " + ex.Message);
+                }
+            }
+            con.Cerrar();
+            return c;
+        }
     }
 }
