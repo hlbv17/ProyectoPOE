@@ -363,10 +363,9 @@ namespace Datos {
             return idCita;
         }
 
-        //----------------------------------------------------------------------------------
-
-        // Method: ConsultarCitaxCedula
-        public Cita ConsultarCitaxCedula (string cedula) {
+        //-----------------------------para eliminar desde Historia Clinica-----------------------------------------------------
+        public Cita ConsultarCitaxCedula(string cedula)
+        {
             //List<Cita> citas = new List<Cita>();
             Cita c = null;
             Odontologo o = null;
@@ -390,18 +389,8 @@ namespace Datos {
                         pa = new Paciente ();
                         o = new Odontologo ();
 
-                        c.Id_cita = Convert.ToInt32 (dr ["id_cita"]);
-                        pa.Cedula = dr ["cedula"].ToString ();
-                        c.Paciente.Cedula = pa.Cedula;
-                        pa.Nombre = dr ["paciente"].ToString ();
-                        c.Paciente.Nombre = pa.Nombre;
-                        o.Nombre = dr ["odontologo"].ToString ();
-                        c.Odontologo.Nombre = o.Nombre;
-                        c.Fecha = DateTime.Parse (dr ["fecha"].ToString ());
-                        string hour = dr ["hora"].ToString ();
-                        c.Hora = DateTime.ParseExact (hour, "HH:mm:ss", CultureInfo.InvariantCulture);
-                        o.Consultorio = Convert.ToInt32 (dr ["consultorio"]);
-                        c.Odontologo.Consultorio = o.Consultorio;
+                        c.Id_cita = Convert.ToInt32(dr["id_cita"]);
+
                         //citas.Add(c);
                     }
                 } catch (Exception ex) {

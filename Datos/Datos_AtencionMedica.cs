@@ -374,5 +374,37 @@ namespace Datos {
             return listaAM;
         }
 
+
+        //----------------------------------Para eliminar desde historia clinica-------------------------------------------------------------------------
+        public int ConsultarAtencionMedicaHiscL(int idHisClin)
+        {
+            int idAM = 0;
+            string sql = "SELECT Historia_Clinica.id_historiaClinica, AtencionMedica.id_atencionMedica \n" +    //
+                " FROM     AtencionMedica INNER JOIN \n" +
+                " Historia_Clinica ON AtencionMedica.id_historiaClinica = Historia_Clinica.id_historiaClinica \n" +
+                " WHERE Historia_Clinica.id_historiaClinica  = '" + idHisClin + "'";
+            SqlDataReader dr = null;
+            Console.WriteLine(sql);
+            string mensaje = "";
+            mensaje = con.Conectar();
+            if (mensaje[0] == '1')
+            {
+                try
+                {
+                    cmd.Connection = con.Cn;
+                    cmd.CommandText = sql;
+                    dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        idAM = Convert.ToInt32(dr["id_AtencionMedica"].ToString());
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("¡---ERROR---ConsultarIdAtencionMedica---! " + ex.Message);
+                }
+            }
+            return idAM;
+        }
     }
 }

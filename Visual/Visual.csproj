@@ -272,10 +272,10 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Q.png" />
+    <None Include="Resources\Acutalizarico1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Acutalizarico1.png" />
+    <None Include="Resources\q3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
