@@ -84,6 +84,7 @@ namespace Visual
             this.btnGuardar.TabIndex = 41;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // txtPresentar
             // 
@@ -139,6 +140,7 @@ namespace Visual
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(352, 27);
             this.txtCorreo.TabIndex = 36;
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
             // txtTelefono
             // 
@@ -181,6 +183,7 @@ namespace Visual
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(352, 27);
             this.txtNombre.TabIndex = 32;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtCedula
             // 
@@ -191,6 +194,7 @@ namespace Visual
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(354, 27);
             this.txtCedula.TabIndex = 31;
+            this.txtCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCedula_KeyPress);
             // 
             // label9
             // 
@@ -305,6 +309,7 @@ namespace Visual
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 956);
             this.Controls.Add(this.btnGuardar);

@@ -307,7 +307,7 @@ namespace Control
             document.Close();
 
             if (document != null)
-                MessageBox.Show("Reporte generado con exito :)\n\n El reporte se encuentra en la carpeta del proyecto actual: /Vanessa-RonquilloproyectoPOE/VISUAL/bin/Debug");
+                MessageBox.Show("Reporte generado con exito :)\n\n El reporte se encuentra en la carpeta del proyecto actual: /ProyectoPOE/VISUAL/bin/Debug");
             else
             {
                 MessageBox.Show("Error al generar reporte");

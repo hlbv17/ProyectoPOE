@@ -19,11 +19,12 @@ namespace Visual
             InitializeComponent();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+
+        private void btnGuardar_Click_1(object sender, EventArgs e)
         {
             string cedula = txtCedula.Text.Trim(), nombre = txtNombre.Text.Trim(), sexo = cmbSexo.Text,
-                telefono = txtTelefono.Text.Trim(), correo = txtCorreo.Text.Trim(), discapacidad = cmbDiscapacidad.Text,
-                APersonales = txtAntecPers.Text.Trim(), AFamiliares = txtAntecFam.Text.Trim();
+            telefono = txtTelefono.Text.Trim(), correo = txtCorreo.Text.Trim(), discapacidad = cmbDiscapacidad.Text,
+            APersonales = txtAntecPers.Text.Trim(), AFamiliares = txtAntecFam.Text.Trim();
             DateTime fechaNac = dtpFNacimiento.Value.Date;
             if (val.is_validate(errorP, txtCorreo, txtNombre, txtCedula, txtTelefono, txtAntecPers, txtAntecFam, cmbDiscapacidad, cmbSexo,
                 dtpFNacimiento) && val.validarEmail(correo) && !admPac.CedulaUnica(cedula)
@@ -34,22 +35,36 @@ namespace Visual
                 admPac.Guardar(cedula, nombre, sexo, telefono, correo, discapacidad, APersonales, AFamiliares, fechaNac, 1);
                 admPac.Agregar(txtPresentar);
             }
-
         }
 
         private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            char c = e.KeyChar;
+            if (!char.IsDigit(c) && (e.KeyChar != Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+                return;
+            }
         }
 
         private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            char c = e.KeyChar;
+            if (!char.IsLetter(c) && !char.IsDigit(c) && c != '@' && c != '.' && c != '-' && c != '_' && (e.KeyChar != Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+                return;
+            }
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            char c = e.KeyChar;
+            if (!char.IsLetter(c) && c != ' ' && (e.KeyChar != Convert.ToChar(Keys.Back)))
+            {
+                e.Handled = true;
+                return;
+            }
         }
     }
 }

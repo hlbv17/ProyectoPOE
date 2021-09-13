@@ -82,5 +82,17 @@ namespace Visual
             FrmConsultarANDEliminarodontologo f = new FrmConsultarANDEliminarodontologo();
             f.ShowDialog();
         }
+
+        private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmIngresoHisClinicaVLRS frm = new FrmIngresoHisClinicaVLRS();
+            frm.ShowDialog();
+        }
+
+        private void editarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFiltrarVLRS frm = new FrmFiltrarVLRS();
+            frm.ShowDialog();
+        }
     }
 }
