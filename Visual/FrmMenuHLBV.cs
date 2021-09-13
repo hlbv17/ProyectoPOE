@@ -58,5 +58,29 @@ namespace Visual
         {
            
         }
+
+        private void registrarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmOdontologoEGGM f = new FrmOdontologoEGGM();
+            f.ShowDialog();
+        }
+
+        private void editarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmConsultarANDEliminarodontologo f = new FrmConsultarANDEliminarodontologo();
+            f.ShowDialog();
+        }
+
+        private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmConsultarANDEliminarodontologo f = new FrmConsultarANDEliminarodontologo();
+            f.ShowDialog();
+        }
+
+        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmConsultarANDEliminarodontologo f = new FrmConsultarANDEliminarodontologo();
+            f.ShowDialog();
+        }
     }
 }
