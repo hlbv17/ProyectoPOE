@@ -29,6 +29,7 @@ namespace Control
         DatosPacienteVLRS datosPacien = new DatosPacienteVLRS();
         DatosAntecedentesVLRS datosAnt = new DatosAntecedentesVLRS();
         DatosHistoriaClinicaVLRS datosHistClin = new DatosHistoriaClinicaVLRS();
+        DatosCitaHLBV datosCita = new DatosCitaHLBV();
         ValidacionesVLRS v = new ValidacionesVLRS();
 
         Persona persona = null;
@@ -197,6 +198,11 @@ namespace Control
             Paciente pac = datosPacien.consultarPersonaPac(cedula);
             long id_paciente = pac.Id_paciente;
             HistoriaClinica hclinica = datosHistClin.consutarHistClinic(id_paciente);
+
+            //Eliminar Atencion medica
+            Cita cita = datosCita.ConsultarCitaxCedula(pac.Cedula);
+            datosCita.EliminarCitas(cita.Id_cita);
+
             datosHistClin.Eliminar(id_paciente);
             datosAnt.Eliminar(hclinica.Antecedente.Id_antecedente);
             datosPacien.Eliminar(pac.Id_paciente);
