@@ -61,6 +61,8 @@ namespace Visual
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.AliceBlue;
+            this.menuStrip1.Font = new System.Drawing.Font("Nirmala UI", 9F);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pacienteToolStripMenuItem,
@@ -71,7 +73,7 @@ namespace Visual
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 27);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -82,8 +84,9 @@ namespace Visual
             this.editarToolStripMenuItem,
             this.eliminarToolStripMenuItem,
             this.consultarToolStripMenuItem});
+            this.pacienteToolStripMenuItem.Font = new System.Drawing.Font("Nirmala UI", 10.2F);
             this.pacienteToolStripMenuItem.Name = "pacienteToolStripMenuItem";
-            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(72, 23);
             this.pacienteToolStripMenuItem.Text = "Paciente";
             // 
             // registrarToolStripMenuItem
@@ -117,8 +120,9 @@ namespace Visual
             this.editarToolStripMenuItem1,
             this.eliminarToolStripMenuItem1,
             this.consultarToolStripMenuItem1});
+            this.odontólogoToolStripMenuItem.Font = new System.Drawing.Font("Nirmala UI", 10.2F);
             this.odontólogoToolStripMenuItem.Name = "odontólogoToolStripMenuItem";
-            this.odontólogoToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
+            this.odontólogoToolStripMenuItem.Size = new System.Drawing.Size(96, 23);
             this.odontólogoToolStripMenuItem.Text = "Odontólogo";
             // 
             // registrarToolStripMenuItem1
@@ -157,8 +161,9 @@ namespace Visual
             this.eliminarToolStripMenuItem2,
             this.listarToolStripMenuItem,
             this.consultarToolStripMenuItem2});
+            this.citaToolStripMenuItem.Font = new System.Drawing.Font("Nirmala UI", 10.2F);
             this.citaToolStripMenuItem.Name = "citaToolStripMenuItem";
-            this.citaToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
+            this.citaToolStripMenuItem.Size = new System.Drawing.Size(45, 23);
             this.citaToolStripMenuItem.Text = "Cita";
             // 
             // registrarToolStripMenuItem2
@@ -204,8 +209,9 @@ namespace Visual
             this.editarToolStripMenuItem3,
             this.eliminarToolStripMenuItem3,
             this.consultarToolStripMenuItem3});
+            this.atenciónMédicaToolStripMenuItem.Font = new System.Drawing.Font("Nirmala UI", 10.2F);
             this.atenciónMédicaToolStripMenuItem.Name = "atenciónMédicaToolStripMenuItem";
-            this.atenciónMédicaToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
+            this.atenciónMédicaToolStripMenuItem.Size = new System.Drawing.Size(123, 23);
             this.atenciónMédicaToolStripMenuItem.Text = "Atención Médica";
             // 
             // registrarToolStripMenuItem3
@@ -237,8 +243,9 @@ namespace Visual
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.conexionToolStripMenuItem,
             this.acercaDeToolStripMenuItem});
+            this.ayudaToolStripMenuItem.Font = new System.Drawing.Font("Nirmala UI", 10.2F);
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(60, 23);
             this.ayudaToolStripMenuItem.Text = "Ayuda";
             // 
             // conexionToolStripMenuItem

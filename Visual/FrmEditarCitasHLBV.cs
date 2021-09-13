@@ -43,7 +43,7 @@ namespace Visual
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            admCita.LimpiarCampos(txtCedula, lblPaciente, dgvCitas, dtpFecha, cmbHora, cmbOdontologo, lblConsultorio, txtRegistro);
+            admCita.LimpiarCampos(lblId, txtCedula, lblPaciente, dgvCitas, dtpFecha, cmbHora, cmbOdontologo, lblConsultorio, txtRegistro);
             //admCita.BloquearCampos(dgvCitas, txtCedula, dtpFecha, cmbHora, cmbOdontologo);
         }
 

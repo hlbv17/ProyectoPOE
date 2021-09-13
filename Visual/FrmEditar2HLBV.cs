@@ -52,5 +52,10 @@ namespace Visual
             string odontologo = (string)cmbOdontologo.SelectedItem;
             admO.LabelConsultorio(odontologo, cmbOdontologo, lblConsultorio);
         }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            admCita.LimpiarCamposE(lblId, txtCedula, lblPaciente, dtpFecha, cmbHora, cmbOdontologo, lblConsultorio, txtRegistro);
+        }
     }
 }

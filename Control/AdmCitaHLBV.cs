@@ -329,9 +329,10 @@ namespace Control
                 txtRegistro.Text += Citas[indice].ToString() + "\r\n";
         }
 
-        public void LimpiarCampos(TextBox txtCedula, Label lblNombre, DataGridView dgvCitas, DateTimePicker dtpFecha,
+        public void LimpiarCampos(Label lblId, TextBox txtCedula, Label lblNombre, DataGridView dgvCitas, DateTimePicker dtpFecha,
             ComboBox cmbHora, ComboBox cmbOdontologo, Label lblConsultorio, TextBox txtRegistro)
         {
+            lblId.Text = "__";
             lblNombre.Text = "";
             txtCedula.Text = "";
             cmbHora.Text = "";
@@ -340,6 +341,21 @@ namespace Control
             dtpFecha.Value = DateTime.Now;
             dgvCitas.Rows.Clear();
             BloquearCampos(txtCedula, dtpFecha, cmbHora, cmbOdontologo);
+            txtRegistro.Text = "";
+        }
+
+        public void LimpiarCamposE(Label lblId, TextBox txtCedula, Label lblPaciente, DateTimePicker dtpFecha, ComboBox cmbHora, ComboBox cmbOdontologo, Label lblConsultorio, TextBox txtRegistro)
+        {
+            lblId.Text = "__";
+            txtCedula.Text = "";
+            cmbHora.SelectedIndex = 0;
+            cmbOdontologo.Items.Clear();
+            cmbOdontologo.Items.Add("--Seleccionar--");
+            cmbOdontologo.SelectedIndex = 0;
+            cmbOdontologo.Enabled = false;
+            dtpFecha.Value = DateTime.Now;
+            lblPaciente.Text = "____________________";
+            lblConsultorio.Text = "___";
             txtRegistro.Text = "";
         }
 

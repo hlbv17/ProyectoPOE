@@ -53,7 +53,7 @@ namespace Visual
             // 
             // btnFiltrar
             // 
-            this.btnFiltrar.Font = new System.Drawing.Font("Nirmala UI", 10.2F);
+            this.btnFiltrar.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFiltrar.Location = new System.Drawing.Point(418, 78);
             this.btnFiltrar.Name = "btnFiltrar";
             this.btnFiltrar.Size = new System.Drawing.Size(81, 30);
@@ -82,18 +82,20 @@ namespace Visual
             // 
             // dgvCitas
             // 
+            this.dgvCitas.AllowUserToAddRows = false;
+            this.dgvCitas.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.dgvCitas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCitas.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightSteelBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.RoyalBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.InactiveBorder;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCitas.ColumnHeadersHeight = 62;
             this.dgvCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.col_n,
             this.col_id,
@@ -110,8 +112,10 @@ namespace Visual
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCitas.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCitas.EnableHeadersVisualStyles = false;
             this.dgvCitas.Location = new System.Drawing.Point(44, 129);
             this.dgvCitas.Name = "dgvCitas";
+            this.dgvCitas.ReadOnly = true;
             this.dgvCitas.Size = new System.Drawing.Size(613, 315);
             this.dgvCitas.TabIndex = 11;
             // 
@@ -119,39 +123,46 @@ namespace Visual
             // 
             this.col_n.HeaderText = "Nº";
             this.col_n.Name = "col_n";
+            this.col_n.ReadOnly = true;
             this.col_n.Width = 50;
             // 
             // col_id
             // 
             this.col_id.HeaderText = "ID";
             this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
             this.col_id.Width = 50;
             // 
             // col_paciente
             // 
             this.col_paciente.HeaderText = "Paciente";
             this.col_paciente.Name = "col_paciente";
+            this.col_paciente.ReadOnly = true;
             // 
             // col_fecha
             // 
             this.col_fecha.HeaderText = "Fecha";
             this.col_fecha.Name = "col_fecha";
+            this.col_fecha.ReadOnly = true;
             // 
             // col_hora
             // 
             this.col_hora.HeaderText = "Hora";
             this.col_hora.Name = "col_hora";
+            this.col_hora.ReadOnly = true;
             this.col_hora.Width = 70;
             // 
             // col_odontologo
             // 
             this.col_odontologo.HeaderText = "Odontólogo";
             this.col_odontologo.Name = "col_odontologo";
+            this.col_odontologo.ReadOnly = true;
             // 
             // col_consultorio
             // 
             this.col_consultorio.HeaderText = "Consultorio";
             this.col_consultorio.Name = "col_consultorio";
+            this.col_consultorio.ReadOnly = true;
             // 
             // btnEliminar
             // 
@@ -168,7 +179,7 @@ namespace Visual
             // 
             // btnMostrar
             // 
-            this.btnMostrar.Font = new System.Drawing.Font("Nirmala UI", 10.2F);
+            this.btnMostrar.Font = new System.Drawing.Font("Nirmala UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrar.Location = new System.Drawing.Point(375, 471);
             this.btnMostrar.Name = "btnMostrar";
             this.btnMostrar.Size = new System.Drawing.Size(81, 30);
