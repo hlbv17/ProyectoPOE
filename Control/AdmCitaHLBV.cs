@@ -105,7 +105,7 @@ namespace Control {
             if (dCita.ConsultarCitasExistentes (cedula, fecha, hora) == false) {
                 pa = dPaciente.ConsultarPacienteNombre (cedula);
                 o = dOdontologo.ConsultarOdontologo (odonto);
-                c = new Cita (id_cita, fecha, hora, o, pa);
+                c = new Cita (id_cita, pa, o, fecha, hora);
                 citas.Add (c);
                 GuardarBD (c);
             } else {

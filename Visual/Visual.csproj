@@ -110,11 +110,11 @@
     <Compile Include="FrmListarCitasHLBV.Designer.cs">
       <DependentUpon>FrmListarCitasHLBV.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMenuHLBV.cs">
+    <Compile Include="Frm_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMenuHLBV.Designer.cs">
-      <DependentUpon>FrmMenuHLBV.cs</DependentUpon>
+    <Compile Include="Frm_Menu.Designer.cs">
+      <DependentUpon>Frm_Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmOdontologoEGGM.cs">
       <SubType>Form</SubType>
@@ -193,8 +193,8 @@
     <EmbeddedResource Include="FrmListarCitasHLBV.resx">
       <DependentUpon>FrmListarCitasHLBV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMenuHLBV.resx">
-      <DependentUpon>FrmMenuHLBV.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Menu.resx">
+      <DependentUpon>Frm_Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmOdontologoEGGM.resx">
       <DependentUpon>FrmOdontologoEGGM.cs</DependentUpon>

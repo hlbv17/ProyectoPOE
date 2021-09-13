@@ -74,9 +74,15 @@ namespace Control {
                 dgvPacientes.Rows.Add (hcl.Id_hclinica, hcl.Paciente.Cedula, hcl.Paciente.Nombre, hcl.Paciente.LeerSexo (), hcl.Paciente.FechaNacimiento.ToShortDateString (),
                     hcl.Paciente.Discapacidad, hcl.Paciente.Etapa, hcl.Antecedente.Antecedenteper, hcl.Antecedente.AntecedenteFam, hcl.AtencionMedica.Count ());
                 i++;
-
             }
             lblTotal.Text = i - 1 + " ";
+        }
+
+        public void ConsultarBBDHclinic () {
+            listahClinica.Clear ();
+            listahClinica = datosHistClin.ConsultarTodos ();
+            if (listahClinica.Count == 0)
+                MessageBox.Show ("Error: No se consultaron los datos");
         }
 
         public void ConsultarBBDXsexoXCedulaXFechas (string sexo, string cedula, DateTime fechaDesde, DateTime fechasta, DataGridView dgvPacientes, Label lblTotal, int index, int rbindex) {
@@ -100,11 +106,7 @@ namespace Control {
                 MessageBox.Show ("Error: No existen datos con esos parámetros de consulta");
         }
 
-        public void ConsultarBBDHclinic () {
-            listahClinica = datosHistClin.ConsultarTodos ();
-            if (listahClinica == null)
-                MessageBox.Show ("Error: No se consultaron los datos");
-        }
+        
 
         public void Guardar (string cedula, string nombre, string sexo, string telefono, string correo, string discapacidad, string aPersonales, string aFamiliares, DateTime fechaNac, int guar_o_edi) {
 

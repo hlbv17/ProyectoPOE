@@ -44,11 +44,11 @@ namespace Datos {
             Cita c = null;
             Odontologo o = null;
             Paciente pa = null;
-            string sql = "SELECT C.id_cita, P1.cedula, P1.nombre as paciente, P2.nombre as odontologo, C.fecha, C.hora, O.consultorio\n" +
+            string sql = "SELECT C.id_cita, P1.cedula, P1.nombres as paciente, P2.nombres as odontologo, C.fecha, C.hora, O.consultorio\n" +
                          "FROM Cita C, Odontologo O, Persona P1, Persona P2 \n" +
                          "WHERE P1.id_persona = C.id_paciente \n" +
                          "AND P2.id_persona = C.id_odontologo \n" +
-                         "AND C.id_odontologo = O.consultorio";
+                         "AND C.id_odontologo = O.id_odontologo";
             SqlDataReader dr = null;
             Console.WriteLine (sql);
             string mensaje = "";
@@ -62,7 +62,6 @@ namespace Datos {
                         c = new Cita ();
                         pa = new Paciente ();
                         o = new Odontologo ();
-
                         c.Id_cita = Convert.ToInt32 (dr ["id_cita"]);
                         pa.Cedula = dr ["cedula"].ToString ();
                         c.Paciente.Cedula = pa.Cedula;

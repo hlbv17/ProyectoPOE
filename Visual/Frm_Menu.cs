@@ -9,10 +9,10 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace Visual {
-    public partial class FrmMenuHLBV : Form {
+    public partial class Frm_Menu : Form {
         AdmCitaHLBV adm = AdmCitaHLBV.GetAdm ();
         Adm_AtencionMedica_ROPB admAM = Adm_AtencionMedica_ROPB.GetAdm ();
-        public FrmMenuHLBV () {
+        public Frm_Menu () {
             InitializeComponent ();
         }
 
