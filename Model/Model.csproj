@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AtencionMedica.cs" />
+    <Compile Include="AtencionMedica_ROPB.cs" />
     <Compile Include="Cita.cs" />
     <Compile Include="Antecedente.cs" />
     <Compile Include="Dias.cs" />

@@ -13,6 +13,8 @@ namespace Visual
     public partial class FrmMenuHLBV : Form
     {
         AdmCitaHLBV adm = AdmCitaHLBV.GetAdm();
+        Adm_AtencionMedica_ROPB admAtencionMedica = Adm_AtencionMedica_ROPB.GetAdm ();
+
         public FrmMenuHLBV()
         {
             InitializeComponent();
@@ -81,6 +83,38 @@ namespace Visual
         {
             FrmConsultarANDEliminarodontologo f = new FrmConsultarANDEliminarodontologo();
             f.ShowDialog();
+        }
+
+        private void registrarToolStripMenuItem3_Click (object sender, EventArgs e) {
+            Frm_AtencionMedica_Registrar_ROPB frm = new Frm_AtencionMedica_Registrar_ROPB ();
+            frm.ShowDialog ();
+        }
+
+        private void editarToolStripMenuItem3_Click (object sender, EventArgs e) {
+            if (admAtencionMedica.ContarLista () > 0) {
+                Frm_AtencionMedica_Editar_ROPB frm = new Frm_AtencionMedica_Editar_ROPB (DateTime.Now, "---Seleccione---", "---Seleccione---", null);
+                frm.ShowDialog ();
+            } else {
+                MessageBox.Show ("No hay registro de Atenciones Médicas", "Error!");
+            }
+        }
+
+        private void eliminarToolStripMenuItem3_Click (object sender, EventArgs e) {
+            if (admAtencionMedica.ContarLista () > 0) {
+                Frm_AtencionMedica_Eliminar_ROPB frm = new Frm_AtencionMedica_Eliminar_ROPB (DateTime.Now, "---Seleccione---", "---Seleccione---", null);
+                frm.ShowDialog ();
+            } else {
+                MessageBox.Show ("No hay registro de Atenciones Médicas", "Error!");
+            }
+        }
+
+        private void consultarToolStripMenuItem3_Click (object sender, EventArgs e) {
+            if (admAtencionMedica.ContarLista () > 0) {
+                Frm_AtencionMedica_Buscar_ROPB frm = new Frm_AtencionMedica_Buscar_ROPB ();
+                frm.ShowDialog ();
+            } else {
+                MessageBox.Show ("No hay registro de Atenciones Médicas", "Error!");
+            }
         }
     }
 }

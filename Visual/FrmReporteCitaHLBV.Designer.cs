@@ -37,10 +37,10 @@ namespace Visual
             // axAcroPDF
             // 
             this.axAcroPDF.Enabled = true;
-            this.axAcroPDF.Location = new System.Drawing.Point(43, 38);
+            this.axAcroPDF.Location = new System.Drawing.Point(12, 12);
             this.axAcroPDF.Name = "axAcroPDF";
             this.axAcroPDF.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axAcroPDF.OcxState")));
-            this.axAcroPDF.Size = new System.Drawing.Size(708, 380);
+            this.axAcroPDF.Size = new System.Drawing.Size(776, 426);
             this.axAcroPDF.TabIndex = 0;
             // 
             // FrmReporteCitaHLBV

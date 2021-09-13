@@ -9,17 +9,17 @@ namespace Control
 {
     public class AdmConexionEGGM
     {
-        ConexionEGGM con = new Datos.ConexionEGGM();
+        Conexion con = new Datos.Conexion();
         public void Conectar()
         {
 
             string mensaje =
-            mensaje = con.conectar();
+            mensaje = con.Conectar();
             if (mensaje[0] == '1')
                 MessageBox.Show("Conexión satisfactoria!");
             else
                 MessageBox.Show("Error: " + mensaje);
-            con.cerrar();
+            con.Cerrar();
 
         }
     }

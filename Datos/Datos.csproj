@@ -40,10 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="ConexionEGGM.cs" />
     <Compile Include="ConexionHLBV.cs" />
     <Compile Include="ConexionVLRS.cs" />
+    <Compile Include="Conexion.cs" />
     <Compile Include="DatosAntecedentesVLRS.cs" />
     <Compile Include="DatosCitaHLBV.cs" />
     <Compile Include="DatosDiasEGGM.cs" />
@@ -53,6 +53,12 @@
     <Compile Include="DatosOdontologoEGGM.cs" />
     <Compile Include="DatosPacienteVLRS.cs" />
     <Compile Include="DatosPersonaVLRS.cs" />
+    <Compile Include="Datos_AtencionMedica_ROPB.cs" />
+    <Compile Include="Datos_Cita_ROPB.cs" />
+    <Compile Include="Datos_HistoriaClinica_ROPB.cs" />
+    <Compile Include="Datos_Odontologo_ROPB.cs" />
+    <Compile Include="Datos_Paciente_ROPB.cs" />
+    <Compile Include="Datos_PiezaDental_ROPB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReporteHisClinicaVLRS.cs" />
   </ItemGroup>

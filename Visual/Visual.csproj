@@ -134,6 +134,30 @@
     <Compile Include="FrmReporteCitaHLBV.Designer.cs">
       <DependentUpon>FrmReporteCitaHLBV.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_AtencionMedica_Buscar_ROPB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AtencionMedica_Buscar_ROPB.Designer.cs">
+      <DependentUpon>Frm_AtencionMedica_Buscar_ROPB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_AtencionMedica_Editar_ROPB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AtencionMedica_Editar_ROPB.Designer.cs">
+      <DependentUpon>Frm_AtencionMedica_Editar_ROPB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_AtencionMedica_Eliminar_ROPB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AtencionMedica_Eliminar_ROPB.Designer.cs">
+      <DependentUpon>Frm_AtencionMedica_Eliminar_ROPB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_AtencionMedica_Registrar_ROPB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AtencionMedica_Registrar_ROPB.Designer.cs">
+      <DependentUpon>Frm_AtencionMedica_Registrar_ROPB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmActualizarOdontologo.resx">
@@ -180,6 +204,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReporteCitaHLBV.resx">
       <DependentUpon>FrmReporteCitaHLBV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_AtencionMedica_Buscar_ROPB.resx">
+      <DependentUpon>Frm_AtencionMedica_Buscar_ROPB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_AtencionMedica_Editar_ROPB.resx">
+      <DependentUpon>Frm_AtencionMedica_Editar_ROPB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_AtencionMedica_Eliminar_ROPB.resx">
+      <DependentUpon>Frm_AtencionMedica_Eliminar_ROPB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_AtencionMedica_Registrar_ROPB.resx">
+      <DependentUpon>Frm_AtencionMedica_Registrar_ROPB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
