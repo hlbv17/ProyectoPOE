@@ -15,9 +15,10 @@ namespace Visual
     public partial class FrmEditarVLRS : Form
     {
         Adm_HistoriaClinicaVLRS admHisclin = Adm_HistoriaClinicaVLRS.GetAdm();
-        ValidacionesVLRS val = new ValidacionesVLRS();
+        Validacion val = new Validacion();
         DatosHistoriaClinicaVLRS datosHistClin = new DatosHistoriaClinicaVLRS();
         HistoriaClinica hisclinic = null;
+
         public FrmEditarVLRS()
         {
             InitializeComponent();

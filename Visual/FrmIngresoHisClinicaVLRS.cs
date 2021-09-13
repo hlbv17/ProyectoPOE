@@ -13,7 +13,7 @@ namespace Visual
     public partial class FrmIngresoHisClinicaVLRS : Form
     {
         Adm_HistoriaClinicaVLRS admPac = Adm_HistoriaClinicaVLRS.GetAdm();
-        ValidacionesVLRS val = new ValidacionesVLRS();
+        Validacion val = new Validacion();
         public FrmIngresoHisClinicaVLRS()
         {
             InitializeComponent();

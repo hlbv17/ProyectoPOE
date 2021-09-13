@@ -19,9 +19,9 @@ namespace Control {
 
         // Variables
         private static Adm_AtencionMedica_ROPB adm = null;
-        List<AtencionMedica_ROPB> listaAM = null;
-        Validacion_ROPB v = null;
-        AtencionMedica_ROPB am = null;
+        List<AtencionMedica> listaAM = null;
+        Validacion v = null;
+        AtencionMedica am = null;
         PiezaDental pd = null;
 
         Cita c = null;
@@ -37,12 +37,12 @@ namespace Control {
 
         // Constructor: Adm_AtencionMedica_ROPB
         private Adm_AtencionMedica_ROPB () {
-            listaAM = new List<AtencionMedica_ROPB> ();
-            v = new Validacion_ROPB ();
+            listaAM = new List<AtencionMedica> ();
+            v = new Validacion ();
         }
 
-        public List<AtencionMedica_ROPB> Lista { get => listaAM; set => listaAM = value; }   // Getter & Setter: listaAM
-        public AtencionMedica_ROPB Am { get => am; set => am = value; }                      // Getter & Setter: am
+        public List<AtencionMedica> Lista { get => listaAM; set => listaAM = value; }   // Getter & Setter: listaAM
+        public AtencionMedica Am { get => am; set => am = value; }                      // Getter & Setter: am
 
         // Getter :GetAdm
         public static Adm_AtencionMedica_ROPB GetAdm () {
@@ -203,7 +203,7 @@ namespace Control {
                 //pd.NumeroPieza = numeroPieza;
                 //pd.CuadrantePieza = cuadrantePieza;
                 //pd.NombrePieza = nombrePieza;
-                am = new AtencionMedica_ROPB (c, pd, motivoConsulta, diagnostico);
+                am = new AtencionMedica (c, pd, motivoConsulta, diagnostico);
                 listaAM.Add (am);
                 string mensaje = dam.InsertarAteniconMedica (am);
                 if (mensaje [0] == '1') {
@@ -240,7 +240,7 @@ namespace Control {
             dgv_AntencionMedica.Rows.Clear ();
             listaAM = dam.ConsultarAntecionesMedicas ();
             int i = 0;
-            foreach (AtencionMedica_ROPB element in listaAM) {
+            foreach (AtencionMedica element in listaAM) {
                 ++i;
                 dgv_AntencionMedica.Rows.Add (i, dhc.ConsultarIdHistoriaClinica (element.Cita.Paciente.Nombre), element.Cita.Paciente.Nombre, element.Cita.Odontologo.Nombre, element.Cita.Odontologo.Consultorio, element.Cita.Fecha.ToString ("dd/MM/yyy"), element.Cita.Hora.ToString ("HH:mm"), element.PiezaDental.NumeroPieza, element.PiezaDental.CuadrantePieza, element.PiezaDental.NombrePieza, element.MotivoConsulta, element.Diagnostico);
             }
@@ -255,7 +255,7 @@ namespace Control {
             dgv_AntencionMedica.Rows.Clear ();
             listaAM = dam.ConsultarAntecionesMedicasBuscar (paciente, fecha, hora, n);
             int i = 0;
-            foreach (AtencionMedica_ROPB element in listaAM) {
+            foreach (AtencionMedica element in listaAM) {
                 ++i;
                 dgv_AntencionMedica.Rows.Add (i, dhc.ConsultarIdHistoriaClinica (element.Cita.Paciente.Nombre), element.Cita.Paciente.Nombre, element.Cita.Odontologo.Nombre, element.Cita.Odontologo.Consultorio, element.Cita.Fecha.ToString ("dd/MM/yyy"), element.Cita.Hora.ToString ("HH:mm"), element.PiezaDental.NumeroPieza, element.PiezaDental.CuadrantePieza, element.PiezaDental.NombrePieza, element.MotivoConsulta, element.Diagnostico);
             }
@@ -270,7 +270,7 @@ namespace Control {
             DateTime fecha = dtp_Fecha.Value;
             string hora = cmb_Hora.Text;
             string paciente = cmb_Paciente.Text;
-            am = new AtencionMedica_ROPB ();
+            am = new AtencionMedica ();
             am = dam.ConsultarAtencionMedicaEditar (fecha, hora, paciente);
             if (hora == "---Seleccione---" || paciente == "---Seleccione---" || am.Diagnostico == "") {
                 cmb_CuadrantePieza.Text = "---Seleccione---";
@@ -327,7 +327,7 @@ namespace Control {
             int idCita = dc.CosultarIdCita (paciente, fecha, hora);
             string mensaje = dam.EditarAtencionMedica (idCita, numeroPieza, motivoConsulta, diagnostico);
             if (mensaje [0] == '1') {
-                am = new AtencionMedica_ROPB ();
+                am = new AtencionMedica ();
                 am = dam.ConsultarAtencionMedicaEditar (fecha, hora, paciente);
                 txt_Registro.Text = am.ToString ();
                 MessageBox.Show ("Datos actualizados", "Nice.");
@@ -346,7 +346,7 @@ namespace Control {
             DateTime fecha = dtp_Fecha.Value;
             string hora = cmb_Hora.Text;
             string paciente = cmb_Paciente.Text;
-            am = new AtencionMedica_ROPB ();
+            am = new AtencionMedica ();
             am = dam.ConsultarAtencionMedicaEditar (fecha, hora, paciente);
             if (hora == "---Seleccione---" || paciente == "---Seleccione---" || am.Diagnostico == "") {
                 cmb_CuadrantePieza.Text = "---Seleccione---";
@@ -438,7 +438,7 @@ namespace Control {
                 }
                 listaAM = dam.BuscarAtencionMedicaReporte (paciente, fecha, hora, n);
                 int i = 0;
-                foreach (AtencionMedica_ROPB element in listaAM) {
+                foreach (AtencionMedica element in listaAM) {
                     ++i;
                     tabla.AddCell (new Cell ().Add (new Paragraph (i + "").SetFont (fontContenido))); // #
                     tabla.AddCell (new Cell ().Add (new Paragraph (dhc.ConsultarIdHistoriaClinica (element.Cita.Paciente.Nombre) + "").SetFont (fontContenido)));   // #HistoriaClínica

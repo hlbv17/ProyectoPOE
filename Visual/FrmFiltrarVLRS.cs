@@ -13,7 +13,7 @@ namespace Visual
     public partial class FrmFiltrarVLRS : Form
     {
         Adm_HistoriaClinicaVLRS admHisClinica = Adm_HistoriaClinicaVLRS.GetAdm();
-        ValidacionesVLRS val = new ValidacionesVLRS();
+        Validacion val = new Validacion();
         int rbindex, index;
         string sexo, cedula;
         DateTime fechaDesde, fechaHasta;

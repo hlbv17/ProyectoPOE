@@ -14,7 +14,7 @@ namespace Datos {
         SqlCommand cmd = new SqlCommand ();
 
         // Method: InsertarAteniconMedica
-        public string InsertarAteniconMedica (AtencionMedica_ROPB am) {
+        public string InsertarAteniconMedica (AtencionMedica am) {
             DatosHistoriaClinicaVLRS dhc = new DatosHistoriaClinicaVLRS ();
             DatosCitaHLBV dc = new DatosCitaHLBV ();
             string sql = "INSERT INTO AtencionMedica (id_historiaClinica, id_cita,  id_piezaDental, motivoConsulta, diagnostico) \n" +
@@ -61,9 +61,9 @@ namespace Datos {
         }
 
         // Method: ConsultarAntecionesMedicas
-        public List<AtencionMedica_ROPB> ConsultarAntecionesMedicas () {
-            List<AtencionMedica_ROPB> listaAM = new List<AtencionMedica_ROPB> ();
-            AtencionMedica_ROPB atm = null;
+        public List<AtencionMedica> ConsultarAntecionesMedicas () {
+            List<AtencionMedica> listaAM = new List<AtencionMedica> ();
+            AtencionMedica atm = null;
             string sql = "SELECT PP.nombres as paciente, PO.nombres as odontologo, ODO.consultorio as consultorio, C.fecha as fecha, C.hora as hora, PD.id_piezaDental as numeroPieza, CD.nombreCuadrante, NP.nombrePieza, ATM.motivoConsulta, ATM.diagnostico \n" +
                 "FROM AtencionMedica ATM \n" +
                 "inner join Cita C ON C.id_cita = ATM.id_cita \n" +
@@ -83,7 +83,7 @@ namespace Datos {
                     cmd.CommandText = sql;
                     dr = cmd.ExecuteReader ();
                     while (dr.Read ()) {
-                        atm = new AtencionMedica_ROPB ();
+                        atm = new AtencionMedica ();
                         atm.Cita.Paciente.Nombre = dr ["paciente"].ToString ();
                         atm.Cita.Odontologo.Nombre = dr ["odontologo"].ToString ();
                         atm.Cita.Odontologo.Consultorio = Convert.ToInt32 (dr ["consultorio"].ToString ());
@@ -104,9 +104,9 @@ namespace Datos {
         }
 
         // Method: ConsultarAntecionesMedicasBuscar
-        public List<AtencionMedica_ROPB> ConsultarAntecionesMedicasBuscar (string paciente, DateTime fecha, string hora, int n) {
-            List<AtencionMedica_ROPB> listaAM = new List<AtencionMedica_ROPB> ();
-            AtencionMedica_ROPB atm = null;
+        public List<AtencionMedica> ConsultarAntecionesMedicasBuscar (string paciente, DateTime fecha, string hora, int n) {
+            List<AtencionMedica> listaAM = new List<AtencionMedica> ();
+            AtencionMedica atm = null;
             string sql = "SELECT PP.nombres as paciente, PO.nombres as odontologo, ODO.consultorio as consultorio, C.fecha as fecha, C.hora as hora, PD.id_piezaDental as numeroPieza, CD.nombreCuadrante, NP.nombrePieza, ATM.motivoConsulta, ATM.diagnostico \n" +
                 "FROM AtencionMedica ATM \n" +
                 "inner join Cita C ON C.id_cita = ATM.id_cita \n" +
@@ -163,7 +163,7 @@ namespace Datos {
                     }
                     dr = cmd.ExecuteReader ();
                     while (dr.Read ()) {
-                        atm = new AtencionMedica_ROPB ();
+                        atm = new AtencionMedica ();
                         atm.Cita.Paciente.Nombre = dr ["paciente"].ToString ();
                         atm.Cita.Odontologo.Nombre = dr ["odontologo"].ToString ();
                         atm.Cita.Odontologo.Consultorio = Convert.ToInt32 (dr ["consultorio"].ToString ());
@@ -184,8 +184,8 @@ namespace Datos {
         }
 
         // Method: ConsultarAtencionMedicaEditar
-        public AtencionMedica_ROPB ConsultarAtencionMedicaEditar (DateTime fecha, string hora, string paciente) {
-            AtencionMedica_ROPB atm = new AtencionMedica_ROPB ();
+        public AtencionMedica ConsultarAtencionMedicaEditar (DateTime fecha, string hora, string paciente) {
+            AtencionMedica atm = new AtencionMedica ();
             string sql = "SELECT PP.nombres as paciente, PO.nombres as odontologo, ODO.consultorio as consultorio, C.fecha as fecha, C.hora as hora, PD.id_piezaDental as numeroPieza, CD.nombreCuadrante, NP.nombrePieza, ATM.motivoConsulta, ATM.diagnostico \n" +
                "FROM AtencionMedica ATM \n" +
                "inner join Cita C ON C.id_cita = ATM.id_cita \n" +
@@ -304,7 +304,7 @@ namespace Datos {
          --- Reporte iText7.1.14--------------------------------------------------------------------------------------------------------*/
 
         // Method: BuscarAtencionMedicaReporte
-        public List<AtencionMedica_ROPB> BuscarAtencionMedicaReporte (string paciente, DateTime fecha, string hora, int n) {
+        public List<AtencionMedica> BuscarAtencionMedicaReporte (string paciente, DateTime fecha, string hora, int n) {
             //DataSet ds = new DataSet (); // Tabla virtual
             string sentenciaSQL = "SELECT PP.nombres as paciente, PO.nombres as odontologo, ODO.consultorio as consultorio, C.fecha as fecha, C.hora as hora, PD.id_piezaDental as numeroPieza, CD.nombreCuadrante, NP.nombrePieza, ATM.motivoConsulta, ATM.diagnostico \n" +
                 "FROM AtencionMedica ATM \n" +
@@ -341,9 +341,9 @@ namespace Datos {
         }
 
         // Method: ConsultarAtencionMedicaReporte
-        private List<AtencionMedica_ROPB> ConsultarAtencionMedicaReporte (string sql) {
-            List<AtencionMedica_ROPB> listaAM = new List<AtencionMedica_ROPB> ();
-            AtencionMedica_ROPB atm = null;
+        private List<AtencionMedica> ConsultarAtencionMedicaReporte (string sql) {
+            List<AtencionMedica> listaAM = new List<AtencionMedica> ();
+            AtencionMedica atm = null;
             SqlDataReader dr = null;
             Console.WriteLine (sql);
             string mensaje = "";
@@ -354,7 +354,7 @@ namespace Datos {
                     cmd.CommandText = sql;
                     dr = cmd.ExecuteReader ();
                     while (dr.Read ()) {
-                        atm = new AtencionMedica_ROPB ();
+                        atm = new AtencionMedica ();
                         atm.Cita.Paciente.Nombre = dr ["paciente"].ToString ();
                         atm.Cita.Odontologo.Nombre = dr ["odontologo"].ToString ();
                         atm.Cita.Odontologo.Consultorio = Convert.ToInt32 (dr ["consultorio"].ToString ());

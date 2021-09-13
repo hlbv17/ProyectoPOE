@@ -16,6 +16,8 @@ namespace Datos {
         DatosHorarioEGGM datosHorario = null;
         DatosEspecialidadEGGM especialida = null;
 
+        /*----------------------------------------EGGM------------------------------------------------------*/
+
         // Method: A
         public int A () {
             string stmt = "SELECT COUNT(*) FROM Odontologo";
@@ -600,8 +602,7 @@ namespace Datos {
             return p;
         }
 
-        /*
-         ---ROPB-------------------------------------------------------------------------*/
+        /*----------------------------------------ROPB------------------------------------------------------*/
 
         // Method: ConsultarNombre
         public string ConsultarNombre (DateTime fecha, DateTime hora, string paciente) {

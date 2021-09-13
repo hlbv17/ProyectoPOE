@@ -13,9 +13,10 @@ namespace Proyecto_Dentalig {
         private string motivoConsulta;
         private string diagnostico;
 
+        // Constructor: Default
         public AtencionMedica () {
-            this.cita = null;
-            this.piezaDental = null;
+            this.cita = new Cita ();
+            this.piezaDental = new PiezaDental ();
             this.motivoConsulta = "";
             this.diagnostico = "";
         }
@@ -28,18 +29,19 @@ namespace Proyecto_Dentalig {
             this.diagnostico = diagnostico;
         }
 
-        public string MotivoConsulta { get => motivoConsulta; set => motivoConsulta = value; }  // Getter & Setter: cita
-        public string Diagnostico { get => diagnostico; set => diagnostico = value; }           // Getter & Setter: piezaDental
-        public Cita Cita { get => cita; set => cita = value; }                                // Getter & Setter: motivoConsulta
-        public PiezaDental PiezaDental { get => piezaDental; set => piezaDental = value; }    // Getter & Setter: diagnostico
-        
+        public Cita Cita { get => cita; set => cita = value; }                                  // Getter & Setter: cita
+        public PiezaDental PiezaDental { get => piezaDental; set => piezaDental = value; }      // Getter & Setter: piezaDental
+        public string MotivoConsulta { get => motivoConsulta; set => motivoConsulta = value; }  // Getter & Setter: motivoConsulta
+        public string Diagnostico { get => diagnostico; set => diagnostico = value; }           // Getter & Setter: diagnostico
+
         // Method: ToString
         public override string ToString () {
-            return 
-                "\r\nCita: "+ cita.ToString()+
-                "\r\nPieca Dental: " + piezaDental.ToString ()+
-                "\r\nMotivo de Consulta: "+ motivoConsulta+
-                "\r\nDiagnostico:"+ diagnostico;
+            return
+                "\r\nCita: " + cita.ToString () +
+                "\r\nPieza Dental: " + piezaDental.ToString () +
+                "\r\nMotivo de Consulta: " + motivoConsulta +
+                "\r\nDiagnostico: " + diagnostico;
         }
+
     }
 }

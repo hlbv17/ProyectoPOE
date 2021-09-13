@@ -14,8 +14,7 @@ namespace Datos {
         Conexion con = new Conexion ();
         SqlCommand cmd = new SqlCommand ();
 
-        /*
-         ---HLBV---------------------------------------------------------*/
+        /*----------------------------------------HLBV------------------------------------------------------*/
 
         // Method: insertarCita
         public String insertarCita (Cita c) {
@@ -363,9 +362,10 @@ namespace Datos {
             return idCita;
         }
 
-        //-----------------------------para eliminar desde Historia Clinica-----------------------------------------------------
-        public Cita ConsultarCitaxCedula(string cedula)
-        {
+        /*----------------------------------------VLRS------------------------------------------------------*/
+
+        // Method: para eliminar desde Historia Clinica
+        public Cita ConsultarCitaxCedula (string cedula) {
             //List<Cita> citas = new List<Cita>();
             Cita c = null;
             Odontologo o = null;
@@ -389,7 +389,7 @@ namespace Datos {
                         pa = new Paciente ();
                         o = new Odontologo ();
 
-                        c.Id_cita = Convert.ToInt32(dr["id_cita"]);
+                        c.Id_cita = Convert.ToInt32 (dr ["id_cita"]);
 
                         //citas.Add(c);
                     }
@@ -401,8 +401,7 @@ namespace Datos {
             return c;
         }
 
-        /*
-         ---ROPB---------------------------------------------------------*/
+        /*----------------------------------------ROPB------------------------------------------------------*/
 
         // Method: CosultarIdCita
         public int CosultarIdCita (string nombre, DateTime fecha, string hora) {

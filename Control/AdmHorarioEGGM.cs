@@ -16,7 +16,7 @@ namespace Control
         List<Horario> horarioOdont = null;
         List<Dias> diash = null;
         DatosHorarioEGGM datosHora = new DatosHorarioEGGM();
-        ValidacionesEGGM v = null;
+        Validacion v = null;
         Horario hora = null;
 
         public List<Horario> Horario1 { get => horario1; set => horario1 = value; }

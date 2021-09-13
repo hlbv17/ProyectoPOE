@@ -6,16 +6,132 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Control {
-    public class ValidacionesVLRS {
+    public class Validacion {
+
+        /*----------------------------------------ROPB------------------------------------------------------*/
+
+        // Method: EsCorrectoGuardar
+        public bool EsCorrectoGuardar (DateTimePicker dtp_Fecha, ComboBox cmb_Hora, ComboBox cmb_Paciente, ComboBox cmb_CuadrantePieza, ComboBox cmb_NombrePieza, TextBox txt_MotivoConsulta, TextBox txt_Diagnostico, ErrorProvider errorProvider1) {
+            bool output = true;
+            if (dtp_Fecha == null) {
+                errorProvider1.SetError (dtp_Fecha, "Campo obligatorio.");
+                output = false;
+            }
+            if (cmb_Hora.SelectedIndex == 0) {
+                errorProvider1.SetError (cmb_Hora, "Campo obligatorio.");
+                output = false;
+            }
+            if (cmb_Paciente.SelectedIndex == 0) {
+                errorProvider1.SetError (cmb_Paciente, "Campo obligatorio.");
+                output = false;
+            }
+            if (cmb_CuadrantePieza.SelectedIndex == 0) {
+                errorProvider1.SetError (cmb_CuadrantePieza, "Campo obligatorio.");
+                output = false;
+            }
+            if (cmb_NombrePieza.SelectedIndex == 0) {
+                errorProvider1.SetError (cmb_NombrePieza, "Campo obligatorio.");
+                output = false;
+            }
+            if (txt_MotivoConsulta.Text == "") {
+                errorProvider1.SetError (txt_MotivoConsulta, "Campo obligatorio.");
+                output = false;
+            }
+            if (txt_Diagnostico.Text == "") {
+                errorProvider1.SetError (txt_Diagnostico, "Campo obligatorio.");
+                output = false;
+            }
+            return output;
+        }
+
+        // Method: EsCorrectoGuardarEditar
+        public bool EsCorrectoGuardarEditar (ComboBox cmb_CuadrantePieza, ComboBox cmb_NombrePieza, TextBox txt_MotivoConsulta, TextBox txt_Diagnostico, ComboBox cmb_CuadrantePieza_Editar, ComboBox cmb_NombrePieza_Editar, TextBox txt_MotivoConsulta_Editar, TextBox txt_Diagnostico_Editar, ErrorProvider errorProvider1) {
+            bool output = true;
+            if (cmb_CuadrantePieza.SelectedIndex == 0 && cmb_NombrePieza.SelectedIndex == 0) {
+                MessageBox.Show ("No ha selecionado datos a modificar.", "ERROR!");
+                output = false;
+            } else {
+                if (cmb_CuadrantePieza_Editar.SelectedIndex == 0) {
+                    errorProvider1.SetError (cmb_CuadrantePieza_Editar, "Campo obligatorio.");
+                    output = false;
+                }
+                if (cmb_NombrePieza_Editar.SelectedIndex == 0) {
+                    errorProvider1.SetError (cmb_NombrePieza_Editar, "Campo obligatorio.");
+                    output = false;
+                }
+                if (txt_MotivoConsulta_Editar.Text == "") {
+                    errorProvider1.SetError (txt_MotivoConsulta_Editar, "Campo obligatorio.");
+                    output = false;
+                }
+                if (txt_Diagnostico_Editar.Text == "") {
+                    errorProvider1.SetError (txt_Diagnostico_Editar, "Campo obligatorio.");
+                    output = false;
+                }
+            }
+            return output;
+        }
+
+        // Method: EsCorrectoEliminar
+        public bool EsCorrectoEliminar (ComboBox cmb_CuadrantePieza, ComboBox cmb_NombrePieza, TextBox txt_MotivoConsulta, TextBox txt_Diagnostico) {
+            bool output = true;
+            if (cmb_CuadrantePieza.SelectedIndex == 0 && cmb_NombrePieza.SelectedIndex == 0 && txt_MotivoConsulta.Text == "" && txt_Diagnostico.Text == "") {
+                MessageBox.Show ("NO hay datos a borrar.", "ERROR!");
+                output = false;
+            }
+            return output;
+        }
+
+        /*----------------------------------------EGGM------------------------------------------------------*/
+        
+        //
+        internal int AEntero (string entrada) {
+            int x = 0;
+            try {
+                x = Convert.ToInt32 (entrada);
+            } catch (Exception ex) {
+                Console.WriteLine (ex.Message);
+                MessageBox.Show ("Error:Se espera un número entero");
+            }
+            return x;
+        }
+
+        //
+        internal bool EsReal (string monto) {
+            bool bandera = true;
+            double x = 0.0;
+            try {
+                x = Convert.ToDouble (monto);
+                bandera = true;
+            } catch (Exception ex) {
+                Console.WriteLine (ex.Message);
+                MessageBox.Show ("Error: se espera un número real");
+                bandera = false;
+            }
+            return bandera;
+        }
+
+        //
+        internal double AReal (string entrada) {
+            double x = 0;
+            try {
+                x = Convert.ToInt32 (entrada);
+            } catch (Exception ex) {
+                Console.WriteLine (ex.Message);
+                MessageBox.Show ("Error: se espera un número real");
+            }
+            return x;
+        }
+
+        /*----------------------------------------VLRS------------------------------------------------------*/
+
+        //
         public Char AChar (string sexo) {
             char x = ' ';
             try {
                 x = Convert.ToChar (sexo);
             } catch (Exception ex) {
                 Console.WriteLine (ex.Message);
-
             }
-
             return x;
         }
 
@@ -25,6 +141,7 @@ namespace Control {
             return Regex.IsMatch (email, expresion);
         }
 
+        //
         public bool is_validate (ErrorProvider errorP, TextBox txtCorreo, TextBox txtNombre, TextBox txtCedula, TextBox txtTelefono, TextBox txtAntecPers,
             TextBox txtAntecFam, ComboBox cmbDiscapacidad, ComboBox cmbSexo, DateTimePicker dtpFNacimiento) {
             bool no_error = true;
@@ -87,7 +204,7 @@ namespace Control {
             return no_error;
         }
 
-
+        //
         public bool ValidarFiltro (ErrorProvider errorProvider1, ComboBox cmbFiltro, TextBox txtCedula, ComboBox cmbSexo, DateTimePicker dtpFnac1, DateTimePicker dtpFnac2, int rbindex) {
             bool no_error = true;
             if (cmbFiltro.SelectedIndex == 0) {
@@ -133,7 +250,6 @@ namespace Control {
                     no_error = false;
                 }
             }
-
             return no_error;
         }
 

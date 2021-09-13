@@ -86,9 +86,7 @@
     <Compile Include="Adm_HistoriaClinicaVLRS.cs" />
     <Compile Include="Adm_AtencionMedica_ROPB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValidacionesEGGM.cs" />
-    <Compile Include="ValidacionesVLRS.cs" />
-    <Compile Include="Validacion_ROPB.cs" />
+    <Compile Include="Validacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">

@@ -29,7 +29,7 @@ namespace Control {
         DatosHistoriaClinicaVLRS datosHistClin = new DatosHistoriaClinicaVLRS ();
         DatosCitaHLBV datosCita = new DatosCitaHLBV ();
         Datos_AtencionMedica datosAtmed = new Datos_AtencionMedica ();
-        ValidacionesVLRS v = new ValidacionesVLRS ();
+        Validacion v = new Validacion ();
 
         Persona persona = null;
         Paciente paciente = null;
@@ -39,7 +39,7 @@ namespace Control {
 
         private Adm_HistoriaClinicaVLRS () {//2
             //listapacientes = new List<PacienteVLRS>();
-            v = new ValidacionesVLRS ();
+            v = new Validacion ();
             datospers = new DatosPersonaVLRS ();
             datosPacien = new DatosPacienteVLRS ();
             datosAnt = new DatosAntecedentesVLRS ();

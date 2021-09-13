@@ -12,7 +12,7 @@ namespace Datos {
         Conexion con = new Conexion ();
         SqlCommand cmd = new SqlCommand ();
 
-        //----------------------------------------VLRS------------------------------------------------------
+        /*----------------------------------------VLRS------------------------------------------------------*/
 
         // Method: 
         public String insertar (Paciente paciente) { //Persona
@@ -125,7 +125,7 @@ namespace Datos {
             return mensaje;
         }
 
-        //----------------------------------------HLBV------------------------------------------------------
+        /*----------------------------------------HLBV------------------------------------------------------*/
 
         // Method: 
         public Paciente ConsultarPacienteNombre (string cedula) {
@@ -190,7 +190,7 @@ namespace Datos {
             return flag;
         }
 
-        //----------------------------------------ROPB------------------------------------------------------
+        /*----------------------------------------ROPB------------------------------------------------------*/
 
         // Method: ConsultarNombres
         public List<string> ConsultarNombres (DateTime fecha, DateTime hora, int x) {

@@ -14,8 +14,8 @@ namespace Proyecto_Dentalig {
         // Constructor: Default
         public Dias () {
             this.dia = "";
-            this.horaEntrada = DateTime.Now;
-            this.horaSalida = DateTime.Now;
+            this.horaEntrada = new DateTime();
+            this.horaSalida = new DateTime ();
         }
 
         // Constructor: Parameterized

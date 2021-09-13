@@ -13,8 +13,7 @@ namespace Datos {
         Conexion con = new Conexion ();
         SqlCommand cmd = new SqlCommand ();
 
-        /*
-         ---VLRS----------------------------------------------------------------------*/
+        /*----------------------------------------VLRS------------------------------------------------------*/
 
         // Method: DatosHistoriaClinicaVLRS
         public string insertar (HistoriaClinica hisclinica) {
@@ -256,8 +255,7 @@ namespace Datos {
             return hclinic;
         }
 
-        /*
-         ---ROPB----------------------------------------------------------------------*/
+        /*----------------------------------------ROPB------------------------------------------------------*/
 
         // Method: ConsultarIdHistoriaClinica
         public int ConsultarIdHistoriaClinica (string nombre) {

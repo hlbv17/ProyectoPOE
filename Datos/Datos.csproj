@@ -40,9 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConexionEGGM.cs" />
-    <Compile Include="ConexionHLBV.cs" />
-    <Compile Include="ConexionVLRS.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="DatosAntecedentesVLRS.cs" />
     <Compile Include="DatosCitaHLBV.cs" />
