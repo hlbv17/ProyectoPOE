@@ -64,19 +64,19 @@ namespace Visual
             // 
             // dtpFecha
             // 
-            this.dtpFecha.Font = new System.Drawing.Font("Nirmala UI", 10.2F);
-            this.dtpFecha.Location = new System.Drawing.Point(132, 82);
+            this.dtpFecha.Font = new System.Drawing.Font("Nirmala UI", 9F);
+            this.dtpFecha.Location = new System.Drawing.Point(143, 81);
             this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(247, 26);
+            this.dtpFecha.Size = new System.Drawing.Size(247, 23);
             this.dtpFecha.TabIndex = 14;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Nirmala UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label2.Font = new System.Drawing.Font("Nirmala UI", 10.2F);
             this.label2.Location = new System.Drawing.Point(79, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 19);
+            this.label2.Size = new System.Drawing.Size(44, 19);
             this.label2.TabIndex = 12;
             this.label2.Text = "Fecha";
             // 
@@ -110,7 +110,7 @@ namespace Visual
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCitas.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCitas.Location = new System.Drawing.Point(60, 129);
+            this.dgvCitas.Location = new System.Drawing.Point(44, 129);
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.Size = new System.Drawing.Size(613, 315);
             this.dgvCitas.TabIndex = 11;
