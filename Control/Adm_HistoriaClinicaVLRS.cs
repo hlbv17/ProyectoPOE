@@ -26,6 +26,7 @@ namespace Control
         Persona persona = null;
         Paciente paciente = null;
         Antecedente antecedente = null;
+        HistoriaClinica hisclinic = null;
 
 
         private Adm_HistoriaClinicaVLRS()
@@ -80,7 +81,7 @@ namespace Control
             lblTotal.Text = i - 1 + " ";
         }
 
-        public void ConsultarBBDxSexo(string sexo, string cedula, DateTime fechaDesde, DateTime fechasta, DataGridView dgvPacientes, Label lblTotal, int index, int rbindex)
+        public void ConsultarBBDXsexoXCedulaXFechas(string sexo, string cedula, DateTime fechaDesde, DateTime fechasta, DataGridView dgvPacientes, Label lblTotal, int index, int rbindex)
         {
             int i = 1;
             char Csexo = ' ';
@@ -139,11 +140,10 @@ namespace Control
             string mensaje3 = "";
             string mensaje4 = "";
 
-            Paciente pac = datospers.consultarPersona(paciente.Cedula);
+            Paciente pac = datosPacien.consultarPersonaPac(paciente.Cedula);
             mensaje = datospers.Actualizar(paciente, pac.Cedula);//
             mensaje2 = datosPacien.Actualizar(paciente, pac.Id_persona);
 
-            pac = datosPacien.consultarPersonaPac(paciente.Cedula);
             HistoriaClinica hclin = datosHistClin.consutarHistClinic(pac.Id_paciente);
             mensaje3 = datosAnt.Actualizar(hisclinica.Antecedente, hclin.Antecedente.Id_antecedente);
 
@@ -238,6 +238,108 @@ namespace Control
             }
 
             return x;
+        }
+
+        public void ReporteiText(char csexo, string cedula, DateTime fechaDesde, DateTime fechaHasta, int index, int rbindex)
+        {
+            listahClinica.Clear();
+            PdfWriter pdfWriter = new PdfWriter("Reporte_Historia_Clinica.pdf");
+            PdfDocument pdfDocument = new PdfDocument(pdfWriter);
+            Document document = new Document(pdfDocument, PageSize.A4.Rotate());
+            document.SetMargins((float)2.54, (float)2.54, (float)2.54, (float)2.54);
+
+            var titulo = new Paragraph("Reporte de Historia Clinica");
+            titulo.SetTextAlignment(TextAlignment.CENTER);
+            titulo.SetFontSize(16);
+            titulo.SetFontColor(ColorConstants.BLACK);
+            titulo.SetBold();
+
+
+            var dfecha = DateTime.Now.ToString("dd-MM-yyyy");
+            var dhora = DateTime.Now.ToString("hh:mm");
+            var fecha = new Paragraph("Fecha: " + dfecha + "\n" + "Hora: " + dhora);
+            fecha.SetBold();
+            fecha.SetFontSize(12);
+
+
+
+            PdfFont fontColumnas = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
+            PdfFont fontContenido = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
+            string[] columnas = { "HistClin", "Cedula", "Nombres", "Sexo", "F. Nacimiento", "Discapacidad", "Etapa_Edad", "Ant.Personales", "Ant.Familiares", "N° Atenc.Medi" };
+            float[] espacio = { 1, 4, 4, 4, 4, 4, 4, 4, 4, 4 }; //revisar con nuemero de columnas?
+            Table tabla = new Table(UnitValue.CreatePercentArray(espacio));
+            tabla.SetWidth(UnitValue.CreatePercentValue(100));
+
+            foreach (string element in columnas)
+            {
+                tabla.AddHeaderCell(new Cell().Add(new Paragraph(element).SetFont(fontColumnas)));
+            }
+
+            listahClinica = datosHistClin.ConsultarXsexoXCedulaXFechas(csexo, cedula, fechaDesde, fechaHasta, index, rbindex);
+
+            int i = 0;
+            foreach (HistoriaClinica element in listahClinica)
+            {
+                ++i;
+
+                tabla.AddCell(new Cell().Add(new Paragraph(element.Id_hclinica.ToString()).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(element.Paciente.Cedula).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(element.Paciente.Nombre).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(element.Paciente.LeerSexo()).SetFont(fontContenido)));//mirar bien
+                tabla.AddCell(new Cell().Add(new Paragraph(element.Paciente.FechaNacimiento.ToString("dd/MM/yyyy")).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(element.Paciente.Discapacidad).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(element.Paciente.Etapa).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(element.Antecedente.Antecedenteper).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(element.Antecedente.AntecedenteFam).SetFont(fontContenido)));
+                tabla.AddCell(new Cell().Add(new Paragraph(element.AtencionMedica.Count().ToString()).SetFont(fontContenido)));
+            }
+            document.Add(fecha);
+            document.Add(titulo);
+            document.Add(tabla);
+            document.Close();
+
+            if (document != null)
+                MessageBox.Show("Reporte generado con exito :)\n\n El reporte se encuentra en la carpeta del proyecto actual: /Vanessa-RonquilloproyectoPOE/VISUAL/bin/Debug");
+            else
+            {
+                MessageBox.Show("Error al generar reporte");
+            }
+        }
+
+
+        public void LlenarFormulario(string cedula, TextBox txtNombre, TextBox txtNombreact, ComboBox cmbSexo, ComboBox cmbSexoAct, DateTimePicker dtpFNacimiento, DateTimePicker dtpFnaciAct, TextBox txtTelefono, TextBox txtTelefonoAct, TextBox txtCorreo, TextBox txtCorreoAct, ComboBox cmbDiscapacidad, ComboBox cmbDiscAct, TextBox txtAntecPers, TextBox txtAntPersAct, TextBox txtAntecFam, TextBox txtAntFamAct, TextBox txtCedulaAct, TextBox txtCedula)
+        {
+            txtCedula.Text = cedula.ToString();
+            if (!String.IsNullOrEmpty(cedula))
+                hisclinic = datosHistClin.ConsultarXCedula(cedula);
+            if (hisclinic != null)
+            {
+                //formulario para visualizar datos
+                txtNombre.Text = hisclinic.Paciente.Nombre;
+                cmbSexo.Text = hisclinic.Paciente.LeerSexo();
+                dtpFNacimiento.Value = hisclinic.Paciente.FechaNacimiento;
+                txtTelefono.Text = hisclinic.Paciente.Telefono;
+                txtCorreo.Text = hisclinic.Paciente.Correo;
+                cmbDiscapacidad.Text = hisclinic.Paciente.Discapacidad;
+                txtAntecPers.Text = hisclinic.Antecedente.Antecedenteper;
+                txtAntecFam.Text = hisclinic.Antecedente.AntecedenteFam;
+
+                //formulario para cambiar los datos
+                txtCedulaAct.Text = hisclinic.Paciente.Cedula;
+                txtNombreact.Text = hisclinic.Paciente.Nombre;
+                cmbSexoAct.Text = hisclinic.Paciente.LeerSexo();
+                dtpFnaciAct.Value = hisclinic.Paciente.FechaNacimiento;
+                txtTelefonoAct.Text = hisclinic.Paciente.Telefono;
+                txtCorreoAct.Text = hisclinic.Paciente.Correo;
+                cmbDiscAct.Text = hisclinic.Paciente.Discapacidad;
+                txtAntPersAct.Text = hisclinic.Antecedente.Antecedenteper;
+                txtAntFamAct.Text = hisclinic.Antecedente.AntecedenteFam;
+
+            }
+            else
+            {
+                MessageBox.Show("No existe Historia Clinica con la cedula registrada asociada");
+            }
         }
     }
 }
