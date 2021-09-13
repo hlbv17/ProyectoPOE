@@ -94,5 +94,35 @@ namespace Visual
             FrmFiltrarVLRS frm = new FrmFiltrarVLRS();
             frm.ShowDialog();
         }
+
+        private void registrarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FrmIngresoHisClinicaVLRS frm = new FrmIngresoHisClinicaVLRS();
+            frm.ShowDialog();
+        }
+
+        private void editarToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            FrmFiltrarVLRS frm = new FrmFiltrarVLRS();
+            frm.ShowDialog();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFiltrarVLRS frm = new FrmFiltrarVLRS();
+            frm.ShowDialog();
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFiltrarVLRS frm = new FrmFiltrarVLRS();
+            frm.ShowDialog();
+        }
+
+        private void reporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFiltrarVLRS frm = new FrmFiltrarVLRS();
+            frm.ShowDialog();
+        }
     }
 }
