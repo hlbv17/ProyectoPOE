@@ -12,7 +12,7 @@ namespace Visual
 {
     public partial class FrmEditar2HLBV : Form
     {
-        AdmOdontologoHLBV admO = AdmOdontologoHLBV.GetAdm();
+        AdmOdontologoEGGM admO = AdmOdontologoEGGM.GetAdm();
         AdmCitaHLBV admCita = AdmCitaHLBV.GetAdm();
         public FrmEditar2HLBV(DataGridView dgvCitas)
         {

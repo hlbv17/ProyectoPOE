@@ -78,6 +78,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdmCitaHLBV.cs" />
+    <Compile Include="AdmOdontologoEGGM.cs" />
+    <Compile Include="AdmPacienteHLBV.cs" />
     <Compile Include="Adm_HistoriaClinicaVLRS.cs" />
     <Compile Include="Adm_AtencionMedica_ROPB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

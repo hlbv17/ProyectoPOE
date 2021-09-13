@@ -13,7 +13,7 @@ namespace Visual
     public partial class FrmRegistrarCitaHLBV : Form
     {
         AdmPacienteHLBV admPa = new AdmPacienteHLBV();
-        AdmOdontologoHLBV admO =  AdmOdontologoHLBV.GetAdm();
+        AdmOdontologoEGGM admO = AdmOdontologoEGGM.GetAdm();
         AdmCitaHLBV admCita = AdmCitaHLBV.GetAdm();
         public FrmRegistrarCitaHLBV()
         {

@@ -1,4 +1,5 @@
 ﻿using Control;
+using Datos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ namespace Visual
 {
     public partial class FrmEditarCitasHLBV : Form
     {
-        AdmOdontologoHLBV admO = AdmOdontologoHLBV.GetAdm();
+        AdmOdontologoEGGM admO = AdmOdontologoEGGM.GetAdm();
         AdmCitaHLBV admCita = AdmCitaHLBV.GetAdm();
         public FrmEditarCitasHLBV()
         {
