@@ -59,7 +59,7 @@ namespace Visual
             }
             catch (Exception ex)
             {
-                MessageBox.Show("DEBE INGRESAR TODOS LO DATOS");
+                MessageBox.Show("DEBE INGRESAR TODOS LO DATOS: "+ ex);
             }
         }
 
