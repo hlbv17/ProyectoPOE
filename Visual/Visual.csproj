@@ -50,11 +50,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEditar2HLBV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditar2HLBV.Designer.cs">
+      <DependentUpon>FrmEditar2HLBV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEditarCitasHLBV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEditarCitasHLBV.Designer.cs">
+      <DependentUpon>FrmEditarCitasHLBV.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEditarVLRS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmEditarVLRS.Designer.cs">
       <DependentUpon>FrmEditarVLRS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEliminarCitasHLBV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEliminarCitasHLBV.Designer.cs">
+      <DependentUpon>FrmEliminarCitasHLBV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFiltrarCitasHLBV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFiltrarCitasHLBV.Designer.cs">
+      <DependentUpon>FrmFiltrarCitasHLBV.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmFiltrarVLRS.cs">
       <SubType>Form</SubType>
@@ -68,22 +92,64 @@
     <Compile Include="FrmIngresoHisClinicaVLRS.Designer.cs">
       <DependentUpon>FrmIngresoHisClinicaVLRS.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegistrarCitasHLBV.cs">
+    <Compile Include="FrmListarCitasHLBV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRegistrarCitasHLBV.Designer.cs">
-      <DependentUpon>FrmRegistrarCitasHLBV.cs</DependentUpon>
+    <Compile Include="FrmListarCitasHLBV.Designer.cs">
+      <DependentUpon>FrmListarCitasHLBV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenuHLBV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenuHLBV.Designer.cs">
+      <DependentUpon>FrmMenuHLBV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRegistrarCitaHLBV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRegistrarCitaHLBV.Designer.cs">
+      <DependentUpon>FrmRegistrarCitaHLBV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReporteCitaHLBV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReporteCitaHLBV.Designer.cs">
+      <DependentUpon>FrmReporteCitaHLBV.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmEditar2HLBV.resx">
+      <DependentUpon>FrmEditar2HLBV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEditarCitasHLBV.resx">
+      <DependentUpon>FrmEditarCitasHLBV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEditarVLRS.resx">
       <DependentUpon>FrmEditarVLRS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEliminarCitasHLBV.resx">
+      <DependentUpon>FrmEliminarCitasHLBV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFiltrarCitasHLBV.resx">
+      <DependentUpon>FrmFiltrarCitasHLBV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmFiltrarVLRS.resx">
       <DependentUpon>FrmFiltrarVLRS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIngresoHisClinicaVLRS.resx">
       <DependentUpon>FrmIngresoHisClinicaVLRS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmListarCitasHLBV.resx">
+      <DependentUpon>FrmListarCitasHLBV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenuHLBV.resx">
+      <DependentUpon>FrmMenuHLBV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRegistrarCitaHLBV.resx">
+      <DependentUpon>FrmRegistrarCitaHLBV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReporteCitaHLBV.resx">
+      <DependentUpon>FrmReporteCitaHLBV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
