@@ -10,8 +10,6 @@ using Model;
 using Proyecto_Dentalig;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Control
