@@ -44,6 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmActualizarOdontologo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmActualizarOdontologo.Designer.cs">
+      <DependentUpon>FrmActualizarOdontologo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmConsultarANDEliminarodontologo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmConsultarANDEliminarodontologo.Designer.cs">
+      <DependentUpon>FrmConsultarANDEliminarodontologo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmEditar2HLBV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +92,12 @@
     <Compile Include="FrmFiltrarVLRS.Designer.cs">
       <DependentUpon>FrmFiltrarVLRS.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmHorarioEGGM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHorarioEGGM.Designer.cs">
+      <DependentUpon>FrmHorarioEGGM.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmIngresoHisClinicaVLRS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +116,12 @@
     <Compile Include="FrmMenuHLBV.Designer.cs">
       <DependentUpon>FrmMenuHLBV.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOdontologoEGGM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOdontologoEGGM.Designer.cs">
+      <DependentUpon>FrmOdontologoEGGM.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRegistrarCitaHLBV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +136,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmActualizarOdontologo.resx">
+      <DependentUpon>FrmActualizarOdontologo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmConsultarANDEliminarodontologo.resx">
+      <DependentUpon>FrmConsultarANDEliminarodontologo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEditar2HLBV.resx">
       <DependentUpon>FrmEditar2HLBV.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +160,9 @@
     <EmbeddedResource Include="FrmFiltrarVLRS.resx">
       <DependentUpon>FrmFiltrarVLRS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmHorarioEGGM.resx">
+      <DependentUpon>FrmHorarioEGGM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmIngresoHisClinicaVLRS.resx">
       <DependentUpon>FrmIngresoHisClinicaVLRS.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMenuHLBV.resx">
       <DependentUpon>FrmMenuHLBV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOdontologoEGGM.resx">
+      <DependentUpon>FrmOdontologoEGGM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRegistrarCitaHLBV.resx">
       <DependentUpon>FrmRegistrarCitaHLBV.cs</DependentUpon>
