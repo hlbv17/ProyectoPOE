@@ -73,9 +73,9 @@ namespace Visual.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Q {
+        internal static System.Drawing.Bitmap q3 {
             get {
-                object obj = ResourceManager.GetObject("Q", resourceCulture);
+                object obj = ResourceManager.GetObject("q3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
