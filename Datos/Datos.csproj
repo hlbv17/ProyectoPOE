@@ -41,11 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ConexionEGGM.cs" />
     <Compile Include="ConexionHLBV.cs" />
     <Compile Include="ConexionVLRS.cs" />
     <Compile Include="DatosAntecedentesVLRS.cs" />
     <Compile Include="DatosCitaHLBV.cs" />
+    <Compile Include="DatosDiasEGGM.cs" />
+    <Compile Include="DatosEspecialidadEGGM.cs" />
     <Compile Include="DatosHistoriaClinicaVLRS.cs" />
+    <Compile Include="DatosHorarioEGGM.cs" />
     <Compile Include="DatosOdontologoEGGM.cs" />
     <Compile Include="DatosPacienteVLRS.cs" />
     <Compile Include="DatosPersonaVLRS.cs" />
