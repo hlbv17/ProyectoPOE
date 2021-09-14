@@ -10,13 +10,13 @@ namespace Datos {
         // Variables
 
         /*----------------------------------------EGGM------------------------------------------------------*/
-        //private static string cadena = "Data Source=desktop-ek3b3mp\\sqlexpress;Initial Catalog = DentalingE2GM; Integrated Security = True";
+        private static string cadena = "Data Source=DESKTOP-EK3B3MP\\SQLEXPRESS;Initial Catalog=Dentalig;Integrated Security=True";
 
         /*----------------------------------------HLBV------------------------------------------------------*/
         //private static string cadena = "Data Source=HEBE\\SQLEXPRESS;Initial Catalog=dentalig_grupo;Integrated Security=True";
 
         /*----------------------------------------ROPB------------------------------------------------------*/
-        private static string cadena = "Data Source=DESKTOP-F0FU8NS\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Dentalig";
+       // private static string cadena = "Data Source=DESKTOP-F0FU8NS\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Dentalig";
 
         /*----------------------------------------VLRS------------------------------------------------------*/
         //private static string cadena = "Data Source=DESKTOP-K0G9OCM\\SQLEXPRESS;Initial Catalog=PoyectoDentPOE;Integrated Security=True";

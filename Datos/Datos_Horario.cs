@@ -49,6 +49,7 @@ namespace Datos {
                 }
             }
             con.Cerrar ();
+            Console.WriteLine(horarioE2GM);
             return horarioE2GM;
 
         }
@@ -118,6 +119,7 @@ namespace Datos {
                 }
             }
             con.Cerrar ();
+            Console.WriteLine(horarioE2GM);
             return horarioE2GM;
         }
 
@@ -131,7 +133,7 @@ namespace Datos {
             string sql = " SELECT Dias.dia, Horario.tipo, Dias.horaEntrada, Dias.horaSalida" +
                           " FROM Dias INNER JOIN" +
                           " HorarioDias ON Dias.id_dias = HorarioDias.id_dias INNER JOIN" +
-                          " Horario ON HorarioDias.id_horario = Horario.id_Horario" +
+                          " Horario ON HorarioDias.id_horario = Horario.id_horario" +
                           " WHERE (Horario.tipo = '" + tipo + "')";
             SqlDataReader dr = null; //tabla virtual
             Console.WriteLine (sql);
@@ -157,12 +159,13 @@ namespace Datos {
                 }
             }
             con.Cerrar ();
+            Console.WriteLine(horarioE2GM);
             return horarioE2GM;
         }
 
         //
         public Horario consultarTipodeHoraario (int horario) {
-            string sql = "Select * from Horario where id_Horario = " + horario;
+            string sql = "Select * from Horario where id_horario = " + horario;
             SqlDataReader dr = null; //tabla virtual
             Horario d = new Horario ();
             Dias dia = new Dias ();
@@ -182,6 +185,7 @@ namespace Datos {
                 }
             }
             con.Cerrar ();
+            Console.WriteLine(d);
             return d;
         }
 

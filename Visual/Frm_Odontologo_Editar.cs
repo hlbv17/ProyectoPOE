@@ -22,16 +22,18 @@ namespace Visual
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            string nombre = textNombre.Text.Trim(), cedula = txtCedula.Text.Trim(), correo = txtCorreo.Text.Trim(), telefono = txtTelefono.Text.Trim(), especialidad = cmbEspecialidad.Text;
+       
+            int consultorio = Convert.ToInt32(cmbConsultorio.Text);
+            int w = Convert.ToInt32(idodo.Text); 
+            DateTime fechaNac = dateTimePicker1.Value.Date;
+            char sexo = Convert.ToChar(cmbSexo.Text);
+            Console.WriteLine(" "+ w + " "+ admhorario.Horario1[1]);
             
             try
             {
-                string nombre = textNombre.Text.Trim(), cedula = txtCedula.Text.Trim(), correo = txtCorreo.Text.Trim(), telefono = txtTelefono.Text.Trim(), especialidad = cmbEspecialidad.Text;
-                char sexo = Convert.ToChar(cmbSexo.Text);
-                int consultorio = Convert.ToInt32(cmbConsultorio.Text);
-                int w = Convert.ToInt32(idodo.Text);
-                DateTime fechaNac = dateTimePicker1.Value.Date;
-
-                admodo.guardarActualizar(w, nombre, cedula, especialidad, sexo, fechaNac, correo, telefono, consultorio, admhorario.HorarioOdont[1]);
+               admodo.guardarActualizar(w, nombre, cedula, especialidad, sexo, fechaNac, correo, telefono, consultorio, admhorario.HorarioOdont[1]);
+              
                 MessageBox.Show(admodo.mostrardatos(), "DATOS GUARDADOS");
             }
             catch (Exception ex)
