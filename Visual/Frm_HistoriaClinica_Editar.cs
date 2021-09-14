@@ -8,9 +8,9 @@ namespace Visual
 {
     public partial class Frm_HistoriaClinica_Editar : Form
     {
-        Adm_HistoriaClinicaVLRS admHisclin = Adm_HistoriaClinicaVLRS.GetAdm();
+        Adm_HistoriaClinica admHisclin = Adm_HistoriaClinica.GetAdm();
         Validacion val = new Validacion();
-        DatosHistoriaClinicaVLRS datosHistClin = new DatosHistoriaClinicaVLRS();
+        Datos_HistoriaClinica datosHistClin = new Datos_HistoriaClinica();
         //HistoriaClinica hisclinic = null;
 
         public Frm_HistoriaClinica_Editar()

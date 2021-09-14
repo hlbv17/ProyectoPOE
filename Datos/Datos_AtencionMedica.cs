@@ -16,8 +16,8 @@ namespace Datos {
 
         // Method: InsertarAteniconMedica
         public string InsertarAteniconMedica (AtencionMedica am) {
-            DatosHistoriaClinicaVLRS dhc = new DatosHistoriaClinicaVLRS ();
-            DatosCitaHLBV dc = new DatosCitaHLBV ();
+            Datos_HistoriaClinica dhc = new Datos_HistoriaClinica ();
+            Datos_Cita dc = new Datos_Cita ();
             string sql = "INSERT INTO AtencionMedica (id_historiaClinica, id_cita,  id_piezaDental, motivoConsulta, diagnostico) \n" +
                 "VALUES ('" + dhc.ConsultarIdHistoriaClinica (am.Cita.Paciente.Nombre) + "','" + dc.CosultarIdCita (am.Cita.Paciente.Nombre, am.Cita.Fecha, am.Cita.Hora.ToString ("HH:mm")) + "','" + am.PiezaDental.NumeroPieza + "','" + am.MotivoConsulta + "','" + am.Diagnostico + "')";
             Console.WriteLine (sql);

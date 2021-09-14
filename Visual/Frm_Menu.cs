@@ -5,8 +5,8 @@ using System.Windows.Forms;
 namespace Visual {
     public partial class Frm_Menu : Form {
 
-        AdmCitaHLBV adm = AdmCitaHLBV.GetAdm ();
-        Adm_AtencionMedica_ROPB admAM = Adm_AtencionMedica_ROPB.GetAdm ();
+        Adm_Cita adm = Adm_Cita.GetAdm ();
+        Adm_AtencionMedica admAM = Adm_AtencionMedica.GetAdm ();
         public Frm_Menu () {
             InitializeComponent ();
         }
@@ -16,28 +16,28 @@ namespace Visual {
         }
 
         private void registrarToolStripMenuItem2_Click (object sender, EventArgs e) {
-            FrmRegistrarCitaHLBV frmR = new FrmRegistrarCitaHLBV ();
+            Frm_Cita_Registrar frmR = new Frm_Cita_Registrar ();
             frmR.ShowDialog ();
         }
 
         private void listarToolStripMenuItem_Click (object sender, EventArgs e) {
-            FrmListarCitasHLBV frmL = new FrmListarCitasHLBV ();
+            Frm_Cita_Listar frmL = new Frm_Cita_Listar ();
             frmL.ShowDialog ();
         }
 
         private void editarToolStripMenuItem2_Click (object sender, EventArgs e) {
-            FrmEditarCitasHLBV frmE = new FrmEditarCitasHLBV ();
+            Frm_Cita_Editar frmE = new Frm_Cita_Editar ();
             frmE.ShowDialog ();
         }
 
         private void consultarToolStripMenuItem2_Click (object sender, EventArgs e) {
-            FrmFiltrarCitasHLBV frmF = new FrmFiltrarCitasHLBV ();
+            Frm_Cita_Filtrar frmF = new Frm_Cita_Filtrar ();
             frmF.ShowDialog ();
 
         }
 
         private void eliminarToolStripMenuItem2_Click (object sender, EventArgs e) {
-            FrmEliminarCitasHLBV frmEl = new FrmEliminarCitasHLBV ();
+            Frm_Cita_Eliminar frmEl = new Frm_Cita_Eliminar ();
             frmEl.ShowDialog ();
         }
 
@@ -46,22 +46,22 @@ namespace Visual {
         }
 
         private void registrarToolStripMenuItem1_Click (object sender, EventArgs e) {
-            FrmOdontologoEGGM f = new FrmOdontologoEGGM ();
+            Frm_Odontologo_Registrar f = new Frm_Odontologo_Registrar ();
             f.ShowDialog ();
         }
 
         private void editarToolStripMenuItem1_Click (object sender, EventArgs e) {
-            FrmConsultarANDEliminarodontologo f = new FrmConsultarANDEliminarodontologo ();
+            Frm_Odontologo_ConsultarEliminar f = new Frm_Odontologo_ConsultarEliminar ();
             f.ShowDialog ();
         }
 
         private void eliminarToolStripMenuItem1_Click (object sender, EventArgs e) {
-            FrmConsultarANDEliminarodontologo f = new FrmConsultarANDEliminarodontologo ();
+            Frm_Odontologo_ConsultarEliminar f = new Frm_Odontologo_ConsultarEliminar ();
             f.ShowDialog ();
         }
 
         private void consultarToolStripMenuItem1_Click (object sender, EventArgs e) {
-            FrmConsultarANDEliminarodontologo f = new FrmConsultarANDEliminarodontologo ();
+            Frm_Odontologo_ConsultarEliminar f = new Frm_Odontologo_ConsultarEliminar ();
             f.ShowDialog ();
         }
 
@@ -101,13 +101,13 @@ namespace Visual {
         }
 
         private void mni_AM_Registrar_Click (object sender, EventArgs e) {
-            Frm_AtencionMedica_Registrar_ROPB frm = new Frm_AtencionMedica_Registrar_ROPB ();
+            Frm_AtencionMedica_Registrar frm = new Frm_AtencionMedica_Registrar ();
             frm.ShowDialog ();
         }
 
         private void mni_AM_Editar_Click (object sender, EventArgs e) {
             if (admAM.ContarLista () > 0) {
-                Frm_AtencionMedica_Editar_ROPB frm = new Frm_AtencionMedica_Editar_ROPB (DateTime.Now, "---Seleccione---", "---Seleccione---", null);
+                Frm_AtencionMedica_Editar frm = new Frm_AtencionMedica_Editar (DateTime.Now, "---Seleccione---", "---Seleccione---", null);
                 frm.ShowDialog ();
             } else {
                 MessageBox.Show ("No hay registro de Atenciones Médicas", "Error!");
@@ -116,7 +116,7 @@ namespace Visual {
 
         private void mni_AM_Eliminar_Click (object sender, EventArgs e) {
             if (admAM.ContarLista () > 0) {
-                Frm_AtencionMedica_Eliminar_ROPB frm = new Frm_AtencionMedica_Eliminar_ROPB (DateTime.Now, "---Seleccione---", "---Seleccione---", null);
+                Frm_AtencionMedica_Eliminar frm = new Frm_AtencionMedica_Eliminar (DateTime.Now, "---Seleccione---", "---Seleccione---", null);
                 frm.ShowDialog ();
             } else {
                 MessageBox.Show ("No hay registro de Atenciones Médicas", "Error!");
@@ -125,7 +125,7 @@ namespace Visual {
 
         private void mni_AM_Consultar_Click (object sender, EventArgs e) {
             if (admAM.ContarLista () > 0) {
-                Frm_AtencionMedica_Buscar_ROPB frm = new Frm_AtencionMedica_Buscar_ROPB ("");
+                Frm_AtencionMedica_Busca frm = new Frm_AtencionMedica_Busca ("");
                 frm.ShowDialog ();
             } else {
                 MessageBox.Show ("No hay registro de Atenciones Médicas", "Error!");

@@ -44,29 +44,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmActualizarOdontologo.cs">
+    <Compile Include="Frm_Odontologo_Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmActualizarOdontologo.Designer.cs">
-      <DependentUpon>FrmActualizarOdontologo.cs</DependentUpon>
+    <Compile Include="Frm_Odontologo_Editar.Designer.cs">
+      <DependentUpon>Frm_Odontologo_Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmConsultarANDEliminarodontologo.cs">
+    <Compile Include="Frm_Odontologo_ConsultarEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmConsultarANDEliminarodontologo.Designer.cs">
-      <DependentUpon>FrmConsultarANDEliminarodontologo.cs</DependentUpon>
+    <Compile Include="Frm_Odontologo_ConsultarEliminar.Designer.cs">
+      <DependentUpon>Frm_Odontologo_ConsultarEliminar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEditar2HLBV.cs">
+    <Compile Include="Frm_Cita_Editar2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEditar2HLBV.Designer.cs">
-      <DependentUpon>FrmEditar2HLBV.cs</DependentUpon>
+    <Compile Include="Frm_Cita_Editar2.Designer.cs">
+      <DependentUpon>Frm_Cita_Editar2.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEditarCitasHLBV.cs">
+    <Compile Include="Frm_Cita_Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEditarCitasHLBV.Designer.cs">
-      <DependentUpon>FrmEditarCitasHLBV.cs</DependentUpon>
+    <Compile Include="Frm_Cita_Editar.Designer.cs">
+      <DependentUpon>Frm_Cita_Editar.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_HistoriaClinica_Editar.cs">
       <SubType>Form</SubType>
@@ -74,17 +74,17 @@
     <Compile Include="Frm_HistoriaClinica_Editar.Designer.cs">
       <DependentUpon>Frm_HistoriaClinica_Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEliminarCitasHLBV.cs">
+    <Compile Include="Frm_Cita_Eliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEliminarCitasHLBV.Designer.cs">
-      <DependentUpon>FrmEliminarCitasHLBV.cs</DependentUpon>
+    <Compile Include="Frm_Cita_Eliminar.Designer.cs">
+      <DependentUpon>Frm_Cita_Eliminar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFiltrarCitasHLBV.cs">
+    <Compile Include="Frm_Cita_Filtrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmFiltrarCitasHLBV.Designer.cs">
-      <DependentUpon>FrmFiltrarCitasHLBV.cs</DependentUpon>
+    <Compile Include="Frm_Cita_Filtrar.Designer.cs">
+      <DependentUpon>Frm_Cita_Filtrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_HistoriaClinica_Filtrar.cs">
       <SubType>Form</SubType>
@@ -92,11 +92,11 @@
     <Compile Include="Frm_HistoriaClinica_Filtrar.Designer.cs">
       <DependentUpon>Frm_HistoriaClinica_Filtrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmHorarioEGGM.cs">
+    <Compile Include="Frm_Odontologo_Horario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmHorarioEGGM.Designer.cs">
-      <DependentUpon>FrmHorarioEGGM.cs</DependentUpon>
+    <Compile Include="Frm_Odontologo_Horario.Designer.cs">
+      <DependentUpon>Frm_Odontologo_Horario.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_HistoriaClinica_Registrar.cs">
       <SubType>Form</SubType>
@@ -104,11 +104,11 @@
     <Compile Include="Frm_HistoriaClinica_Registrar.Designer.cs">
       <DependentUpon>Frm_HistoriaClinica_Registrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmListarCitasHLBV.cs">
+    <Compile Include="Frm_Cita_Listar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmListarCitasHLBV.Designer.cs">
-      <DependentUpon>FrmListarCitasHLBV.cs</DependentUpon>
+    <Compile Include="Frm_Cita_Listar.Designer.cs">
+      <DependentUpon>Frm_Cita_Listar.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_Menu.cs">
       <SubType>Form</SubType>
@@ -116,106 +116,106 @@
     <Compile Include="Frm_Menu.Designer.cs">
       <DependentUpon>Frm_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmOdontologoEGGM.cs">
+    <Compile Include="Frm_Odontologo_Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmOdontologoEGGM.Designer.cs">
-      <DependentUpon>FrmOdontologoEGGM.cs</DependentUpon>
+    <Compile Include="Frm_Odontologo_Registrar.Designer.cs">
+      <DependentUpon>Frm_Odontologo_Registrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegistrarCitaHLBV.cs">
+    <Compile Include="Frm_Cita_Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRegistrarCitaHLBV.Designer.cs">
-      <DependentUpon>FrmRegistrarCitaHLBV.cs</DependentUpon>
+    <Compile Include="Frm_Cita_Registrar.Designer.cs">
+      <DependentUpon>Frm_Cita_Registrar.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmReporteCitaHLBV.cs">
+    <Compile Include="Frm_Cita_Reporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmReporteCitaHLBV.Designer.cs">
-      <DependentUpon>FrmReporteCitaHLBV.cs</DependentUpon>
+    <Compile Include="Frm_Cita_Reporte.Designer.cs">
+      <DependentUpon>Frm_Cita_Reporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Buscar_ROPB.cs">
+    <Compile Include="Frm_AtencionMedica_Busca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Buscar_ROPB.Designer.cs">
-      <DependentUpon>Frm_AtencionMedica_Buscar_ROPB.cs</DependentUpon>
+    <Compile Include="Frm_AtencionMedica_Busca.Designer.cs">
+      <DependentUpon>Frm_AtencionMedica_Busca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Editar_ROPB.cs">
+    <Compile Include="Frm_AtencionMedica_Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Editar_ROPB.Designer.cs">
-      <DependentUpon>Frm_AtencionMedica_Editar_ROPB.cs</DependentUpon>
+    <Compile Include="Frm_AtencionMedica_Editar.Designer.cs">
+      <DependentUpon>Frm_AtencionMedica_Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Eliminar_ROPB.cs">
+    <Compile Include="Frm_AtencionMedica_Eliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Eliminar_ROPB.Designer.cs">
-      <DependentUpon>Frm_AtencionMedica_Eliminar_ROPB.cs</DependentUpon>
+    <Compile Include="Frm_AtencionMedica_Eliminar.Designer.cs">
+      <DependentUpon>Frm_AtencionMedica_Eliminar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Registrar_ROPB.cs">
+    <Compile Include="Frm_AtencionMedica_Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Registrar_ROPB.Designer.cs">
-      <DependentUpon>Frm_AtencionMedica_Registrar_ROPB.cs</DependentUpon>
+    <Compile Include="Frm_AtencionMedica_Registrar.Designer.cs">
+      <DependentUpon>Frm_AtencionMedica_Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmActualizarOdontologo.resx">
-      <DependentUpon>FrmActualizarOdontologo.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Odontologo_Editar.resx">
+      <DependentUpon>Frm_Odontologo_Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmConsultarANDEliminarodontologo.resx">
-      <DependentUpon>FrmConsultarANDEliminarodontologo.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Odontologo_ConsultarEliminar.resx">
+      <DependentUpon>Frm_Odontologo_ConsultarEliminar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEditar2HLBV.resx">
-      <DependentUpon>FrmEditar2HLBV.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Cita_Editar2.resx">
+      <DependentUpon>Frm_Cita_Editar2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEditarCitasHLBV.resx">
-      <DependentUpon>FrmEditarCitasHLBV.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Cita_Editar.resx">
+      <DependentUpon>Frm_Cita_Editar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_HistoriaClinica_Editar.resx">
       <DependentUpon>Frm_HistoriaClinica_Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEliminarCitasHLBV.resx">
-      <DependentUpon>FrmEliminarCitasHLBV.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Cita_Eliminar.resx">
+      <DependentUpon>Frm_Cita_Eliminar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmFiltrarCitasHLBV.resx">
-      <DependentUpon>FrmFiltrarCitasHLBV.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Cita_Filtrar.resx">
+      <DependentUpon>Frm_Cita_Filtrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_HistoriaClinica_Filtrar.resx">
       <DependentUpon>Frm_HistoriaClinica_Filtrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmHorarioEGGM.resx">
-      <DependentUpon>FrmHorarioEGGM.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Odontologo_Horario.resx">
+      <DependentUpon>Frm_Odontologo_Horario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_HistoriaClinica_Registrar.resx">
       <DependentUpon>Frm_HistoriaClinica_Registrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmListarCitasHLBV.resx">
-      <DependentUpon>FrmListarCitasHLBV.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Cita_Listar.resx">
+      <DependentUpon>Frm_Cita_Listar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Menu.resx">
       <DependentUpon>Frm_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmOdontologoEGGM.resx">
-      <DependentUpon>FrmOdontologoEGGM.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Odontologo_Registrar.resx">
+      <DependentUpon>Frm_Odontologo_Registrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmRegistrarCitaHLBV.resx">
-      <DependentUpon>FrmRegistrarCitaHLBV.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Cita_Registrar.resx">
+      <DependentUpon>Frm_Cita_Registrar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmReporteCitaHLBV.resx">
-      <DependentUpon>FrmReporteCitaHLBV.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_Cita_Reporte.resx">
+      <DependentUpon>Frm_Cita_Reporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_AtencionMedica_Buscar_ROPB.resx">
-      <DependentUpon>Frm_AtencionMedica_Buscar_ROPB.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_AtencionMedica_Busca.resx">
+      <DependentUpon>Frm_AtencionMedica_Busca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_AtencionMedica_Editar_ROPB.resx">
-      <DependentUpon>Frm_AtencionMedica_Editar_ROPB.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_AtencionMedica_Editar.resx">
+      <DependentUpon>Frm_AtencionMedica_Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_AtencionMedica_Eliminar_ROPB.resx">
-      <DependentUpon>Frm_AtencionMedica_Eliminar_ROPB.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_AtencionMedica_Eliminar.resx">
+      <DependentUpon>Frm_AtencionMedica_Eliminar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_AtencionMedica_Registrar_ROPB.resx">
-      <DependentUpon>Frm_AtencionMedica_Registrar_ROPB.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_AtencionMedica_Registrar.resx">
+      <DependentUpon>Frm_AtencionMedica_Registrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -276,6 +276,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\q3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Inicio.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

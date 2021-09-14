@@ -12,7 +12,7 @@ namespace Visual
 {
     public partial class Frm_HistoriaClinica_Registrar : Form
     {
-        Adm_HistoriaClinicaVLRS admPac = Adm_HistoriaClinicaVLRS.GetAdm();
+        Adm_HistoriaClinica admPac = Adm_HistoriaClinica.GetAdm();
         Validacion val = new Validacion();
         public Frm_HistoriaClinica_Registrar()
         {

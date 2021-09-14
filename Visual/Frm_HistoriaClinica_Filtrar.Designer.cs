@@ -329,6 +329,7 @@ namespace Visual
             this.dgvPacientes.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPacientes.MultiSelect = false;
             this.dgvPacientes.Name = "dgvPacientes";
+            this.dgvPacientes.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -350,6 +351,7 @@ namespace Visual
             this.Num.HeaderText = "HistClinic";
             this.Num.MinimumWidth = 6;
             this.Num.Name = "Num";
+            this.Num.ReadOnly = true;
             this.Num.Width = 96;
             // 
             // Column4
@@ -357,6 +359,7 @@ namespace Visual
             this.Column4.HeaderText = "Cedula";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             this.Column4.Width = 125;
             // 
             // Nombres
@@ -364,6 +367,7 @@ namespace Visual
             this.Nombres.HeaderText = "Nombres";
             this.Nombres.MinimumWidth = 6;
             this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
             this.Nombres.Width = 125;
             // 
             // Column5
@@ -371,6 +375,7 @@ namespace Visual
             this.Column5.HeaderText = "Sexo";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             this.Column5.Width = 125;
             // 
             // Column3
@@ -386,6 +391,7 @@ namespace Visual
             this.Discapacidad.HeaderText = "Discapacidad";
             this.Discapacidad.MinimumWidth = 6;
             this.Discapacidad.Name = "Discapacidad";
+            this.Discapacidad.ReadOnly = true;
             this.Discapacidad.Width = 125;
             // 
             // Etapa_Edad
@@ -393,6 +399,7 @@ namespace Visual
             this.Etapa_Edad.HeaderText = "Etapa_Edad";
             this.Etapa_Edad.MinimumWidth = 6;
             this.Etapa_Edad.Name = "Etapa_Edad";
+            this.Etapa_Edad.ReadOnly = true;
             this.Etapa_Edad.Width = 125;
             // 
             // Column1
@@ -400,6 +407,7 @@ namespace Visual
             this.Column1.HeaderText = "Ant Personales";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             this.Column1.Width = 125;
             // 
             // AnteFamiliares
@@ -415,6 +423,7 @@ namespace Visual
             this.Column2.HeaderText = "N° de atenciones medicas";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             this.Column2.Width = 125;
             // 
             // panelSeFech
@@ -567,7 +576,7 @@ namespace Visual
             this.btn_AtencionMedica.UseVisualStyleBackColor = false;
             this.btn_AtencionMedica.Click += new System.EventHandler(this.btn_AtencionMedica_Click);
             // 
-            // FrmFiltrarVLRS
+            // Frm_HistoriaClinica_Filtrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -592,7 +601,7 @@ namespace Visual
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "FrmFiltrarVLRS";
+            this.Name = "Frm_HistoriaClinica_Filtrar";
             this.Text = "FrmFiltrarVLRS";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panelCedu.ResumeLayout(false);

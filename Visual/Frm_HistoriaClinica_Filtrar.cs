@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace Visual {
     public partial class Frm_HistoriaClinica_Filtrar : Form {
 
-        Adm_HistoriaClinicaVLRS admHisClinica = Adm_HistoriaClinicaVLRS.GetAdm ();
+        Adm_HistoriaClinica admHisClinica = Adm_HistoriaClinica.GetAdm ();
         Validacion val = new Validacion ();
         int rbindex, index;
         string sexo, cedula;
@@ -138,7 +138,7 @@ namespace Visual {
             if (filaSeleccionada != null) { //¿Existe una referencia?
                 string paciente = filaSeleccionada.Cells [2].Value.ToString ();
                 Console.WriteLine (paciente);
-                Frm_AtencionMedica_Buscar_ROPB frm = new Frm_AtencionMedica_Buscar_ROPB (paciente);
+                Frm_AtencionMedica_Busca frm = new Frm_AtencionMedica_Busca (paciente);
                 frm.ShowDialog ();
             }
         }
