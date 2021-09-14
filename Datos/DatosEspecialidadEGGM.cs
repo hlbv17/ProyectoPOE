@@ -10,7 +10,6 @@ namespace Datos {
         Conexion con = new Conexion ();
         SqlCommand cmd = new SqlCommand ();
         public string consultarEspecialidad (int especialidad) {
-            string espe;
             string sql = "Select * from Especialidad2 where id_especialidad = " + especialidad;
             SqlDataReader dr = null; //tabla virtual
             Console.WriteLine (sql);

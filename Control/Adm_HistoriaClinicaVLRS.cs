@@ -31,9 +31,6 @@ namespace Control {
         Datos_AtencionMedica datosAtmed = new Datos_AtencionMedica ();
         Validacion v = new Validacion ();
 
-        Persona persona = null;
-        Paciente paciente = null;
-        Antecedente antecedente = null;
         HistoriaClinica hisclinic = null;
 
         private Adm_HistoriaClinicaVLRS () {//2

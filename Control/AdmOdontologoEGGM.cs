@@ -341,7 +341,7 @@ namespace Control {
             //doc.Add(parrafo);
             //doc.Close();
 
-            string pdfNombre = "DENTALING_CONSULTORIO_DENTAL_ODONTOLOGO.pdf";
+            //string pdfNombre = "DENTALING_CONSULTORIO_DENTAL_ODONTOLOGO.pdf";
             SaveFileDialog sfd = new SaveFileDialog ();
             sfd.Filter = "Pdf File |*.pdf";
             sfd.InitialDirectory = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments);

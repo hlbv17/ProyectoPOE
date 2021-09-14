@@ -2,12 +2,6 @@
 using Datos;
 using Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Visual
@@ -17,7 +11,7 @@ namespace Visual
         Adm_HistoriaClinicaVLRS admHisclin = Adm_HistoriaClinicaVLRS.GetAdm();
         Validacion val = new Validacion();
         DatosHistoriaClinicaVLRS datosHistClin = new DatosHistoriaClinicaVLRS();
-        HistoriaClinica hisclinic = null;
+        //HistoriaClinica hisclinic = null;
 
         public Frm_HistoriaClinica_Editar()
         {

@@ -12,7 +12,6 @@ namespace Datos {
         List<Horario> horario = new List<Horario> ();
         Conexion con = new Conexion ();
         SqlCommand cmd = new SqlCommand ();
-        string h;
         public List<Horario> Horario { get => horario; set => horario = value; }
 
         //CONSULTA LOS HORARIO DE TODO TIPO, SIN IMPORTAR DIA.
@@ -163,7 +162,6 @@ namespace Datos {
 
         //
         public Horario consultarTipodeHoraario (int horario) {
-            string espe;
             string sql = "Select * from Horario where id_Horario = " + horario;
             SqlDataReader dr = null; //tabla virtual
             Horario d = new Horario ();
