@@ -181,6 +181,8 @@ namespace Datos {
                             "AND " + sqlCedula +
                             "AND " + sqlFecha +
                             "AND " + sqlHora;
+                    } else if (n == 0) {
+                        cmd.CommandText = sql;
                     }
                     dr = cmd.ExecuteReader ();
                     while (dr.Read ()) {
@@ -210,29 +212,27 @@ namespace Datos {
             return citas;
         }
 
-        public bool PacienteAtendido(int id)
-        {
+        public bool PacienteAtendido (int id) {
             bool flag = true;
             string sql = "SELECT C.id_cita, A.id_cita as atendido \n" +
                         "FROM Cita C, AtencionMedica A \n" +
                         "WHERE C.id_cita = A.id_cita \n" +
                         "AND C.id_cita = '" + id + "'";
             SqlDataReader dr = null;
-            Console.WriteLine(sql);
+            Console.WriteLine (sql);
             string mensaje = "";
-            mensaje = con.Conectar();
-            if (mensaje[0] == '1')
-            {
+            mensaje = con.Conectar ();
+            if (mensaje [0] == '1') {
                 cmd.Connection = con.Cn;
                 cmd.CommandText = sql;
-                dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
+                dr = cmd.ExecuteReader ();
+                if (dr.Read ()) {
                     flag = true;
+                } else {
+                    flag = false;
                 }
-                flag = false;
             }
-            con.Cerrar();
+            con.Cerrar ();
             return flag;
         }
 

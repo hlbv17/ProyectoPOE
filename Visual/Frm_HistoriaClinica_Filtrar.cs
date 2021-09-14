@@ -138,7 +138,7 @@ namespace Visual {
             if (filaSeleccionada != null) { //¿Existe una referencia?
                 string paciente = filaSeleccionada.Cells [2].Value.ToString ();
                 Console.WriteLine (paciente);
-                Frm_AtencionMedica_Buscar_ROPB frm = new Frm_AtencionMedica_Buscar_ROPB (paciente);
+                Frm_AtencionMedica_Busca frm = new Frm_AtencionMedica_Busca (paciente);
                 frm.ShowDialog ();
             }
         }

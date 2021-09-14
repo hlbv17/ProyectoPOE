@@ -9,7 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace Visual {
-    public partial class Frm_AtencionMedica_Buscar_ROPB : Form {
+    public partial class Frm_AtencionMedica_Busca : Form {
 
 
         // Global Variables
@@ -22,7 +22,7 @@ namespace Visual {
         //bool firstTime;
 
 
-        public Frm_AtencionMedica_Buscar_ROPB (string nombre) {
+        public Frm_AtencionMedica_Busca (string nombre) {
             InitializeComponent ();
             // Ejecuciones al inicar el formulario.
             buscarGlobal = 0;
@@ -127,7 +127,7 @@ namespace Visual {
             // Abrir formulario: Editar
             if (index >= 0 && dgv_AntencionMedica.Rows != null && dgv_AntencionMedica.Rows.Count != 0) {
                 //Console.WriteLine (paciente + " | " + hora + " | " + fecha + "\n");
-                Frm_AtencionMedica_Editar_ROPB frm = new Frm_AtencionMedica_Editar_ROPB (fecha, hora, paciente, this);
+                Frm_AtencionMedica_Editar frm = new Frm_AtencionMedica_Editar (fecha, hora, paciente, this);
                 frm.ShowDialog ();
             } else {
                 MessageBox.Show ("NO se ha selecionado datos.", "ERROR!");
@@ -138,7 +138,7 @@ namespace Visual {
             // Abrir formulario: Eliminar
             if (index >= 0 && dgv_AntencionMedica.Rows != null && dgv_AntencionMedica.Rows.Count != 0) {
                 //Console.WriteLine (paciente + " | " + hora + " | " + fecha + "\n");
-                Frm_AtencionMedica_Eliminar_ROPB frm = new Frm_AtencionMedica_Eliminar_ROPB (fecha, hora, paciente, this);
+                Frm_AtencionMedica_Eliminar frm = new Frm_AtencionMedica_Eliminar (fecha, hora, paciente, this);
                 frm.ShowDialog ();
             } else {
                 MessageBox.Show ("NO se ha selecionado datos.", "ERROR!");

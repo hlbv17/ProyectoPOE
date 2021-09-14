@@ -1,6 +1,6 @@
 ﻿
 namespace Visual {
-    partial class Frm_AtencionMedica_Buscar_ROPB {
+    partial class Frm_AtencionMedica_Busca {
         /// <summary>
         /// Required designer variable.
         /// </summary>
