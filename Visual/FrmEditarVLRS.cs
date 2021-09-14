@@ -11,7 +11,7 @@ namespace Visual
         Adm_HistoriaClinicaVLRS admHisclin = Adm_HistoriaClinicaVLRS.GetAdm();
         Validacion val = new Validacion();
         DatosHistoriaClinicaVLRS datosHistClin = new DatosHistoriaClinicaVLRS();
-        HistoriaClinica hisclinic = null;
+        //HistoriaClinica hisclinic = null;
 
         public FrmEditarVLRS()
         {

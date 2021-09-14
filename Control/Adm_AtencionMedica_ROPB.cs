@@ -407,7 +407,7 @@ namespace Control {
             string paciente = cmb_Paciente.Text, hora = cmb_Hora.Text;
             DateTime fecha = dtp_Fecha.Value.Date;//------------------------------------------
 
-            string pdfNombre = "Reporte_AtencionMedica.pdf";
+            //string pdfNombre = "Reporte_AtencionMedica.pdf";
 
             // SaveFileDialog
             SaveFileDialog sfd = new SaveFileDialog ();

@@ -12,8 +12,6 @@ namespace Datos {
         List<Odontologo> odontologo = new List<Odontologo> ();
         Conexion con = new Conexion ();
         SqlCommand cmd = new SqlCommand ();
-        DatosHorarioEGGM datosHorario = null;
-        DatosEspecialidadEGGM especialida = null;
 
         /*----------------------------------------EGGM------------------------------------------------------*/
 

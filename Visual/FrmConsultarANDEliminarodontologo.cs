@@ -71,13 +71,14 @@ namespace Visual {
                     cedula1 = admodo.Actualizar (posicion);
                 }
                 admodo.pdf (jornada, especialidad, consul);
-            } catch (Exception exo) {
+            } catch (Exception ex) {
                 consultorio = 0;
 
                 if (posicion >= 0) {
                     cedula1 = admodo.Actualizar (posicion);
                 }
                 admodo.pdf (jornada, especialidad, consultorio);
+                Console.WriteLine(ex);
             }
         }
 
@@ -95,10 +96,10 @@ namespace Visual {
             try {
                 int consul = Convert.ToInt32 (cmbConsultorio.Text);
                 admodo.llenarGridFiltrar (dvgOdontologo, jornada, esoecialida, consul);
-            } catch (Exception exo) {
+            } catch (Exception ex) {
                 int consultorio = 0;
                 admodo.llenarGridFiltrar (dvgOdontologo, jornada, esoecialida, consultorio);
-
+                Console.WriteLine(ex);
             }
         }
     }

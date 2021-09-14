@@ -16,7 +16,7 @@ namespace Control
         List<Horario> horarioOdont = null;
         List<Dias> diash = null;
         DatosHorarioEGGM datosHora = new DatosHorarioEGGM();
-        Validacion v = null;
+        //Validacion v = null;
         Horario hora = null;
 
         public List<Horario> Horario1 { get => horario1; set => horario1 = value; }
@@ -193,7 +193,7 @@ namespace Control
             consultarBDD2(tipo);
 
             int i = 0;
-            Horario p = null;
+            //Horario p = null;
             foreach (Horario x in Horario1)
             {
                 dgvhorario.Rows.Add(x.Tipo, x.Dias[i].Dia, x.Dias[i].HoraEntrada.ToString("HH:ss"), x.Dias[i].HoraSalida.ToString("HH:ss"));
