@@ -131,10 +131,10 @@ namespace Datos {
         public Paciente ConsultarPacienteNombre (string cedula) {
 
             Paciente p = null;
-            string sql = "Select PE.id_persona, PE.cedula, PE.id_sexo, PE.nombre, PE.fecha_nacimiento, " +
+            string sql = "Select PE.id_persona, PE.cedula, PE.id_sexo, PE.nombres, PE.fechaNacimiento, " +
                 "PA. discapacidad \n" +
                 "FROM Persona PE \n" +
-                "INNER JOIN Paciente PA ON PE.id_persona = PA.id_persona \n" +
+                "INNER JOIN Paciente PA ON PE.id_persona = PA.id_paciente \n" +
                 "WHERE PE.cedula = '" + cedula + "'";
             SqlDataReader dr = null;
             Console.WriteLine (sql);
@@ -150,8 +150,8 @@ namespace Datos {
                         p.Id_persona = Convert.ToInt32 (dr ["id_persona"]);
                         p.Cedula = dr ["cedula"].ToString ();
                         p.Sexo = Convert.ToChar (dr ["id_sexo"]);
-                        p.Nombre = dr ["nombre"].ToString ();
-                        p.FechaNacimiento = Convert.ToDateTime (dr ["fecha_nacimiento"]);
+                        p.Nombre = dr ["nombres"].ToString ();
+                        p.FechaNacimiento = Convert.ToDateTime (dr ["fechaNacimiento"]);
                         p.Discapacidad = dr ["discapacidad"].ToString ();
                     }
                 } catch (Exception ex) {
@@ -165,9 +165,9 @@ namespace Datos {
         // Method: 
         public bool ConsultarPacienteCedula (string cedula) {
             bool flag = true;
-            string sql = "Select PE.id_persona, PE.cedula, PE.id_sexo, PE.nombre, PE.fecha_nacimiento, PA. discapacidad " +
+            string sql = "Select PE.id_persona, PE.cedula, PE.id_sexo, PE.nombre, PE.fechaNacimiento, PA. discapacidad " +
                 "FROM Persona PE " +
-                "INNER JOIN Paciente PA ON PE.id_persona = PA.id_persona" +
+                "INNER JOIN Paciente PA ON PE.id_persona = PA.id_paciente" +
                 "WHERE PE.cedula = '" + cedula + "'";
             SqlDataReader dr = null;
             Console.WriteLine (sql);

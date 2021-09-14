@@ -78,16 +78,24 @@ namespace Visual
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            int posicion = dgvCitas.Rows.Count;
-            if (posicion >= 1)
+            int posicion = dgvCitas.CurrentRow.Index;
+            if (posicion >= 0)
             {
-                FrmEditar2HLBV frmE = new FrmEditar2HLBV(dgvCitas);
-                frmE.Visible = true;
+                if (admC.AtencionExistente(dgvCitas, posicion) == false)
+                {
+                    FrmEditar2HLBV frmE = new FrmEditar2HLBV(dgvCitas);
+                    frmE.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Error al editar: \nEste paciente ya fue atendido");
+                }
             }
             else
             {
                 MessageBox.Show("No ha realizado la consulta");
-            }   
+            }
+            
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -95,7 +103,14 @@ namespace Visual
             int posicion = dgvCitas.CurrentRow.Index;
             if (posicion >= 0)
             {
-                admC.EliminarCita(dgvCitas, posicion);
+                if (admC.AtencionExistente(dgvCitas, posicion) == false)
+                {
+                    admC.EliminarCita(dgvCitas, posicion);
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar: \nEste paciente ya fue atendido");
+                }
             }
             else
             {

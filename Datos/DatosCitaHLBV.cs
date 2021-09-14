@@ -90,12 +90,12 @@ namespace Datos {
             Cita c = null;
             Odontologo o = null;
             Paciente pa = null;
-            string sql = "SELECT C.id_cita, P1.cedula as cedula, P1.nombre as paciente, P2.nombre as odontologo, " +
+            string sql = "SELECT C.id_cita, P1.cedula as cedula, P1.nombres as paciente, P2.nombres as odontologo, " +
                          "C.fecha, C.hora, O.consultorio \n" +
                          "FROM Cita C, Odontologo O, Persona P1, Persona P2 \n" +
                          "WHERE P1.id_persona = C.id_paciente \n" +
                          "AND P2.id_persona = C.id_odontologo \n" +
-                         "AND C.id_odontologo = O.consultorio \n" +
+                         "AND C.id_odontologo = O.id_odontologo \n" +
                          "AND P1.cedula = '" + cedula + "'";
             SqlDataReader dr = null;
             Console.WriteLine (sql);
@@ -139,12 +139,12 @@ namespace Datos {
             Cita c = null;
             Odontologo o = null;
             Paciente pa = null;
-            string sql = "SELECT C.id_cita, P1.cedula, P1.nombre as paciente, P2.nombre as odontologo, C.fecha, C.hora, " +
+            string sql = "SELECT C.id_cita, P1.cedula, P1.nombres as paciente, P2.nombres as odontologo, C.fecha, C.hora, " +
                          "O.consultorio \n" +
                          "FROM Cita C, Odontologo O, Persona P1, Persona P2 \n" +
                          "WHERE P1.id_persona = C.id_paciente \n" +
                          "AND P2.id_persona = C.id_odontologo \n" +
-                         "AND C.id_odontologo = O.consultorio \n";
+                         "AND C.id_odontologo = O.id_odontologo \n";
             string sqlCedula = "P1.cedula = '" + cedula + "' \n";
             string sqlFecha = "C.fecha = '" + fecha.ToString ("yyyy-MM-dd") + "' \n";
             string sqlHora = "C.hora = '" + hora + "' ";
@@ -210,18 +210,44 @@ namespace Datos {
             return citas;
         }
 
+        public bool PacienteAtendido(int id)
+        {
+            bool flag = true;
+            string sql = "SELECT C.id_cita, A.id_cita as atendido \n" +
+                        "FROM Cita C, AtencionMedica A \n" +
+                        "WHERE C.id_cita = A.id_cita \n" +
+                        "AND C.id_cita = '" + id + "'";
+            SqlDataReader dr = null;
+            Console.WriteLine(sql);
+            string mensaje = "";
+            mensaje = con.Conectar();
+            if (mensaje[0] == '1')
+            {
+                cmd.Connection = con.Cn;
+                cmd.CommandText = sql;
+                dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    flag = true;
+                }
+                flag = false;
+            }
+            con.Cerrar();
+            return flag;
+        }
+
         // Method: ConsultarCitasF
         public List<Cita> ConsultarCitasF (DateTime fecha) {
             List<Cita> citas = new List<Cita> ();
             Cita c = null;
             Odontologo o = null;
             Paciente pa = null;
-            string sql = "SELECT C.id_cita, P1.nombre as paciente, P2.nombre as odontologo, C.fecha, " +
+            string sql = "SELECT C.id_cita, P1.nombres as paciente, P2.nombres as odontologo, C.fecha, " +
                          "C.hora, O.consultorio \n" +
                          "FROM Cita C, Odontologo O, Persona P1, Persona P2 \n" +
                          "WHERE P1.id_persona = C.id_paciente \n" +
                          "AND P2.id_persona = C.id_odontologo \n" +
-                         "AND C.id_odontologo = O.consultorio \n" +
+                         "AND C.id_odontologo = O.id_odontologo \n" +
                          "AND C.fecha = '" + fecha.ToString ("yyyy-MM-dd") + "'";
             SqlDataReader dr = null;
             Console.WriteLine (sql);
@@ -307,12 +333,12 @@ namespace Datos {
         // Method: ConsultarCitasExistentes
         public bool ConsultarCitasExistentes (string cedula, DateTime fecha, DateTime hora) {
             bool flag = true;
-            string sql = "SELECT C.id_cita, P1.cedula, P1.nombre as paciente, P2.nombre as odontologo, C.fecha, C.hora, " +
+            string sql = "SELECT C.id_cita, P1.cedula, P1.nombres as paciente, P2.nombres as odontologo, C.fecha, C.hora, " +
                          "O.consultorio \n" +
                          "FROM Cita C, Odontologo O, Persona P1, Persona P2 \n" +
                          "WHERE P1.id_persona = C.id_paciente \n" +
                          "AND P2.id_persona = C.id_odontologo \n" +
-                         "AND C.id_odontologo = O.consultorio \n" +
+                         "AND C.id_odontologo = O.id_odontologo \n" +
                          "AND P1.cedula = '" + cedula + "'\n" +
                          "AND C.fecha = '" + fecha.ToString ("yyyy-MM-dd") + "'\n" +
                          "AND C.hora = '" + hora.ToString ("HH:mm:ss") + "'";
@@ -340,11 +366,11 @@ namespace Datos {
                          "FROM Cita C, Odontologo O, Persona P1, Persona P2 \n" +
                          "WHERE P1.id_persona = C.id_paciente \n" +
                          "AND P2.id_persona = C.id_odontologo \n" +
-                         "AND C.id_odontologo = O.consultorio \n" +
+                         "AND C.id_odontologo = O.id_odontologo \n" +
                          "AND P1.cedula = '" + cedula + "'\n" +
                          "AND C.fecha = '" + fecha.ToString ("yyyy-MM-dd") + "'\n" +
                          "AND C.hora = '" + hora.ToString ("HH:mm:ss") + "'\n" +
-                         "AND P2.nombre = '" + odontologo + "'";
+                         "AND P2.nombres = '" + odontologo + "'";
             SqlDataReader dr = null;
             Console.WriteLine (sql);
             string mensaje = "";
