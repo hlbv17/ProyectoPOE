@@ -10,64 +10,49 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class FrmOdontologoEGGM : Form
+    public partial class Frm_Odontologo_Editar : Form
     {
         AdmHorarioEGGM admhorario = AdmHorarioEGGM.GetAdm();
         AdmOdontologoEGGM admodo = AdmOdontologoEGGM.GetAdm();
-        public FrmOdontologoEGGM()
+        public string cedula;
+        public Frm_Odontologo_Editar()
         {
             InitializeComponent();
         }
 
-
-       
-        private void txtCedula_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char c = e.KeyChar;
-            if (!char.IsDigit(c) && (e.KeyChar != Convert.ToChar(Keys.Back)))
-            {
-                if (e.KeyChar == Convert.ToChar(Keys.Enter) && txtCedula.Text.Length >= 10)
-                {
-                    admodo.consultarOdo(txtCedula.Text.Trim(), textNombre, txtCorreo, txtTelefono);
-                }
-                else
-                {
-                    e.Handled = true;
-                    return;
-                }
-            }
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
             try
             {
-                string nombre = textNombre.Text.Trim(), cedula = txtCedula.Text.Trim(), correo = txtCorreo.Text.Trim(), telefono = txtTelefono.Text.Trim(), especialidad = cmbEspecialidad.Text, mD = label5.Text;
+                string nombre = textNombre.Text.Trim(), cedula = txtCedula.Text.Trim(), correo = txtCorreo.Text.Trim(), telefono = txtTelefono.Text.Trim(), especialidad = cmbEspecialidad.Text;
                 char sexo = Convert.ToChar(cmbSexo.Text);
                 int consultorio = Convert.ToInt32(cmbConsultorio.Text);
-                int w = +admodo.Contarbasedato();
+                int w = Convert.ToInt32(idodo.Text);
                 DateTime fechaNac = dateTimePicker1.Value.Date;
 
-                admodo.guardarprueba(w, nombre, cedula, especialidad, sexo, fechaNac, correo, telefono, consultorio, admhorario.HorarioOdont[0], label5);
+                admodo.guardarActualizar(w, nombre, cedula, especialidad, sexo, fechaNac, correo, telefono, consultorio, admhorario.HorarioOdont[1]);
                 MessageBox.Show(admodo.mostrardatos(), "DATOS GUARDADOS");
             }
             catch (Exception ex)
             {
-                MessageBox.Show("DEBE INGRESAR TODOS LO DATOS: "+ ex);
+                MessageBox.Show("DEBE INGRESAR TODOS LO DATOS: " + ex);
             }
+
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            FrmHorarioEGGM frm = new FrmHorarioEGGM();
+            
+            Frm_Odontologo_Horario frm = new Frm_Odontologo_Horario();
             frm.ShowDialog();
             admhorario.LlenarGriDE(dgvHorarioOdontologo);
+        }
+
+        private void FrmActualizarOdontologo_Load(object sender, EventArgs e)
+        {
+            txtCedula.Text = cedula;
+            admodo.consultarOdoParaActualizar(txtCedula.Text.Trim(), txtCedula, textNombre, txtCorreo, txtTelefono, cmbConsultorio, cmbEspecialidad, cmbSexo, dateTimePicker1, dgvHorarioOdontologo, idodo);
         }
 
         private void textNombre_KeyPress(object sender, KeyPressEventArgs e)

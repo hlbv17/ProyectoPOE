@@ -1,7 +1,7 @@
 ﻿
 namespace Visual
 {
-    partial class FrmFiltrarCitasHLBV
+    partial class Frm_Cita_Filtrar
     {
         /// <summary>
         /// Required designer variable.

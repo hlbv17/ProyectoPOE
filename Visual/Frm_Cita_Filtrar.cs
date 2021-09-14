@@ -4,10 +4,10 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class FrmFiltrarCitasHLBV : Form
+    public partial class Frm_Cita_Filtrar : Form
     {
         AdmCitaHLBV admC = AdmCitaHLBV.GetAdm();
-        public FrmFiltrarCitasHLBV()
+        public Frm_Cita_Filtrar()
         {
             InitializeComponent();
             admC.LlenarComboH(cmbHora);
@@ -83,7 +83,7 @@ namespace Visual
             {
                 if (admC.AtencionExistente(dgvCitas, posicion) == false)
                 {
-                    FrmEditar2HLBV frmE = new FrmEditar2HLBV(dgvCitas);
+                    Frm_Cita_Editar2 frmE = new Frm_Cita_Editar2(dgvCitas);
                     frmE.Visible = true;
                 }
                 else
@@ -154,7 +154,7 @@ namespace Visual
             if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string file = saveFileDialog1.FileName;
-                FrmReporteCitaHLBV frmR = new FrmReporteCitaHLBV(cedula, fecha, hora, n, file);
+                Frm_Cita_Reporte frmR = new Frm_Cita_Reporte(cedula, fecha, hora, n, file);
                 frmR.Visible = true;
             }
             

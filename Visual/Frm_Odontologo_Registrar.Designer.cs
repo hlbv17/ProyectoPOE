@@ -1,7 +1,7 @@
 ﻿
 namespace Visual
 {
-    partial class FrmOdontologoEGGM
+    partial class Frm_Odontologo_Registrar
     {
         /// <summary>
         /// Required designer variable.

@@ -11,14 +11,14 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class FrmHorarioEGGM : Form
+    public partial class Frm_Odontologo_Horario : Form
     {
         AdmHorarioEGGM admhorario = AdmHorarioEGGM.GetAdm();
 
         
 
 
-        public FrmHorarioEGGM()
+        public Frm_Odontologo_Horario()
         {
             InitializeComponent();
             admhorario.LlenarGrid(dgvHorario);

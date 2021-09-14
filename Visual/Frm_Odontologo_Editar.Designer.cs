@@ -1,7 +1,7 @@
 ﻿
 namespace Visual
 {
-    partial class FrmActualizarOdontologo
+    partial class Frm_Odontologo_Editar
     {
         /// <summary>
         /// Required designer variable.

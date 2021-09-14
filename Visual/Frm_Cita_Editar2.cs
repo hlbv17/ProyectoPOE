@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class FrmEditar2HLBV : Form
+    public partial class Frm_Cita_Editar2 : Form
     {
         AdmOdontologoEGGM admO = AdmOdontologoEGGM.GetAdm();
         AdmCitaHLBV admCita = AdmCitaHLBV.GetAdm();
-        public FrmEditar2HLBV(DataGridView dgvCitas)
+        public Frm_Cita_Editar2(DataGridView dgvCitas)
         {
             InitializeComponent();
             txtCedula.Enabled = false;

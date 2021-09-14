@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class FrmListarCitasHLBV : Form
+    public partial class Frm_Cita_Listar : Form
     {
         AdmCitaHLBV admC = AdmCitaHLBV.GetAdm();
-        public FrmListarCitasHLBV()
+        public Frm_Cita_Listar()
         {
             InitializeComponent();
             admC.LlenarTabla(dgvCitas);

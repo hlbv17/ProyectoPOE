@@ -4,12 +4,12 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class FrmRegistrarCitaHLBV : Form
+    public partial class Frm_Cita_Registrar : Form
     {
         AdmPacienteHLBV admPa = new AdmPacienteHLBV();
         AdmOdontologoEGGM admO = AdmOdontologoEGGM.GetAdm();
         AdmCitaHLBV admCita = AdmCitaHLBV.GetAdm();
-        public FrmRegistrarCitaHLBV()
+        public Frm_Cita_Registrar()
         {
             InitializeComponent();
             admCita.LlenarComboH(cmbHora);

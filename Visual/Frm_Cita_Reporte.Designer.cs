@@ -1,7 +1,7 @@
 ﻿
 namespace Visual
 {
-    partial class FrmReporteCitaHLBV
+    partial class Frm_Cita_Reporte
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Visual
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReporteCitaHLBV));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Cita_Reporte));
             this.axAcroPDF = new AxAcroPDFLib.AxAcroPDF();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();

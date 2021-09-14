@@ -16,28 +16,28 @@ namespace Visual {
         }
 
         private void registrarToolStripMenuItem2_Click (object sender, EventArgs e) {
-            FrmRegistrarCitaHLBV frmR = new FrmRegistrarCitaHLBV ();
+            Frm_Cita_Registrar frmR = new Frm_Cita_Registrar ();
             frmR.ShowDialog ();
         }
 
         private void listarToolStripMenuItem_Click (object sender, EventArgs e) {
-            FrmListarCitasHLBV frmL = new FrmListarCitasHLBV ();
+            Frm_Cita_Listar frmL = new Frm_Cita_Listar ();
             frmL.ShowDialog ();
         }
 
         private void editarToolStripMenuItem2_Click (object sender, EventArgs e) {
-            FrmEditarCitasHLBV frmE = new FrmEditarCitasHLBV ();
+            Frm_Cita_Editar frmE = new Frm_Cita_Editar ();
             frmE.ShowDialog ();
         }
 
         private void consultarToolStripMenuItem2_Click (object sender, EventArgs e) {
-            FrmFiltrarCitasHLBV frmF = new FrmFiltrarCitasHLBV ();
+            Frm_Cita_Filtrar frmF = new Frm_Cita_Filtrar ();
             frmF.ShowDialog ();
 
         }
 
         private void eliminarToolStripMenuItem2_Click (object sender, EventArgs e) {
-            FrmEliminarCitasHLBV frmEl = new FrmEliminarCitasHLBV ();
+            Frm_Cita_Eliminar frmEl = new Frm_Cita_Eliminar ();
             frmEl.ShowDialog ();
         }
 
@@ -46,22 +46,22 @@ namespace Visual {
         }
 
         private void registrarToolStripMenuItem1_Click (object sender, EventArgs e) {
-            FrmOdontologoEGGM f = new FrmOdontologoEGGM ();
+            Frm_Odontologo_Registrar f = new Frm_Odontologo_Registrar ();
             f.ShowDialog ();
         }
 
         private void editarToolStripMenuItem1_Click (object sender, EventArgs e) {
-            FrmConsultarANDEliminarodontologo f = new FrmConsultarANDEliminarodontologo ();
+            Frm_Odontologo_ConsultarEliminar f = new Frm_Odontologo_ConsultarEliminar ();
             f.ShowDialog ();
         }
 
         private void eliminarToolStripMenuItem1_Click (object sender, EventArgs e) {
-            FrmConsultarANDEliminarodontologo f = new FrmConsultarANDEliminarodontologo ();
+            Frm_Odontologo_ConsultarEliminar f = new Frm_Odontologo_ConsultarEliminar ();
             f.ShowDialog ();
         }
 
         private void consultarToolStripMenuItem1_Click (object sender, EventArgs e) {
-            FrmConsultarANDEliminarodontologo f = new FrmConsultarANDEliminarodontologo ();
+            Frm_Odontologo_ConsultarEliminar f = new Frm_Odontologo_ConsultarEliminar ();
             f.ShowDialog ();
         }
 

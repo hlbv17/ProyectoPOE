@@ -9,12 +9,12 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace Visual {
-    public partial class FrmConsultarANDEliminarodontologo : Form {
+    public partial class Frm_Odontologo_ConsultarEliminar : Form {
 
         AdmOdontologoEGGM admodo = AdmOdontologoEGGM.GetAdm ();
         public string cedula;
 
-        public FrmConsultarANDEliminarodontologo () {
+        public Frm_Odontologo_ConsultarEliminar () {
             InitializeComponent ();
             admodo.llenarGrid (dvgOdontologo);
         }
@@ -27,7 +27,7 @@ namespace Visual {
         }
 
         private void btnActualizar_Click (object sender, EventArgs e) {
-            FrmActualizarOdontologo frm = new FrmActualizarOdontologo ();
+            Frm_Odontologo_Editar frm = new Frm_Odontologo_Editar ();
             int posicion = dvgOdontologo.CurrentRow.Index;
             if (posicion >= 0) {
                 cedula = admodo.Actualizar (posicion);

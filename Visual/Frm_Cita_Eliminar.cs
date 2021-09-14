@@ -4,10 +4,10 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class FrmEliminarCitasHLBV : Form
+    public partial class Frm_Cita_Eliminar : Form
     {
         AdmCitaHLBV admC = AdmCitaHLBV.GetAdm();
-        public FrmEliminarCitasHLBV()
+        public Frm_Cita_Eliminar()
         {
             InitializeComponent();
             admC.LlenarTabla(dgvCitas);

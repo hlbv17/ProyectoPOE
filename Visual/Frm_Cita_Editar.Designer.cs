@@ -1,7 +1,7 @@
 ﻿
 namespace Visual
 {
-    partial class FrmEditarCitasHLBV
+    partial class Frm_Cita_Editar
     {
         /// <summary>
         /// Required designer variable.

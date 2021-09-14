@@ -1,7 +1,7 @@
 ﻿
 namespace Visual
 {
-    partial class FrmConsultarANDEliminarodontologo
+    partial class Frm_Odontologo_ConsultarEliminar
     {
         /// <summary>
         /// Required designer variable.

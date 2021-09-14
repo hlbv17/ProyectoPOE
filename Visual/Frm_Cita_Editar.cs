@@ -4,11 +4,11 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class FrmEditarCitasHLBV : Form
+    public partial class Frm_Cita_Editar : Form
     {
         AdmOdontologoEGGM admO = AdmOdontologoEGGM.GetAdm();
         AdmCitaHLBV admCita = AdmCitaHLBV.GetAdm();
-        public FrmEditarCitasHLBV()
+        public Frm_Cita_Editar()
         {
             InitializeComponent();
             admCita.BloquearCampos(txtCedula, dtpFecha, cmbHora, cmbOdontologo);

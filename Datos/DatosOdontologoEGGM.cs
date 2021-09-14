@@ -253,7 +253,7 @@ namespace Datos {
                     dr = cmd.ExecuteReader ();
                     while (dr.Read ()) {
                         o = new Odontologo ();
-                        o = new Odontologo (0, "", 0, null, "", 'F', "", DateTime.Now, "", "");
+                        //o = new Odontologo (0, "", 0, null, "", 'F', "", DateTime.Now, "", "");
                         DatosEspecialidadEGGM espec = new DatosEspecialidadEGGM ();
                         DatosHorarioEGGM datosHorario = new DatosHorarioEGGM ();
                         o.Cedula = dr ["cedula"].ToString ();
