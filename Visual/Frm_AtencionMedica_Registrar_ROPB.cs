@@ -12,7 +12,7 @@ namespace Visual {
     public partial class Frm_AtencionMedica_Registrar_ROPB : Form {
 
 
-        Adm_AtencionMedica_ROPB adm = Adm_AtencionMedica_ROPB.GetAdm ();
+        Adm_AtencionMedica adm = Adm_AtencionMedica.GetAdm ();
 
         public Frm_AtencionMedica_Registrar_ROPB () {
             InitializeComponent ();

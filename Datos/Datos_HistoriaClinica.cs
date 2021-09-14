@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 
 namespace Datos {
-    public class DatosHistoriaClinicaVLRS {
+    public class Datos_HistoriaClinica {
 
         // Variables
         Conexion con = new Conexion ();

@@ -12,8 +12,8 @@ namespace Visual
 {
     public partial class Frm_Odontologo_Registrar : Form
     {
-        AdmHorarioEGGM admhorario = AdmHorarioEGGM.GetAdm();
-        AdmOdontologoEGGM admodo = AdmOdontologoEGGM.GetAdm();
+        Adm_Horario admhorario = Adm_Horario.GetAdm();
+        Adm_Odontologo admodo = Adm_Odontologo.GetAdm();
         public Frm_Odontologo_Registrar()
         {
             InitializeComponent();

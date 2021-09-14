@@ -13,7 +13,7 @@ namespace Visual {
 
 
         // Global Variables
-        Adm_AtencionMedica_ROPB adm = Adm_AtencionMedica_ROPB.GetAdm ();
+        Adm_AtencionMedica adm = Adm_AtencionMedica.GetAdm ();
         DateTime fecha;
         string hora;
         string paciente;

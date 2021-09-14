@@ -15,10 +15,10 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace Control {
-    public class Adm_AtencionMedica_ROPB {
+    public class Adm_AtencionMedica {
 
         // Variables
-        private static Adm_AtencionMedica_ROPB adm = null;
+        private static Adm_AtencionMedica adm = null;
         List<AtencionMedica> listaAM = null;
         Validacion v = null;
         AtencionMedica am = null;
@@ -29,14 +29,14 @@ namespace Control {
 
         //private Conexion_ROPB con = new Conexion_ROPB ();
         Datos_AtencionMedica dam = new Datos_AtencionMedica ();
-        DatosCitaHLBV dc = new DatosCitaHLBV ();
+        Datos_Cita dc = new Datos_Cita ();
         Datos_PiezaDental dpd = new Datos_PiezaDental ();
-        DatosPacienteVLRS dp = new DatosPacienteVLRS ();
-        DatosOdontologoEGGM don = new DatosOdontologoEGGM ();
-        DatosHistoriaClinicaVLRS dhc = new DatosHistoriaClinicaVLRS ();
+        Datos_Paciente dp = new Datos_Paciente ();
+        Datos_Odontologo don = new Datos_Odontologo ();
+        Datos_HistoriaClinica dhc = new Datos_HistoriaClinica ();
 
         // Constructor: Adm_AtencionMedica_ROPB
-        private Adm_AtencionMedica_ROPB () {
+        private Adm_AtencionMedica () {
             listaAM = new List<AtencionMedica> ();
             v = new Validacion ();
         }
@@ -45,9 +45,9 @@ namespace Control {
         public AtencionMedica Am { get => am; set => am = value; }                      // Getter & Setter: am
 
         // Getter :GetAdm
-        public static Adm_AtencionMedica_ROPB GetAdm () {
+        public static Adm_AtencionMedica GetAdm () {
             if (adm == null) {
-                adm = new Adm_AtencionMedica_ROPB ();
+                adm = new Adm_AtencionMedica ();
             }
             return adm;
         }

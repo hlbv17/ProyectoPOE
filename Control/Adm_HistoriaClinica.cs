@@ -16,34 +16,34 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace Control {
-    public class Adm_HistoriaClinicaVLRS {
-        
-        private static Adm_HistoriaClinicaVLRS admPaciente = null;//1
+    public class Adm_HistoriaClinica {
+
+        private static Adm_HistoriaClinica admPaciente = null;//1
 
         List<Paciente> listapacientes = new List<Paciente> ();
         List<HistoriaClinica> listahClinica = new List<HistoriaClinica> ();
 
-        DatosPersonaVLRS datospers = new DatosPersonaVLRS ();
-        DatosPacienteVLRS datosPacien = new DatosPacienteVLRS ();
-        DatosAntecedentesVLRS datosAnt = new DatosAntecedentesVLRS ();
-        DatosHistoriaClinicaVLRS datosHistClin = new DatosHistoriaClinicaVLRS ();
-        DatosCitaHLBV datosCita = new DatosCitaHLBV ();
+        Datos_Persona datospers = new Datos_Persona ();
+        Datos_Paciente datosPacien = new Datos_Paciente ();
+        Datos_Antecedentes datosAnt = new Datos_Antecedentes ();
+        Datos_HistoriaClinica datosHistClin = new Datos_HistoriaClinica ();
+        Datos_Cita datosCita = new Datos_Cita ();
         Datos_AtencionMedica datosAtmed = new Datos_AtencionMedica ();
         Validacion v = new Validacion ();
 
         HistoriaClinica hisclinic = null;
 
-        private Adm_HistoriaClinicaVLRS () {//2
+        private Adm_HistoriaClinica () {//2
             //listapacientes = new List<PacienteVLRS>();
             v = new Validacion ();
-            datospers = new DatosPersonaVLRS ();
-            datosPacien = new DatosPacienteVLRS ();
-            datosAnt = new DatosAntecedentesVLRS ();
+            datospers = new Datos_Persona ();
+            datosPacien = new Datos_Paciente ();
+            datosAnt = new Datos_Antecedentes ();
         }
 
-        public static Adm_HistoriaClinicaVLRS GetAdm () { //3
+        public static Adm_HistoriaClinica GetAdm () { //3
             if (admPaciente == null) {
-                admPaciente = new Adm_HistoriaClinicaVLRS ();
+                admPaciente = new Adm_HistoriaClinica ();
             }
             return admPaciente;
         }
@@ -315,5 +315,6 @@ namespace Control {
                 MessageBox.Show ("No existe Historia Clinica con la cedula registrada asociada");
             }
         }
+    
     }
 }

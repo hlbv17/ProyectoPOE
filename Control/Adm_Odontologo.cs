@@ -15,16 +15,17 @@ using System.Windows.Forms;
 using System.Globalization;
 
 namespace Control {
-    public class AdmOdontologoEGGM {
+    public class Adm_Odontologo {
+
         List<Odontologo> odontologos = new List<Odontologo> ();
-        private static AdmOdontologoEGGM admO = new AdmOdontologoEGGM ();
-        DatosOdontologoEGGM datosOdonto = new DatosOdontologoEGGM ();
-        AdmHorarioEGGM admhorario = AdmHorarioEGGM.GetAdm ();
+        private static Adm_Odontologo admO = new Adm_Odontologo ();
+        Datos_Odontologo datosOdonto = new Datos_Odontologo ();
+        Adm_Horario admhorario = Adm_Horario.GetAdm ();
         public Odontologo odontologo = null;
-        DatosOdontologoEGGM datosOdon = new DatosOdontologoEGGM ();
+        Datos_Odontologo datosOdon = new Datos_Odontologo ();
 
         List<Odontologo> odontologosF = new List<Odontologo> ();
-        DatosOdontologoEGGM datosodo = new DatosOdontologoEGGM ();
+        Datos_Odontologo datosodo = new Datos_Odontologo ();
         public List<Odontologo> odontologosR = new List<Odontologo> ();
 
         //Validacion val = null;
@@ -32,14 +33,14 @@ namespace Control {
         public List<Odontologo> Odontologos { get => odontologos; set => odontologos = value; }
         public Odontologo Odontologo { get => odontologo; set => odontologo = value; }
 
-        public AdmOdontologoEGGM () {
+        public Adm_Odontologo () {
             odontologos = new List<Odontologo> ();
             //val = new Validacion();
         }
 
-        public static AdmOdontologoEGGM GetAdm () {
+        public static Adm_Odontologo GetAdm () {
             if (admO == null) {
-                admO = new AdmOdontologoEGGM ();
+                admO = new Adm_Odontologo ();
             }
             return admO;
         }

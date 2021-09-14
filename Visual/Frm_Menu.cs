@@ -5,8 +5,8 @@ using System.Windows.Forms;
 namespace Visual {
     public partial class Frm_Menu : Form {
 
-        AdmCitaHLBV adm = AdmCitaHLBV.GetAdm ();
-        Adm_AtencionMedica_ROPB admAM = Adm_AtencionMedica_ROPB.GetAdm ();
+        Adm_Cita adm = Adm_Cita.GetAdm ();
+        Adm_AtencionMedica admAM = Adm_AtencionMedica.GetAdm ();
         public Frm_Menu () {
             InitializeComponent ();
         }

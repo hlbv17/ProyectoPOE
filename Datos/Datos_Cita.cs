@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 
 namespace Datos {
-    public class DatosCitaHLBV {
+    public class Datos_Cita {
 
         // Variables
         Conexion con = new Conexion ();

@@ -41,19 +41,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-    <Compile Include="DatosAntecedentesVLRS.cs" />
-    <Compile Include="DatosCitaHLBV.cs" />
-    <Compile Include="DatosDiasEGGM.cs" />
-    <Compile Include="DatosEspecialidadEGGM.cs" />
-    <Compile Include="DatosHistoriaClinicaVLRS.cs" />
-    <Compile Include="DatosHorarioEGGM.cs" />
-    <Compile Include="DatosOdontologoEGGM.cs" />
-    <Compile Include="DatosPacienteVLRS.cs" />
-    <Compile Include="DatosPersonaVLRS.cs" />
+    <Compile Include="Datos_Antecedentes.cs" />
+    <Compile Include="Datos_Cita.cs" />
+    <Compile Include="Datos_Dias.cs" />
+    <Compile Include="Datos_Especialidad.cs" />
+    <Compile Include="Datos_HistoriaClinica.cs" />
+    <Compile Include="Datos_Horario.cs" />
+    <Compile Include="Datos_Odontologo.cs" />
+    <Compile Include="Datos_Paciente.cs" />
+    <Compile Include="Datos_Persona.cs" />
     <Compile Include="Datos_AtencionMedica.cs" />
     <Compile Include="Datos_PiezaDental.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReporteHisClinicaVLRS.cs" />
+    <Compile Include="Reporte_HistoriaClinica.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

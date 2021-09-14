@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 
 namespace Datos {
-    public class ReporteHisClinicaVLRS {
+    public class Reporte_HistoriaClinica {
 
         SqlCommand cmd = null;
         SqlDataAdapter da = null;

@@ -6,9 +6,9 @@ namespace Visual
 {
     public partial class Frm_Cita_Registrar : Form
     {
-        AdmPacienteHLBV admPa = new AdmPacienteHLBV();
-        AdmOdontologoEGGM admO = AdmOdontologoEGGM.GetAdm();
-        AdmCitaHLBV admCita = AdmCitaHLBV.GetAdm();
+        Adm_Paciente admPa = new Adm_Paciente();
+        Adm_Odontologo admO = Adm_Odontologo.GetAdm();
+        Adm_Cita admCita = Adm_Cita.GetAdm();
         public Frm_Cita_Registrar()
         {
             InitializeComponent();

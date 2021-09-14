@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace Visual {
     public partial class Frm_HistoriaClinica_Filtrar : Form {
 
-        Adm_HistoriaClinicaVLRS admHisClinica = Adm_HistoriaClinicaVLRS.GetAdm ();
+        Adm_HistoriaClinica admHisClinica = Adm_HistoriaClinica.GetAdm ();
         Validacion val = new Validacion ();
         int rbindex, index;
         string sexo, cedula;

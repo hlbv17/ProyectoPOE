@@ -6,7 +6,7 @@ namespace Visual
 {
     public partial class Frm_Cita_Eliminar : Form
     {
-        AdmCitaHLBV admC = AdmCitaHLBV.GetAdm();
+        Adm_Cita admC = Adm_Cita.GetAdm();
         public Frm_Cita_Eliminar()
         {
             InitializeComponent();

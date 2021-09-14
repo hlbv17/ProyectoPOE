@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Control
+namespace Datos
 {
-    class AdmDiasEGGM
+    class Datos_Dias
     {
     }
 }

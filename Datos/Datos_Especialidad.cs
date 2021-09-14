@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 
 namespace Datos {
-    class DatosEspecialidadEGGM {
+    class Datos_Especialidad {
         string e;
         Conexion con = new Conexion ();
         SqlCommand cmd = new SqlCommand ();

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 
 namespace Datos {
-    public class DatosOdontologoEGGM {
+    public class Datos_Odontologo {
         
         List<Odontologo> odontologo = new List<Odontologo> ();
         Conexion con = new Conexion ();
@@ -150,8 +150,8 @@ namespace Datos {
                     cmd.CommandText = sql;
                     dr2 = cmd.ExecuteReader ();
                     if (dr2.Read ()) {
-                        DatosEspecialidadEGGM espec = new DatosEspecialidadEGGM ();
-                        DatosHorarioEGGM h = new DatosHorarioEGGM ();
+                        Datos_Especialidad espec = new Datos_Especialidad ();
+                        Datos_Horario h = new Datos_Horario ();
                         int especi = Convert.ToInt32 (dr2 ["id_especialidad"]);
                         int horario = Convert.ToInt32 (dr2 ["id_horario"]);
                         o.Id_Odontologo = Convert.ToInt32 (dr2 ["id_odontologo"]);
@@ -254,8 +254,8 @@ namespace Datos {
                     while (dr.Read ()) {
                         o = new Odontologo ();
                         //o = new Odontologo (0, "", 0, null, "", 'F', "", DateTime.Now, "", "");
-                        DatosEspecialidadEGGM espec = new DatosEspecialidadEGGM ();
-                        DatosHorarioEGGM datosHorario = new DatosHorarioEGGM ();
+                        Datos_Especialidad espec = new Datos_Especialidad ();
+                        Datos_Horario datosHorario = new Datos_Horario ();
                         o.Cedula = dr ["cedula"].ToString ();
                         o2 = consultarodontologp (o.Cedula);
                         int especilidad, horario;
@@ -400,8 +400,8 @@ namespace Datos {
 
         // Method: ACtualizar2
         public string ACtualizar2 (Odontologo odo, int tipo, int espe) {
-            DatosHorarioEGGM datosHorario = new DatosHorarioEGGM ();
-            DatosEspecialidadEGGM espec = new DatosEspecialidadEGGM ();
+            Datos_Horario datosHorario = new Datos_Horario ();
+            Datos_Especialidad espec = new Datos_Especialidad ();
             string sql1 = "UPDATE Odontologo set  id_odontologo = '" + odo.Id_Odontologo + "', id_especialidad = '" + espe + "', id_horario = '" + tipo + "', consultorio = '" + odo.Consultorio + "', cedula = '" + odo.Cedula +
                 "' WHERE cedula = " + odo.Cedula;
             string mensaje = "";
@@ -438,8 +438,8 @@ namespace Datos {
                     dr = cmd.ExecuteReader ();
                     while (dr.Read ()) {
                         o = new Odontologo (0, "", 0, null, "", 'F', "", DateTime.Now, "", "");
-                        DatosEspecialidadEGGM espec = new DatosEspecialidadEGGM ();
-                        DatosHorarioEGGM datosHorario = new DatosHorarioEGGM ();
+                        Datos_Especialidad espec = new Datos_Especialidad ();
+                        Datos_Horario datosHorario = new Datos_Horario ();
                         o.Cedula = dr ["cedula"].ToString ();
                         o2 = consultarodontologp (o.Cedula);
                         int especilidad, horario;
@@ -580,8 +580,8 @@ namespace Datos {
                     cmd.CommandText = sql;
                     dr = cmd.ExecuteReader ();
                     if (dr.Read ()) {
-                        DatosEspecialidadEGGM espec = new DatosEspecialidadEGGM ();
-                        DatosHorarioEGGM datosHorario = new DatosHorarioEGGM ();
+                        Datos_Especialidad espec = new Datos_Especialidad ();
+                        Datos_Horario datosHorario = new Datos_Horario ();
                         int especilidad, horario;
                         especilidad = Convert.ToInt32 (dr ["id_especialidad"].ToString ());
                         string es = espec.consultarEspecialidad (especilidad);

@@ -13,7 +13,7 @@ namespace Visual
 {
     public partial class Frm_Odontologo_Horario : Form
     {
-        AdmHorarioEGGM admhorario = AdmHorarioEGGM.GetAdm();
+        Adm_Horario admhorario = Adm_Horario.GetAdm();
 
         
 

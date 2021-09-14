@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace Visual {
     public partial class Frm_AtencionMedica_Editar_ROPB : Form {
 
-        Adm_AtencionMedica_ROPB adm = Adm_AtencionMedica_ROPB.GetAdm ();
+        Adm_AtencionMedica adm = Adm_AtencionMedica.GetAdm ();
         Frm_AtencionMedica_Buscar_ROPB frmBuscar;
 
         public Frm_AtencionMedica_Editar_ROPB (DateTime fecha, string hora, string paciente, Frm_AtencionMedica_Buscar_ROPB frmB) {

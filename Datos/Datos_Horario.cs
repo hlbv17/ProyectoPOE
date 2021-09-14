@@ -8,7 +8,7 @@ using System.Text;
 
 
 namespace Datos {
-    public class DatosHorarioEGGM {
+    public class Datos_Horario {
         List<Horario> horario = new List<Horario> ();
         Conexion con = new Conexion ();
         SqlCommand cmd = new SqlCommand ();

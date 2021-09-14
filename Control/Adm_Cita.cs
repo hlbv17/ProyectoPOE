@@ -13,12 +13,13 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Control {
-    public class AdmCitaHLBV {
+    public class Adm_Cita {
+
         private Conexion con = new Conexion ();
-        private static AdmCitaHLBV adm = new AdmCitaHLBV ();
-        DatosCitaHLBV dCita = new DatosCitaHLBV ();
-        DatosPacienteVLRS dPaciente = new DatosPacienteVLRS ();
-        DatosOdontologoEGGM dOdontologo = new DatosOdontologoEGGM ();
+        private static Adm_Cita adm = new Adm_Cita ();
+        Datos_Cita dCita = new Datos_Cita ();
+        Datos_Paciente dPaciente = new Datos_Paciente ();
+        Datos_Odontologo dOdontologo = new Datos_Odontologo ();
 
         List<Cita> citas = null;
         //Validacion val = null;
@@ -35,14 +36,14 @@ namespace Control {
             return Citas.Count;
         }
 
-        public AdmCitaHLBV () {
+        public Adm_Cita () {
             citas = new List<Cita> ();
             //val = new Validacion();
         }
 
-        public static AdmCitaHLBV GetAdm () {
+        public static Adm_Cita GetAdm () {
             if (adm == null) {
-                adm = new AdmCitaHLBV ();
+                adm = new Adm_Cita ();
             }
             return adm;
         }
@@ -129,8 +130,7 @@ namespace Control {
                 txtRegistro.Text += Citas [Citas.Count - 1].ToString () + "\r\n";
         }
 
-        public void LimpiarCamposR (TextBox txtCedula, Label lblNombre, DateTimePicker dtpFecha,
-            ComboBox cmbHora, ComboBox cmbOdontologo, Label lblConsultorio, TextBox txtRegistro) {
+        public void LimpiarCamposR (TextBox txtCedula, Label lblNombre, DateTimePicker dtpFecha, ComboBox cmbHora, ComboBox cmbOdontologo, Label lblConsultorio, TextBox txtRegistro) {
             txtCedula.Text = "";
             cmbHora.SelectedIndex = 0;
             cmbOdontologo.Items.Clear ();
@@ -178,8 +178,7 @@ namespace Control {
             }
         }
 
-        public void LimpiarCampos (TextBox txtCedula, DataGridView dgvCitas, DateTimePicker dtpFecha,
-            ComboBox cmbHora, Button btnImprimir) {
+        public void LimpiarCampos (TextBox txtCedula, DataGridView dgvCitas, DateTimePicker dtpFecha, ComboBox cmbHora, Button btnImprimir) {
             txtCedula.Text = "";
             cmbHora.SelectedIndex = 0;
             dtpFecha.Value = DateTime.Now;
@@ -200,16 +199,12 @@ namespace Control {
             }
         }
 
-        public bool AtencionExistente(DataGridView dgvCitas, int posicion)
-        {
-            int id = Convert.ToInt32(dgvCitas.Rows[posicion].Cells["col_id"].Value);
+        public bool AtencionExistente (DataGridView dgvCitas, int posicion) {
+            int id = Convert.ToInt32 (dgvCitas.Rows [posicion].Cells ["col_id"].Value);
             bool flag = true;
-            if (dCita.PacienteAtendido(id) == false)
-            {
+            if (dCita.PacienteAtendido (id) == false) {
                 flag = true;
-            }
-            else
-            {
+            } else {
                 flag = false;
             }
             return flag;

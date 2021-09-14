@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 
 namespace Datos {
-    public class DatosPersonaVLRS {
+    public class Datos_Persona {
 
         Conexion con = new Conexion ();
         SqlCommand cmd = new SqlCommand ();

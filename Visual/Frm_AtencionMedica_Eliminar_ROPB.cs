@@ -13,7 +13,7 @@ namespace Visual {
 
 
 
-        Adm_AtencionMedica_ROPB adm = Adm_AtencionMedica_ROPB.GetAdm ();
+        Adm_AtencionMedica adm = Adm_AtencionMedica.GetAdm ();
         Frm_AtencionMedica_Buscar_ROPB frmBuscar;
 
         public Frm_AtencionMedica_Eliminar_ROPB (DateTime fecha, string hora, string paciente, Frm_AtencionMedica_Buscar_ROPB frmB) {

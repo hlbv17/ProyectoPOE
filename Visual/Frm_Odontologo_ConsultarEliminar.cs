@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace Visual {
     public partial class Frm_Odontologo_ConsultarEliminar : Form {
 
-        AdmOdontologoEGGM admodo = AdmOdontologoEGGM.GetAdm ();
+        Adm_Odontologo admodo = Adm_Odontologo.GetAdm ();
         public string cedula;
 
         public Frm_Odontologo_ConsultarEliminar () {

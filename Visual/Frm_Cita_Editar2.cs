@@ -6,8 +6,8 @@ namespace Visual
 {
     public partial class Frm_Cita_Editar2 : Form
     {
-        AdmOdontologoEGGM admO = AdmOdontologoEGGM.GetAdm();
-        AdmCitaHLBV admCita = AdmCitaHLBV.GetAdm();
+        Adm_Odontologo admO = Adm_Odontologo.GetAdm();
+        Adm_Cita admCita = Adm_Cita.GetAdm();
         public Frm_Cita_Editar2(DataGridView dgvCitas)
         {
             InitializeComponent();
