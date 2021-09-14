@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 namespace Visual {
     public partial class FrmConsultarANDEliminarodontologo : Form {
+
         AdmOdontologoEGGM admodo = AdmOdontologoEGGM.GetAdm ();
         public string cedula;
 

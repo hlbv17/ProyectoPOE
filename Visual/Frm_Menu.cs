@@ -4,6 +4,7 @@ using System.Windows.Forms;
 
 namespace Visual {
     public partial class Frm_Menu : Form {
+
         AdmCitaHLBV adm = AdmCitaHLBV.GetAdm ();
         Adm_AtencionMedica_ROPB admAM = Adm_AtencionMedica_ROPB.GetAdm ();
         public Frm_Menu () {
@@ -124,7 +125,7 @@ namespace Visual {
 
         private void mni_AM_Consultar_Click (object sender, EventArgs e) {
             if (admAM.ContarLista () > 0) {
-                Frm_AtencionMedica_Buscar_ROPB frm = new Frm_AtencionMedica_Buscar_ROPB ();
+                Frm_AtencionMedica_Buscar_ROPB frm = new Frm_AtencionMedica_Buscar_ROPB ("");
                 frm.ShowDialog ();
             } else {
                 MessageBox.Show ("No hay registro de Atenciones Médicas", "Error!");

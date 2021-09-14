@@ -262,10 +262,10 @@ namespace Control {
 
         public void llenarGrid (DataGridView dgvOdontologo) {
             consultarDBB ();
-            int i = 1;
+            int i = 0;
             foreach (Odontologo x in odontologos) {
-                dgvOdontologo.Rows.Add (i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado (x.Consultorio), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);
                 i++;
+                dgvOdontologo.Rows.Add (i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado (x.Consultorio), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);
             }
         }
 

@@ -22,18 +22,32 @@ namespace Visual {
         //bool firstTime;
 
 
-        public Frm_AtencionMedica_Buscar_ROPB () {
+        public Frm_AtencionMedica_Buscar_ROPB (string nombre) {
             InitializeComponent ();
-
             // Ejecuciones al inicar el formulario.
             buscarGlobal = 0;
             adm.LlenarComboPacienteAutomatico (dtp_Fecha, cmb_Hora, cmb_Paciente, 2);
             adm.LlenarComboHoraAutomatico (dtp_Fecha, cmb_Hora, 2);
             adm.LlenarTablaAntencionMedica (dgv_AntencionMedica, lbl_Total);
             btn_Reporte.Enabled = true;
-            AutoSeleccionFilaDefault ();
-            //firstTime = true;
+            HistoriaClinica (nombre);
+        }
 
+        private void HistoriaClinica (string nombre) {
+            if (nombre != "") {
+                rdb_No.Checked = true;
+                cmb_Paciente.SelectedItem = nombre;
+                buscarGlobal = 2;   // 2: btn_Buscar_PacienteHora
+                adm.LlenarTablaAntencionMedicaBuscar (dgv_AntencionMedica, lbl_Total, cmb_Paciente, dtp_Fecha, cmb_Hora, buscarGlobal);
+                if (adm.ContarListaBuscar () > 0) {
+                    AutoSeleccionFilaDefault ();
+                    HabilitarCampos ();
+                } else {
+                    DeshabilitarCampos ();
+                }
+            } else {
+                AutoSeleccionFilaDefault ();
+            }
         }
 
         // Method: AutoSeleccionFilaDefault

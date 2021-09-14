@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace Visual {
     public partial class FrmFiltrarVLRS : Form {
+
         Adm_HistoriaClinicaVLRS admHisClinica = Adm_HistoriaClinicaVLRS.GetAdm ();
         Validacion val = new Validacion ();
         int rbindex, index;
         string sexo, cedula;
         DateTime fechaDesde, fechaHasta;
+
         public FrmFiltrarVLRS () {
             InitializeComponent ();
             panelCedu.Visible = false;
@@ -134,14 +136,10 @@ namespace Visual {
         private void btn_AtencionMedica_Click (object sender, EventArgs e) {
             var filaSeleccionada = dgvPacientes.CurrentRow;
             if (filaSeleccionada != null) { //¿Existe una referencia?
-                string nombre = filaSeleccionada.Cells [2].Value.ToString ();
-                Console.WriteLine (nombre);
-                Frm_AtencionMedica_Buscar_ROPB frm = new Frm_AtencionMedica_Buscar_ROPB ();
+                string paciente = filaSeleccionada.Cells [2].Value.ToString ();
+                Console.WriteLine (paciente);
+                Frm_AtencionMedica_Buscar_ROPB frm = new Frm_AtencionMedica_Buscar_ROPB (paciente);
                 frm.ShowDialog ();
-
-                //string cedula = filaSeleccionada.Cells [1].Value.ToString ();
-                //Console.WriteLine (cedula);
-                //admHisClinica.Eliminar (dgvPacientes, cedula, lblTotal, filaSeleccionada);
             }
         }
 

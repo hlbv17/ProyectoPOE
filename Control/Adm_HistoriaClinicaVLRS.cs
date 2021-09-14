@@ -17,8 +17,8 @@ using System.Windows.Forms;
 
 namespace Control {
     public class Adm_HistoriaClinicaVLRS {
-        private static Adm_HistoriaClinicaVLRS
-            admPaciente = null;//1
+        
+        private static Adm_HistoriaClinicaVLRS admPaciente = null;//1
 
         List<Paciente> listapacientes = new List<Paciente> ();
         List<HistoriaClinica> listahClinica = new List<HistoriaClinica> ();
@@ -35,7 +35,6 @@ namespace Control {
         Paciente paciente = null;
         Antecedente antecedente = null;
         HistoriaClinica hisclinic = null;
-
 
         private Adm_HistoriaClinicaVLRS () {//2
             //listapacientes = new List<PacienteVLRS>();
@@ -68,11 +67,8 @@ namespace Control {
         public void LlenarGrid (DataGridView dgvPacientes, Label lblTotal) {
             ConsultarBBDHclinic ();
             int i = 1;
-
             foreach (HistoriaClinica hcl in listahClinica) {
-
-                dgvPacientes.Rows.Add (hcl.Id_hclinica, hcl.Paciente.Cedula, hcl.Paciente.Nombre, hcl.Paciente.LeerSexo (), hcl.Paciente.FechaNacimiento.ToShortDateString (),
-                    hcl.Paciente.Discapacidad, hcl.Paciente.Etapa, hcl.Antecedente.Antecedenteper, hcl.Antecedente.AntecedenteFam, hcl.AtencionMedica.Count ());
+                dgvPacientes.Rows.Add (hcl.Id_hclinica, hcl.Paciente.Cedula, hcl.Paciente.Nombre, hcl.Paciente.LeerSexo (), hcl.Paciente.FechaNacimiento.ToShortDateString (), hcl.Paciente.Discapacidad, hcl.Paciente.Etapa, hcl.Antecedente.Antecedenteper, hcl.Antecedente.AntecedenteFam, datosAtmed.ConsultarCantidadAMxPaciente (hcl.Paciente.Nombre));
                 i++;
             }
             lblTotal.Text = i - 1 + " ";
@@ -105,8 +101,6 @@ namespace Control {
             if (listahClinica.Count == 0)
                 MessageBox.Show ("Error: No existen datos con esos parámetros de consulta");
         }
-
-        
 
         public void Guardar (string cedula, string nombre, string sexo, string telefono, string correo, string discapacidad, string aPersonales, string aFamiliares, DateTime fechaNac, int guar_o_edi) {
 
