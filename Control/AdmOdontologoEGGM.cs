@@ -270,6 +270,7 @@ namespace Control {
         }
 
         private void consultarDBB () {
+            odontologos.Clear ();
             odontologos = datosodo.ConsultarPersonaOdontTodos ();
             if (odontologos == null)
                 MessageBox.Show ("Error: Se se consultaron los datos");
