@@ -9,7 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace Visual {
-    public partial class FrmFiltrarVLRS : Form {
+    public partial class Frm_HistoriaClinica_Filtrar : Form {
 
         Adm_HistoriaClinicaVLRS admHisClinica = Adm_HistoriaClinicaVLRS.GetAdm ();
         Validacion val = new Validacion ();
@@ -17,7 +17,7 @@ namespace Visual {
         string sexo, cedula;
         DateTime fechaDesde, fechaHasta;
 
-        public FrmFiltrarVLRS () {
+        public Frm_HistoriaClinica_Filtrar () {
             InitializeComponent ();
             panelCedu.Visible = false;
             panelSeFech.Visible = false;
@@ -51,7 +51,7 @@ namespace Visual {
         }
 
         private void btnEditar_Click (object sender, EventArgs e) {
-            FrmEditarVLRS frm = new FrmEditarVLRS ();
+            Frm_HistoriaClinica_Editar frm = new Frm_HistoriaClinica_Editar ();
             var filaSeleccionada = dgvPacientes.CurrentRow;
 
             if (filaSeleccionada != null) //¿Existe una referencia?

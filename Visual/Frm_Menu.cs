@@ -72,37 +72,37 @@ namespace Visual {
         }
 
         private void registrarToolStripMenuItem_Click (object sender, EventArgs e) {
-            FrmIngresoHisClinicaVLRS frm = new FrmIngresoHisClinicaVLRS ();
+            Frm_HistoriaClinica_Registrar frm = new Frm_HistoriaClinica_Registrar ();
             frm.ShowDialog ();
         }
 
         private void editarToolStripMenuItem_Click (object sender, EventArgs e) {
-            FrmFiltrarVLRS frm = new FrmFiltrarVLRS ();
+            Frm_HistoriaClinica_Filtrar frm = new Frm_HistoriaClinica_Filtrar ();
             frm.ShowDialog ();
         }
 
         private void registrarToolStripMenuItem_Click_1 (object sender, EventArgs e) {
-            FrmIngresoHisClinicaVLRS frm = new FrmIngresoHisClinicaVLRS ();
+            Frm_HistoriaClinica_Registrar frm = new Frm_HistoriaClinica_Registrar ();
             frm.ShowDialog ();
         }
 
         private void editarToolStripMenuItem_Click_1 (object sender, EventArgs e) {
-            FrmFiltrarVLRS frm = new FrmFiltrarVLRS ();
+            Frm_HistoriaClinica_Filtrar frm = new Frm_HistoriaClinica_Filtrar ();
             frm.ShowDialog ();
         }
 
         private void eliminarToolStripMenuItem_Click (object sender, EventArgs e) {
-            FrmFiltrarVLRS frm = new FrmFiltrarVLRS ();
+            Frm_HistoriaClinica_Filtrar frm = new Frm_HistoriaClinica_Filtrar ();
             frm.ShowDialog ();
         }
 
         private void consultarToolStripMenuItem_Click (object sender, EventArgs e) {
-            FrmFiltrarVLRS frm = new FrmFiltrarVLRS ();
+            Frm_HistoriaClinica_Filtrar frm = new Frm_HistoriaClinica_Filtrar ();
             frm.ShowDialog ();
         }
 
         private void reporteToolStripMenuItem_Click (object sender, EventArgs e) {
-            FrmFiltrarVLRS frm = new FrmFiltrarVLRS ();
+            Frm_HistoriaClinica_Filtrar frm = new Frm_HistoriaClinica_Filtrar ();
             frm.ShowDialog ();
         }
 

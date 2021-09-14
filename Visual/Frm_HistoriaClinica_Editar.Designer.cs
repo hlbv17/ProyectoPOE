@@ -1,7 +1,7 @@
 ﻿
 namespace Visual
 {
-    partial class FrmEditarVLRS
+    partial class Frm_HistoriaClinica_Editar
     {
         /// <summary>
         /// Required designer variable.

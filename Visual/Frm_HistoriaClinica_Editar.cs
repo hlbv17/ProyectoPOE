@@ -12,14 +12,14 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class FrmEditarVLRS : Form
+    public partial class Frm_HistoriaClinica_Editar : Form
     {
         Adm_HistoriaClinicaVLRS admHisclin = Adm_HistoriaClinicaVLRS.GetAdm();
         Validacion val = new Validacion();
         DatosHistoriaClinicaVLRS datosHistClin = new DatosHistoriaClinicaVLRS();
         HistoriaClinica hisclinic = null;
 
-        public FrmEditarVLRS()
+        public Frm_HistoriaClinica_Editar()
         {
             InitializeComponent();
         }

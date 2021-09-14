@@ -1,7 +1,7 @@
 ﻿
 namespace Visual
 {
-    partial class FrmIngresoHisClinicaVLRS
+    partial class Frm_HistoriaClinica_Registrar
     {
         /// <summary>
         /// Required designer variable.
