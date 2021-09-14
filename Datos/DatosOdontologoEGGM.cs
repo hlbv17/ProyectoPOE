@@ -9,7 +9,6 @@ using System.Text;
 namespace Datos {
     public class DatosOdontologoEGGM {
         
-        Conexion con2 = new Conexion ();
         List<Odontologo> odontologo = new List<Odontologo> ();
         Conexion con = new Conexion ();
         SqlCommand cmd = new SqlCommand ();
@@ -90,7 +89,7 @@ namespace Datos {
             SqlDataReader dr = null;
             Console.WriteLine (sql);
             string mensaje = "";
-            mensaje = con2.Conectar ();
+            mensaje = con.Conectar ();
             if (mensaje [0] == '1') {
                 try {
                     cmd.Connection = con.Cn;
@@ -109,7 +108,7 @@ namespace Datos {
                     Console.WriteLine ("Error al consultar en la tabla paciente " + ex.Message);
                 }
             }
-            con2.Cerrar ();
+            con.Cerrar ();
             return o;
         }
         //----------------------------------------------------------------------------------------------
