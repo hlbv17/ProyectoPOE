@@ -230,7 +230,11 @@ namespace Datos {
                 {
                     flag = true;
                 }
-                flag = false;
+                else
+                {
+                    flag = false;
+                }
+                
             }
             con.Cerrar();
             return flag;

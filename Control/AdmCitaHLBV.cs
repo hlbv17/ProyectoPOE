@@ -204,7 +204,7 @@ namespace Control {
         {
             int id = Convert.ToInt32(dgvCitas.Rows[posicion].Cells["col_id"].Value);
             bool flag = true;
-            if (dCita.PacienteAtendido(id) == false)
+            if (dCita.PacienteAtendido(id) == true)
             {
                 flag = true;
             }
