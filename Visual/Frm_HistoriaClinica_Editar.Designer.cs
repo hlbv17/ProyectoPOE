@@ -114,6 +114,7 @@ namespace Visual
             this.btnEditar.TabIndex = 95;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
             // 
             // txtPresentar
             // 
@@ -533,7 +534,7 @@ namespace Visual
             this.label1.TabIndex = 58;
             this.label1.Text = "Cedula:";
             // 
-            // FrmEditarVLRS
+            // Frm_HistoriaClinica_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -578,7 +579,7 @@ namespace Visual
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "FrmEditarVLRS";
+            this.Name = "Frm_HistoriaClinica_Editar";
             this.Text = "FrmEditarVLRS";
             ((System.ComponentModel.ISupportInitialize)(this.errorP)).EndInit();
             this.panel1.ResumeLayout(false);

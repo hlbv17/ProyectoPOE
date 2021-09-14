@@ -17,7 +17,7 @@ namespace Datos {
 
         // Method: DatosHistoriaClinicaVLRS
         public string insertar (HistoriaClinica hisclinica) {
-            string sql = "INSERT INTO Historia_Clinica (id_paciente,id_antecedentes) VALUES(" + hisclinica.Paciente.Id_paciente + "," +
+            string sql = "INSERT INTO HistoriaClinica (id_paciente,id_antecedentes) VALUES(" + hisclinica.Paciente.Id_paciente + "," +
                         hisclinica.Antecedente.Id_antecedente + ")";
             Console.WriteLine (sql);
             string mensaje = "";
@@ -42,7 +42,7 @@ namespace Datos {
             HistoriaClinica hclinic = null;
             Paciente paciente = null;
             Antecedente antecedente = null;
-            string sql = "Select * from Historia_Clinica where id_paciente=" + id_paciente;
+            string sql = "Select * from HistoriaClinica where id_paciente=" + id_paciente;
             SqlDataReader dr = null; //tabla virtual
             Console.WriteLine (sql);
             string mensaje = "";
@@ -72,7 +72,7 @@ namespace Datos {
 
         // Method: Eliminar
         public String Eliminar (long id_paciente) {
-            string sql = "Delete from Historia_Clinica where id_paciente=" + id_paciente;
+            string sql = "Delete from HistoriaClinica where id_paciente=" + id_paciente;
             Console.WriteLine (sql);
             string mensaje = "";
             mensaje = con.Conectar ();
@@ -99,10 +99,10 @@ namespace Datos {
             Paciente paciente = null;
             Antecedente antecedente = null;
             List<HistoriaClinica> listaHclinicas = new List<HistoriaClinica> ();
-            string sql = "SELECT Historia_Clinica.id_historiaClinica, Persona.cedula, Persona.nombres, Persona.id_sexo, Persona.fechaNacimiento, Paciente.discapacidad, EtapaEdad.etapa, Antecedentes.antecedentePersonal, Antecedentes.antecedenteFamiliar \n" +
+            string sql = "SELECT HistoriaClinica.id_historiaClinica, Persona.cedula, Persona.nombres, Persona.id_sexo, Persona.fechaNacimiento, Paciente.discapacidad, EtapaEdad.etapa, Antecedentes.antecedentePersonal, Antecedentes.antecedenteFamiliar \n" +
                 "FROM Antecedentes \n" +
-                "INNER JOIN HistoriaClinica Historia_Clinica ON Antecedentes.id_antecedentes = Historia_Clinica.id_antecedentes \n" +
-                "INNER JOIN Paciente ON Historia_Clinica.id_paciente = Paciente.id_paciente \n" +
+                "INNER JOIN HistoriaClinica HistoriaClinica ON Antecedentes.id_antecedentes = HistoriaClinica.id_antecedentes \n" +
+                "INNER JOIN Paciente ON HistoriaClinica.id_paciente = Paciente.id_paciente \n" +
                 "INNER JOIN Persona ON Paciente.id_paciente = Persona.id_persona \n" +
                 "INNER JOIN EtapaEdad ON Paciente.id_etapaEdad = EtapaEdad.id_etapaEdad \n";
             SqlDataReader dr = null; //tabla virtual
@@ -145,13 +145,12 @@ namespace Datos {
             Paciente paciente = null;
             Antecedente antecedente = null;
             List<HistoriaClinica> listaHclinicas = new List<HistoriaClinica> ();
-            string sql = "SELECT Historia_Clinica.id_historiaClinica, Persona.cedula, Persona.nombre, Persona.id_sexo, Persona.fechaNacimiento, " +
-                                "Paciente.discapacidad, EtapaEdad.etapa, Antecedentes.antecedentePersonal, Antecedentes.antecedenteFamiliar \n" +
-                        " FROM Antecedentes INNER JOIN \n" +
-                            " Historia_Clinica ON Antecedentes.id_antecedentes = Historia_Clinica.id_antecedentes INNER JOIN \n" +
-                            " Paciente ON Historia_Clinica.id_paciente = Paciente.id_paciente INNER JOIN \n" +
-                            " Persona ON Paciente.id_persona = Persona.id_persona INNER JOIN \n" +
-                            " EtapaEdad ON Paciente.id_etapaEdad = EtapaEdad.id_etapaEdad \n";
+            string sql = "SELECT HistoriaClinica.id_historiaClinica, Persona.cedula, Persona.nombres, Persona.id_sexo, Persona.fechaNacimiento, Paciente.discapacidad, EtapaEdad.etapa, Antecedentes.antecedentePersonal, Antecedentes.antecedenteFamiliar \n" +
+                "FROM Antecedentes \n" +
+                "INNER JOIN HistoriaClinica HistoriaClinica ON Antecedentes.id_antecedentes = HistoriaClinica.id_antecedentes \n" +
+                "INNER JOIN Paciente ON HistoriaClinica.id_paciente = Paciente.id_paciente \n" +
+                "INNER JOIN Persona ON Paciente.id_paciente = Persona.id_persona \n" +
+                "INNER JOIN EtapaEdad ON Paciente.id_etapaEdad = EtapaEdad.id_etapaEdad \n";
             string sqlsexo = " (Persona.id_sexo = '" + sexo + "') \n";
             string sqlcedula = " (Persona.cedula = '" + cedula + "') \n";
             string sqlfechas = " Persona.fechaNacimiento BETWEEN' " + fechaDesde.ToString ("yyyy-MM-dd") + "' AND '" + fechaHasta.ToString ("yyyy-MM-dd") + "'";
@@ -191,7 +190,7 @@ namespace Datos {
                         hclinic.Paciente = paciente;
                         hclinic.Id_hclinica = Convert.ToInt32 (dr ["id_historiaClinica"]);
                         hclinic.Paciente.Cedula = dr ["cedula"].ToString ();
-                        hclinic.Paciente.Nombre = dr ["nombre"].ToString ();
+                        hclinic.Paciente.Nombre = dr ["nombres"].ToString ();
                         hclinic.Paciente.Sexo = Convert.ToChar (dr ["id_sexo"]);
                         hclinic.Paciente.FechaNacimiento = Convert.ToDateTime (dr ["fechaNacimiento"]);
                         hclinic.Paciente.Discapacidad = dr ["discapacidad"].ToString ();
@@ -213,12 +212,12 @@ namespace Datos {
             HistoriaClinica hclinic = null;
             Paciente paciente = null;
             Antecedente antecedente = null;
-            string sql = "SELECT Persona.cedula, Persona.nombre, Persona.fechaNacimiento, Persona.telefono, Persona.correo, Paciente.discapacidad, Antecedentes.antecedenteFamiliar, Antecedentes.antecedentePersonal," +
+            string sql = "SELECT Persona.cedula, Persona.nombres, Persona.fechaNacimiento, Persona.telefono, Persona.correo, Paciente.discapacidad, Antecedentes.antecedenteFamiliar, Antecedentes.antecedentePersonal," +
                   " Persona.id_sexo" +
                     " FROM Antecedentes INNER JOIN" +
-                    " Historia_Clinica ON Antecedentes.id_antecedentes = Historia_Clinica.id_antecedentes INNER JOIN" +
-                    " Paciente ON Historia_Clinica.id_paciente = Paciente.id_paciente INNER JOIN" +
-                    " Persona ON Paciente.id_persona = Persona.id_persona INNER JOIN" +
+                    " HistoriaClinica ON Antecedentes.id_antecedentes = HistoriaClinica.id_antecedentes INNER JOIN" +
+                    " Paciente ON HistoriaClinica.id_paciente = Paciente.id_paciente INNER JOIN" +
+                    " Persona ON Paciente.id_paciente  = Persona.id_persona INNER JOIN" +
                     " Sexo ON Persona.id_sexo = Sexo.id_sexo" +
                     " WHERE (Persona.cedula = '" + cedula + "')";
             SqlDataReader dr = null; //tabla virtual
@@ -237,7 +236,7 @@ namespace Datos {
                         hclinic.Antecedente = antecedente;
                         hclinic.Paciente = paciente;
                         hclinic.Paciente.Cedula = dr ["cedula"].ToString ();
-                        hclinic.Paciente.Nombre = dr ["nombre"].ToString ();
+                        hclinic.Paciente.Nombre = dr ["nombres"].ToString ();
                         hclinic.Paciente.Sexo = Convert.ToChar (dr ["id_sexo"]);
                         hclinic.Paciente.Discapacidad = dr ["discapacidad"].ToString ();
                         hclinic.Paciente.FechaNacimiento = DateTime.Parse (dr ["fechaNacimiento"].ToString ());

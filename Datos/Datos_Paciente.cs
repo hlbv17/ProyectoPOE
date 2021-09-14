@@ -16,7 +16,7 @@ namespace Datos {
 
         // Method: 
         public String insertar (Paciente paciente) { //Persona
-            string sql = "INSERT INTO Paciente (id_persona,discapacidad,id_etapaEdad) VALUES(" + paciente.Id_persona + ",'" +
+            string sql = "INSERT INTO Paciente (id_paciente,discapacidad,id_etapaEdad) VALUES(" + paciente.Id_persona + ",'" +
                 paciente.Discapacidad + "'," + paciente.Id_EtapaEdad () + ")";
             Console.WriteLine (sql);
             string mensaje = "";
@@ -39,11 +39,11 @@ namespace Datos {
         // Method: 
         public Paciente consultarPersonaPac (string cedula) {
             Paciente pa = null;
-            string sql = "SELECT Persona.id_persona, Persona.cedula, Persona.nombre, Persona.fechaNacimiento, Persona.telefono," +
+            string sql = "SELECT Persona.id_persona, Persona.cedula, Persona.nombres, Persona.fechaNacimiento, Persona.telefono," +
                               " Persona.correo, Persona.id_sexo, Paciente.id_paciente, Paciente.discapacidad,"
                             + " Paciente.id_etapaEdad" +
-                        " FROM Persona INNER JOIN" +
-                             " Paciente ON Persona.id_persona = Paciente.id_persona" +
+                        " FROM Paciente INNER JOIN" +
+                             " Persona ON Paciente.id_paciente = Persona.id_persona" +
                         " WHERE(Persona.cedula ='" + cedula + "')";
 
             SqlDataReader dr = null; //tabla virtual
@@ -59,7 +59,7 @@ namespace Datos {
                         pa = new Paciente ();
                         pa.Id_persona = Convert.ToInt32 (dr ["id_persona"]);
                         pa.Cedula = dr ["cedula"].ToString ();
-                        pa.Nombre = dr ["nombre"].ToString ();
+                        pa.Nombre = dr ["nombres"].ToString ();
                         pa.FechaNacimiento = Convert.ToDateTime (dr ["fechaNacimiento"]);
                         pa.Telefono = dr ["telefono"].ToString ();
                         pa.Correo = dr ["correo"].ToString ();
@@ -104,7 +104,7 @@ namespace Datos {
         public String Actualizar (Paciente paciente, long id_persona) {
             string sql = "UPDATE  Paciente " +
                 " SET discapacidad= '" + paciente.Discapacidad + "',id_etapaEdad= " + paciente.Id_EtapaEdad () +
-                " WHERE id_persona =" + id_persona;
+                " WHERE id_paciente =" + id_persona;
             ;
             Console.WriteLine (sql);
             string mensaje = "";

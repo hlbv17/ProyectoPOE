@@ -403,14 +403,10 @@ namespace Datos {
         /*----------------------------------------VLRS------------------------------------------------------*/
 
         //----------------------------------Para eliminar desde historia clinica-------------------------------------------------------------------------
-        public int ConsultarAtencionMedicaHiscL(int idHisClin)
+
+        public string EliminarAtencionMedicaHisCl(int id_Hisclin)//eliminar desde HisCLinica
         {
-            int idAM = 0;
-            string sql = "SELECT Historia_Clinica.id_historiaClinica, AtencionMedica.id_atencionMedica \n" +    //
-                " FROM     AtencionMedica INNER JOIN \n" +
-                " Historia_Clinica ON AtencionMedica.id_historiaClinica = Historia_Clinica.id_historiaClinica \n" +
-                " WHERE Historia_Clinica.id_historiaClinica  = '" + idHisClin + "'";
-            SqlDataReader dr = null;
+            string sql = "DELETE FROM AtencionMedica WHERE id_historiaClinica = '" + id_Hisclin + "'";
             Console.WriteLine(sql);
             string mensaje = "";
             mensaje = con.Conectar();
@@ -420,18 +416,17 @@ namespace Datos {
                 {
                     cmd.Connection = con.Cn;
                     cmd.CommandText = sql;
-                    dr = cmd.ExecuteReader();
-                    if (dr.Read())
-                    {
-                        idAM = Convert.ToInt32(dr["id_AtencionMedica"].ToString());
-                    }
+                    cmd.ExecuteNonQuery();
+                    return "1";
                 }
-                catch (Exception ex)
+                catch (Exception e)
                 {
-                    Console.WriteLine("¡---ERROR---ConsultarIdAtencionMedica---! " + ex.Message);
+                    Console.WriteLine("Error al eliminar dato. " + e.Message);
+                    return "0" + e.Message;
                 }
             }
-            return idAM;
+            con.Cerrar();
+            return mensaje;
         }
     }
 }
