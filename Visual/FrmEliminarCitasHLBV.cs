@@ -24,7 +24,7 @@ namespace Visual
                 }
                 else
                 {
-                    MessageBox.Show("Error al eliminar: \nEste paciente ya fue atendido");
+                    MessageBox.Show("Este paciente ya fue atendido", "Error al eliminar" );
                 }
             }
             else
