@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Visual
 {
-    public partial class FrmIngresoHisClinicaVLRS : Form
+    public partial class Frm_HistoriaClinica_Registrar : Form
     {
         Adm_HistoriaClinicaVLRS admPac = Adm_HistoriaClinicaVLRS.GetAdm();
         Validacion val = new Validacion();
-        public FrmIngresoHisClinicaVLRS()
+        public Frm_HistoriaClinica_Registrar()
         {
             InitializeComponent();
         }

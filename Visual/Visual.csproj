@@ -68,11 +68,11 @@
     <Compile Include="FrmEditarCitasHLBV.Designer.cs">
       <DependentUpon>FrmEditarCitasHLBV.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmEditarVLRS.cs">
+    <Compile Include="Frm_HistoriaClinica_Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmEditarVLRS.Designer.cs">
-      <DependentUpon>FrmEditarVLRS.cs</DependentUpon>
+    <Compile Include="Frm_HistoriaClinica_Editar.Designer.cs">
+      <DependentUpon>Frm_HistoriaClinica_Editar.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmEliminarCitasHLBV.cs">
       <SubType>Form</SubType>
@@ -86,11 +86,11 @@
     <Compile Include="FrmFiltrarCitasHLBV.Designer.cs">
       <DependentUpon>FrmFiltrarCitasHLBV.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmFiltrarVLRS.cs">
+    <Compile Include="Frm_HistoriaClinica_Filtrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmFiltrarVLRS.Designer.cs">
-      <DependentUpon>FrmFiltrarVLRS.cs</DependentUpon>
+    <Compile Include="Frm_HistoriaClinica_Filtrar.Designer.cs">
+      <DependentUpon>Frm_HistoriaClinica_Filtrar.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmHorarioEGGM.cs">
       <SubType>Form</SubType>
@@ -98,11 +98,11 @@
     <Compile Include="FrmHorarioEGGM.Designer.cs">
       <DependentUpon>FrmHorarioEGGM.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmIngresoHisClinicaVLRS.cs">
+    <Compile Include="Frm_HistoriaClinica_Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmIngresoHisClinicaVLRS.Designer.cs">
-      <DependentUpon>FrmIngresoHisClinicaVLRS.cs</DependentUpon>
+    <Compile Include="Frm_HistoriaClinica_Registrar.Designer.cs">
+      <DependentUpon>Frm_HistoriaClinica_Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmListarCitasHLBV.cs">
       <SubType>Form</SubType>
@@ -172,8 +172,8 @@
     <EmbeddedResource Include="FrmEditarCitasHLBV.resx">
       <DependentUpon>FrmEditarCitasHLBV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmEditarVLRS.resx">
-      <DependentUpon>FrmEditarVLRS.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_HistoriaClinica_Editar.resx">
+      <DependentUpon>Frm_HistoriaClinica_Editar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEliminarCitasHLBV.resx">
       <DependentUpon>FrmEliminarCitasHLBV.cs</DependentUpon>
@@ -181,14 +181,14 @@
     <EmbeddedResource Include="FrmFiltrarCitasHLBV.resx">
       <DependentUpon>FrmFiltrarCitasHLBV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmFiltrarVLRS.resx">
-      <DependentUpon>FrmFiltrarVLRS.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_HistoriaClinica_Filtrar.resx">
+      <DependentUpon>Frm_HistoriaClinica_Filtrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHorarioEGGM.resx">
       <DependentUpon>FrmHorarioEGGM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmIngresoHisClinicaVLRS.resx">
-      <DependentUpon>FrmIngresoHisClinicaVLRS.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_HistoriaClinica_Registrar.resx">
+      <DependentUpon>Frm_HistoriaClinica_Registrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListarCitasHLBV.resx">
       <DependentUpon>FrmListarCitasHLBV.cs</DependentUpon>
