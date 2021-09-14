@@ -13,7 +13,7 @@ namespace Datos {
         //private static string cadena = "Data Source=desktop-ek3b3mp\\sqlexpress;Initial Catalog = DentalingE2GM; Integrated Security = True";
 
         /*----------------------------------------HLBV------------------------------------------------------*/
-        private static string cadena = "Data Source=HEBE\\SQLEXPRESS;Initial Catalog=dentalig;Integrated Security=True";
+        private static string cadena = "Data Source=HEBE\\SQLEXPRESS;Initial Catalog=dentalig_grupo;Integrated Security=True";
 
         /*----------------------------------------ROPB------------------------------------------------------*/
         //private static string cadena = "Data Source=DESKTOP-F0FU8NS\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Dentalig";

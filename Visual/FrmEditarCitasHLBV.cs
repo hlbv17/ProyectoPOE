@@ -78,9 +78,22 @@ namespace Visual
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            int posicion = dgvCitas.CurrentRow.Index,
-                id= Convert.ToInt32(dgvCitas.Rows[posicion].Cells["col_id"].Value);
-            admCita.ActualizarDatos(posicion, id, lblId, txtCedula, lblPaciente, dtpFecha, cmbHora, cmbOdontologo, lblConsultorio);
+            int posicion = dgvCitas.CurrentRow.Index, id= Convert.ToInt32(dgvCitas.Rows[posicion].Cells["col_id"].Value);
+            if (posicion >= 0)
+            {
+                if (admCita.AtencionExistente(dgvCitas, posicion) == false)
+                {
+                    admCita.ActualizarDatos(posicion, id, lblId, txtCedula, lblPaciente, dtpFecha, cmbHora, cmbOdontologo, lblConsultorio);
+                }
+                else
+                {
+                    MessageBox.Show("Error al editar: \nEste paciente ya fue atendido");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No ha realizado la consulta");
+            }
         }
     }
 }

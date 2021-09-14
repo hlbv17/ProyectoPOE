@@ -21,10 +21,21 @@ namespace Visual
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int posicion = dgvCitas.CurrentRow.Index; 
+            int posicion = dgvCitas.CurrentRow.Index;
             if (posicion >= 0)
             {
-                admC.EliminarCita(dgvCitas, posicion);
+                if (admC.AtencionExistente(dgvCitas, posicion) == false)
+                {
+                    admC.EliminarCita(dgvCitas, posicion);
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar: \nEste paciente ya fue atendido");
+                }
+            }
+            else
+            {
+                MessageBox.Show("No ha realizado la consulta");
             }
         }
 
