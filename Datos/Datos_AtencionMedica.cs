@@ -8,10 +8,11 @@ using System.Text;
 namespace Datos {
     public class Datos_AtencionMedica {
 
-
         // Variable
         Conexion con = new Conexion ();
         SqlCommand cmd = new SqlCommand ();
+
+        /*----------------------------------------ROPB------------------------------------------------------*/
 
         // Method: InsertarAteniconMedica
         public string InsertarAteniconMedica (AtencionMedica am) {
@@ -300,8 +301,33 @@ namespace Datos {
             return mensaje;
         }
 
-        /*
-         --- Reporte iText7.1.14--------------------------------------------------------------------------------------------------------*/
+        public int ConsultarCantidadAMxPaciente (string nombre) {
+            int output = -1;
+            string sql = "SELECT COUNT (P.nombres) as numero \n"+
+                "FROM AtencionMedica AM \n" +
+                "INNER JOIN Cita C ON C.id_cita = AM.id_cita \n" +
+                "INNER JOIN Persona P ON P.id_persona = C.id_paciente \n" +
+                "WHERE nombres = '" + nombre + "'";
+            SqlDataReader dr = null;
+            Console.WriteLine (sql);
+            string mensaje = "";
+            mensaje = con.Conectar ();
+            if (mensaje [0] == '1') {
+                try {
+                    cmd.Connection = con.Cn;
+                    cmd.CommandText = sql;
+                    dr = cmd.ExecuteReader ();
+                    if (dr.Read ()) {
+                        output = Convert.ToInt32 (dr ["numero"].ToString ());
+                    }
+                } catch (Exception ex) {
+                    Console.WriteLine ("¡---ERROR---ConsultarCantidadAMxPaciente---! " + ex.Message);
+                }
+            }
+            return output;
+        }
+
+        /*---Reporte iText7.1.14---*/
 
         // Method: BuscarAtencionMedicaReporte
         public List<AtencionMedica> BuscarAtencionMedicaReporte (string paciente, DateTime fecha, string hora, int n) {
@@ -374,6 +400,7 @@ namespace Datos {
             return listaAM;
         }
 
+        /*----------------------------------------VLRS------------------------------------------------------*/
 
         //----------------------------------Para eliminar desde historia clinica-------------------------------------------------------------------------
         public int ConsultarAtencionMedicaHiscL(int idHisClin)
