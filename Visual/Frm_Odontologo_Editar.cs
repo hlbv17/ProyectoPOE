@@ -26,10 +26,10 @@ namespace Visual {
             int w = Convert.ToInt32 (idodo.Text);
             DateTime fechaNac = dateTimePicker1.Value.Date;
             char sexo = Convert.ToChar (cmbSexo.Text);
-            Console.WriteLine (" " + w + " " + admhorario.Horario1 [1]);
+           
 
             try {
-                admodo.guardarActualizar (w, nombre, cedula, especialidad, sexo, fechaNac, correo, telefono, consultorio, admhorario.HorarioOdont [1]);
+                admodo.guardarActualizar (w, nombre, cedula, especialidad, sexo, fechaNac, correo, telefono, consultorio, admhorario.HorarioOdont [0]);
 
                 MessageBox.Show (admodo.mostrardatos (), "DATOS GUARDADOS");
             } catch (Exception ex) {

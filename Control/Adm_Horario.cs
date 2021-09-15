@@ -39,6 +39,7 @@ namespace Control {
         //1). llena el grid del inicio del formulario de Filtro de Horario :3
         public void LlenarGrid (DataGridView dgvBecas) {
             consultarBDD ();
+
             int i = 0;
 
             foreach (Horario x in Horario1) {
@@ -70,13 +71,14 @@ namespace Control {
         }
 
         private void consultarBDD2 (string tipo) {
-            horario1.Clear ();
-            horario1 = datosHora.consultarHorarioACt (tipo);
-            if (horario1 == null) {
+            horarioOdont.Clear ();
+            horarioOdont = datosHora.consultarHorarioACt (tipo);
+                  if (horarioOdont == null) {
                 MessageBox.Show ("Error: No se consultara los datos");
             }
         }
-        
+       
+
         //2). llena el grid del ala momento de filtar del formulario de Filtro de Horario :3
         public void LlenarGridHorarioFiltrar (DataGridView dgvhorario, string diasH, string tipo) {
             consultarBDD1 (diasH, tipo);
@@ -165,10 +167,11 @@ namespace Control {
         
         public void LlenarGridHorarioAc (DataGridView dgvhorario, string tipo) {
             consultarBDD2 (tipo);
-
+            //consultarBDD3(tipo);
             int i = 0;
             //Horario p = null;
-            foreach (Horario x in Horario1) {
+            foreach (Horario x in HorarioOdont) {
+                
                 dgvhorario.Rows.Add (x.Tipo, x.Dias [i].Dia, x.Dias [i].HoraEntrada.ToString ("HH:ss"), x.Dias [i].HoraSalida.ToString ("HH:ss"));
                 i++;
             }

@@ -38,13 +38,13 @@ namespace Visual
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvHorario = new System.Windows.Forms.DataGridView();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnSeleccionarHorario = new System.Windows.Forms.Button();
-            this.dgvHorarioOdontologo = new System.Windows.Forms.DataGridView();
             this.colTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColhorSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHoraEntrsa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnSeleccionarHorario = new System.Windows.Forms.Button();
+            this.dgvHorarioOdontologo = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHoraEntr = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -131,55 +131,6 @@ namespace Visual
             this.dgvHorario.Size = new System.Drawing.Size(498, 250);
             this.dgvHorario.TabIndex = 4;
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(531, 204);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(123, 38);
-            this.btnGuardar.TabIndex = 5;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnSeleccionarHorario
-            // 
-            this.btnSeleccionarHorario.Location = new System.Drawing.Point(531, 363);
-            this.btnSeleccionarHorario.Name = "btnSeleccionarHorario";
-            this.btnSeleccionarHorario.Size = new System.Drawing.Size(123, 56);
-            this.btnSeleccionarHorario.TabIndex = 6;
-            this.btnSeleccionarHorario.Text = "Seleccionar\r\nHorario";
-            this.btnSeleccionarHorario.UseVisualStyleBackColor = true;
-            this.btnSeleccionarHorario.Click += new System.EventHandler(this.btnSeleccionarHorario_Click);
-            // 
-            // dgvHorarioOdontologo
-            // 
-            this.dgvHorarioOdontologo.AllowUserToAddRows = false;
-            this.dgvHorarioOdontologo.AllowUserToDeleteRows = false;
-            this.dgvHorarioOdontologo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHorarioOdontologo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.colHoraEntr,
-            this.colhorSal});
-            this.dgvHorarioOdontologo.Location = new System.Drawing.Point(660, 92);
-            this.dgvHorarioOdontologo.MultiSelect = false;
-            this.dgvHorarioOdontologo.Name = "dgvHorarioOdontologo";
-            this.dgvHorarioOdontologo.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHorarioOdontologo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvHorarioOdontologo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvHorarioOdontologo.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvHorarioOdontologo.RowTemplate.Height = 24;
-            this.dgvHorarioOdontologo.Size = new System.Drawing.Size(469, 250);
-            this.dgvHorarioOdontologo.TabIndex = 7;
-            // 
             // colTipo
             // 
             this.colTipo.HeaderText = "Tipo de jornada";
@@ -211,6 +162,55 @@ namespace Visual
             this.colHoraEntrsa.Name = "colHoraEntrsa";
             this.colHoraEntrsa.ReadOnly = true;
             this.colHoraEntrsa.Width = 125;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(531, 204);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(123, 53);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "Seleccionar Horario";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnSeleccionarHorario
+            // 
+            this.btnSeleccionarHorario.Location = new System.Drawing.Point(531, 376);
+            this.btnSeleccionarHorario.Name = "btnSeleccionarHorario";
+            this.btnSeleccionarHorario.Size = new System.Drawing.Size(123, 43);
+            this.btnSeleccionarHorario.TabIndex = 6;
+            this.btnSeleccionarHorario.Text = "Guardar";
+            this.btnSeleccionarHorario.UseVisualStyleBackColor = true;
+            this.btnSeleccionarHorario.Click += new System.EventHandler(this.btnSeleccionarHorario_Click);
+            // 
+            // dgvHorarioOdontologo
+            // 
+            this.dgvHorarioOdontologo.AllowUserToAddRows = false;
+            this.dgvHorarioOdontologo.AllowUserToDeleteRows = false;
+            this.dgvHorarioOdontologo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHorarioOdontologo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.colHoraEntr,
+            this.colhorSal});
+            this.dgvHorarioOdontologo.Location = new System.Drawing.Point(660, 92);
+            this.dgvHorarioOdontologo.MultiSelect = false;
+            this.dgvHorarioOdontologo.Name = "dgvHorarioOdontologo";
+            this.dgvHorarioOdontologo.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHorarioOdontologo.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvHorarioOdontologo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvHorarioOdontologo.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvHorarioOdontologo.RowTemplate.Height = 24;
+            this.dgvHorarioOdontologo.Size = new System.Drawing.Size(469, 250);
+            this.dgvHorarioOdontologo.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -246,7 +246,7 @@ namespace Visual
             this.colhorSal.ReadOnly = true;
             this.colhorSal.Width = 125;
             // 
-            // FrmHorarioEGGM
+            // Frm_Odontologo_Horario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -259,7 +259,7 @@ namespace Visual
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.cmbDia);
-            this.Name = "FrmHorarioEGGM";
+            this.Name = "Frm_Odontologo_Horario";
             this.Text = "HorarioEGGM";
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarioOdontologo)).EndInit();
