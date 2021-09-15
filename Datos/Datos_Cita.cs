@@ -308,10 +308,7 @@ namespace Datos {
         public string EditarCitas (Cita c) {
             string mensaje = "";
             string sql = "UPDATE Cita \n" +
-                         "SET id_paciente = '" + c.Paciente.Id_persona + "' , id_odontologo = '"
-                         + c.Odontologo.Id_persona + "'," +
-                         "fecha = '" + c.Fecha.ToString("yyyy-MM-dd") + "'," +
-                         "hora = '" + c.Hora.ToString("HH:mm") + "'\n" +
+                         "SET id_paciente = '" + c.Paciente.Id_persona + "' , id_odontologo = '" + c.Odontologo.Id_persona + "', fecha = '" + c.Fecha.ToString("yyyy-MM-dd") + "', hora = '" + c.Hora.ToString("HH:mm") + "'\n" +
                          "WHERE id_cita = '" + c.Id_cita + "'";
             Console.WriteLine (sql);
             mensaje = con.Conectar ();
