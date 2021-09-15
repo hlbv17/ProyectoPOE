@@ -16,11 +16,10 @@ namespace Datos {
         //private static string cadena = "Data Source=HEBE\\SQLEXPRESS;Initial Catalog=dentalig_grupo;Integrated Security=True";
 
         /*----------------------------------------ROPB------------------------------------------------------*/
-        //private static string cadena = "Data Source=DESKTOP-F0FU8NS\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Dentalig";
+        private static string cadena = "Data Source=DESKTOP-F0FU8NS\\SQLEXPRESS;Integrated Security=SSPI;Initial Catalog=Dentalig";
 
         /*----------------------------------------VLRS------------------------------------------------------*/
-        //private static string cadena = "Data Source=DESKTOP-K0G9OCM\\SQLEXPRESS;Initial Catalog=PoyectoDentPOE;Integrated Security=True";
-        private static string cadena = "Data Source=DESKTOP-K0G9OCM\\SQLEXPRESS;Initial Catalog =Dentalig;Integrated Security = True";
+        //private static string cadena = "Data Source=DESKTOP-K0G9OCM\\SQLEXPRESS;Initial Catalog =Dentalig;Integrated Security = True";
 
         private SqlConnection cn = null;
 

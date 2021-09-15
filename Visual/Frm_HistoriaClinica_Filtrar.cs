@@ -126,13 +126,19 @@ namespace Visual {
             index = cmbFiltro.SelectedIndex;
             fechaDesde = dtpFnac1.Value.Date;
             fechaHasta = dtpFnac2.Value.Date;
-            if (val.ValidarFiltro (errorProvider1, cmbFiltro, txtCedula, cmbSexo, dtpFnac1, dtpFnac2, rbindex)) {
-                errorProvider1.Clear ();
-                admHisClinica.ConsultarBBDXsexoXCedulaXFechas (sexo, cedula, fechaDesde, fechaHasta, dgvPacientes, lblTotal, index, rbindex);
-                btnImprimir.Visible = true;
+            if (cmbFiltro.Text == "") {
+                dgvPacientes.Rows.Clear ();
+                admHisClinica.LlenarGrid (dgvPacientes, lblTotal);
             } else {
-                MessageBox.Show ("Escoja correctamente el campo a filtrar");
+                if (val.ValidarFiltro (errorProvider1, cmbFiltro, txtCedula, cmbSexo, dtpFnac1, dtpFnac2, rbindex)) {
+                    errorProvider1.Clear ();
+                    admHisClinica.ConsultarBBDXsexoXCedulaXFechas (sexo, cedula, fechaDesde, fechaHasta, dgvPacientes, lblTotal, index, rbindex);
+                    btnImprimir.Visible = true;
+                } else {
+                    MessageBox.Show ("Escoja correctamente el campo a filtrar");
+                }
             }
+            
         }
 
         private void btn_AtencionMedica_Click (object sender, EventArgs e) {
