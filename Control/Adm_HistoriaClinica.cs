@@ -90,7 +90,7 @@ namespace Control {
             foreach (HistoriaClinica hcl in listahClinica) {
 
                 dgvPacientes.Rows.Add (hcl.Id_hclinica, hcl.Paciente.Cedula, hcl.Paciente.Nombre, hcl.Paciente.LeerSexo (), hcl.Paciente.FechaNacimiento.ToShortDateString (),
-                    hcl.Paciente.Discapacidad, hcl.Paciente.Etapa, hcl.Antecedente.Antecedenteper, hcl.Antecedente.AntecedenteFam, hcl.AtencionMedica.Count ());
+                    hcl.Paciente.Discapacidad, hcl.Paciente.Etapa, hcl.Antecedente.Antecedenteper, hcl.Antecedente.AntecedenteFam, datosAtmed.ConsultarCantidadAMxPaciente(hcl.Paciente.Nombre));
                 i++;
 
             }
@@ -171,17 +171,15 @@ namespace Control {
         public void Eliminar (DataGridView dgvPacientes, string cedula, Label lblTotal, DataGridViewRow filaSeleccionada) {
             dgvPacientes.Rows.Remove (filaSeleccionada);
             Paciente pac = datosPacien.consultarPersonaPac (cedula);
-            long id_paciente = pac.Id_paciente;
-            HistoriaClinica hclinica = datosHistClin.consutarHistClinic (id_paciente);
+            //long id_paciente = pac.Id_paciente;
+            int Iid_Paciente = (int)pac.Id_paciente;
+            HistoriaClinica hclinica = datosHistClin.consutarHistClinic (Iid_Paciente);
 
             int Iid_Clinica = (int)hclinica.Id_hclinica;
-            int id_AteMedica = datosAtmed.ConsultarAtencionMedicaHiscL (Iid_Clinica);
-            datosAtmed.EliminarAtencionMedica (id_AteMedica);
+            datosAtmed.EliminarAtencionMedicaHisCl(Iid_Clinica);
+            datosCita.EliminarCitasHisClin(Iid_Paciente);
 
-            Cita cita = datosCita.ConsultarCitaxCedula (pac.Cedula);
-            datosCita.EliminarCitas (cita.Id_cita);
-
-            datosHistClin.Eliminar (id_paciente);
+            datosHistClin.Eliminar (Iid_Paciente);
             datosAnt.Eliminar (hclinica.Antecedente.Id_antecedente);
             datosPacien.Eliminar (pac.Id_paciente);
             datospers.Eliminar (cedula);

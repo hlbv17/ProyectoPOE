@@ -145,13 +145,12 @@ namespace Datos {
             Paciente paciente = null;
             Antecedente antecedente = null;
             List<HistoriaClinica> listaHclinicas = new List<HistoriaClinica> ();
-            string sql = "SELECT HistoriaClinica.id_historiaClinica, Persona.cedula, Persona.nombres, Persona.id_sexo, Persona.fechaNacimiento, " +
-                                "Paciente.discapacidad, EtapaEdad.etapa, Antecedentes.antecedentePersonal, Antecedentes.antecedenteFamiliar \n" +
-                        " FROM Antecedentes INNER JOIN \n" +
-                            " HistoriaClinica ON Antecedentes.id_antecedentes = HistoriaClinica.id_antecedentes INNER JOIN \n" +
-                            " Paciente ON HistoriaClinica.id_paciente = Paciente.id_paciente INNER JOIN \n" +
-                            " Persona ON Paciente.id_paciente = Persona.id_persona INNER JOIN \n" +
-                            " EtapaEdad ON Paciente.id_etapaEdad = EtapaEdad.id_etapaEdad \n";
+            string sql = "SELECT HistoriaClinica.id_historiaClinica, Persona.cedula, Persona.nombres, Persona.id_sexo, Persona.fechaNacimiento, Paciente.discapacidad, EtapaEdad.etapa, Antecedentes.antecedentePersonal, Antecedentes.antecedenteFamiliar \n" +
+                "FROM Antecedentes \n" +
+                "INNER JOIN HistoriaClinica HistoriaClinica ON Antecedentes.id_antecedentes = HistoriaClinica.id_antecedentes \n" +
+                "INNER JOIN Paciente ON HistoriaClinica.id_paciente = Paciente.id_paciente \n" +
+                "INNER JOIN Persona ON Paciente.id_paciente = Persona.id_persona \n" +
+                "INNER JOIN EtapaEdad ON Paciente.id_etapaEdad = EtapaEdad.id_etapaEdad \n";
             string sqlsexo = " (Persona.id_sexo = '" + sexo + "') \n";
             string sqlcedula = " (Persona.cedula = '" + cedula + "') \n";
             string sqlfechas = " Persona.fechaNacimiento BETWEEN' " + fechaDesde.ToString ("yyyy-MM-dd") + "' AND '" + fechaHasta.ToString ("yyyy-MM-dd") + "'";

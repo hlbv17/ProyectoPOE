@@ -16,7 +16,7 @@ namespace Datos {
 
         // Method: 
         public String insertar (Paciente paciente) { //Persona
-            string sql = "INSERT INTO Paciente (id_paciente, discapacidad, id_etapaEdad) VALUES(" + paciente.Id_persona + ",'" +
+            string sql = "INSERT INTO Paciente (id_paciente,discapacidad,id_etapaEdad) VALUES(" + paciente.Id_persona + ",'" +
                 paciente.Discapacidad + "'," + paciente.Id_EtapaEdad () + ")";
             Console.WriteLine (sql);
             string mensaje = "";
@@ -104,7 +104,7 @@ namespace Datos {
         public String Actualizar (Paciente paciente, long id_persona) {
             string sql = "UPDATE  Paciente " +
                 " SET discapacidad= '" + paciente.Discapacidad + "',id_etapaEdad= " + paciente.Id_EtapaEdad () +
-                " WHERE id_persona =" + id_persona;
+                " WHERE id_paciente =" + id_persona;
             ;
             Console.WriteLine (sql);
             string mensaje = "";

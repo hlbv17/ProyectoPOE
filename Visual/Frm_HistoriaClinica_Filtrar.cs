@@ -26,6 +26,8 @@ namespace Visual {
             gbopciones.Visible = false;
             rbtambos.Checked = true;
             button1.Visible = false;
+            dtpFnac1.Value = DateTime.Now;
+            dtpFnac2.Value = DateTime.Now;
             admHisClinica.LlenarGrid (dgvPacientes, lblTotal);
         }
 
@@ -143,6 +145,11 @@ namespace Visual {
             }
         }
 
+        private void gbopciones_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void rbtambos_CheckedChanged (object sender, EventArgs e) {
             rbindex = 4;
             cmbSexo.Visible = true;
@@ -150,10 +157,10 @@ namespace Visual {
             dtpFnac2.Visible = true;
             lblsexo.Visible = true;
             lblfechas.Visible = true;
-            cmbSexo.Visible = false;
+            cmbSexo.Visible = true;
             dtpFnac1.Visible = true;
             dtpFnac2.Visible = true;
-            lblsexo.Visible = false;
+            lblsexo.Visible = true;
             lblfechas.Visible = true;
         }
 

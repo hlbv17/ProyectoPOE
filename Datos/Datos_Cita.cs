@@ -390,40 +390,30 @@ namespace Datos {
         /*----------------------------------------VLRS------------------------------------------------------*/
 
         // Method: para eliminar desde Historia Clinica
-        public Cita ConsultarCitaxCedula (string cedula) {
-            //List<Cita> citas = new List<Cita>();
-            Cita c = null;
-            Odontologo o = null;
-            Paciente pa = null;
-            string sql = "SELECT Persona.cedula, Cita.id_cita, Cita.id_paciente" +
-                         " FROM Persona INNER JOIN \n" +
-                         "Paciente ON Persona.id_persona = Paciente.id_persona INNER JOIN" +
-                         " Cita ON Paciente.id_paciente = Cita.id_paciente" +
-                         " WHERE Persona.cedula = '" + cedula + "'";
-            SqlDataReader dr = null;
-            Console.WriteLine (sql);
+
+        public string EliminarCitasHisClin(int id_paciente)//eliminar desde HiscLIN
+        {
+            string sql = "DELETE FROM Cita WHERE id_paciente = '" + id_paciente + "'";
+            Console.WriteLine(sql);
             string mensaje = "";
-            mensaje = con.Conectar ();
-            if (mensaje [0] == '1') {
-                try {
+            mensaje = con.Conectar();
+            if (mensaje[0] == '1')
+            {
+                try
+                {
                     cmd.Connection = con.Cn;
                     cmd.CommandText = sql;
-                    dr = cmd.ExecuteReader ();
-                    while (dr.Read ()) {
-                        c = new Cita ();
-                        pa = new Paciente ();
-                        o = new Odontologo ();
-
-                        c.Id_cita = Convert.ToInt32 (dr ["id_cita"]);
-
-                        //citas.Add(c);
-                    }
-                } catch (Exception ex) {
-                    Console.WriteLine ("Error al consultar en la tabla Cita " + ex.Message);
+                    cmd.ExecuteNonQuery();
+                    mensaje = "1";
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error al eliminar en la tabla Cita " + e.Message);
+                    mensaje = "0" + e.Message;
                 }
             }
-            con.Cerrar ();
-            return c;
+            con.Cerrar();
+            return mensaje;
         }
 
         /*----------------------------------------ROPB------------------------------------------------------*/
