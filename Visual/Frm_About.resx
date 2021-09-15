@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Sistema Dentalig para la gestión de consultorio odontológico 
+que incluye:
+Módulo de Historia Clínica. - Permite registrar, editar, consultar 
+y eliminar datos de Pacientes.
+Módulo de Odontólogo. - Permite registrar, editar, consultar y 
+eliminar datos de Odontólogos.
+Módulo de Cita. - Permite registrar, editar, consultar y eliminar 
+datos de Citas.
+Módulo de Atención Médica. - Permite registrar, editar, consultar 
+y eliminar datos de Atención Médica.</value>
+  </data>
 </root>
