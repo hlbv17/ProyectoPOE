@@ -29,8 +29,8 @@ namespace Visual
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cmbConsultorio = new System.Windows.Forms.ComboBox();
@@ -135,6 +135,7 @@ namespace Visual
             this.txtCorreo.ReadOnly = true;
             this.txtCorreo.Size = new System.Drawing.Size(243, 22);
             this.txtCorreo.TabIndex = 37;
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
             // cmbSexo
             // 
@@ -266,17 +267,17 @@ namespace Visual
             this.dgvHorarioOdontologo.MultiSelect = false;
             this.dgvHorarioOdontologo.Name = "dgvHorarioOdontologo";
             this.dgvHorarioOdontologo.ReadOnly = true;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvHorarioOdontologo.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvHorarioOdontologo.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvHorarioOdontologo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvHorarioOdontologo.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvHorarioOdontologo.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHorarioOdontologo.RowTemplate.Height = 24;
             this.dgvHorarioOdontologo.Size = new System.Drawing.Size(525, 259);
             this.dgvHorarioOdontologo.TabIndex = 45;
@@ -336,7 +337,7 @@ namespace Visual
             this.label7.TabIndex = 49;
             this.label7.Text = "ACTUALIZACION DE DATOS DEL ODONTOLOGO";
             // 
-            // FrmActualizarOdontologo
+            // Frm_Odontologo_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -363,7 +364,7 @@ namespace Visual
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textNombre);
             this.Controls.Add(this.txtCedula);
-            this.Name = "FrmActualizarOdontologo";
+            this.Name = "Frm_Odontologo_Editar";
             this.Text = "FrmActualizarOdontologo";
             this.Load += new System.EventHandler(this.FrmActualizarOdontologo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarioOdontologo)).EndInit();

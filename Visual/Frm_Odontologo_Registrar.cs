@@ -58,7 +58,8 @@ namespace Visual {
 
         private void textNombre_KeyPress (object sender, KeyPressEventArgs e) {
             char c = e.KeyChar;
-            if (!char.IsLetter (c) && c != ',' && (e.KeyChar != Convert.ToChar (Keys.Back))) {
+            if (!char.IsLetter (c) && c != ' ' &&(e.KeyChar != Convert.ToChar(Keys.Back)))
+            {
                 e.Handled = true;
                 return;
             }
@@ -67,6 +68,16 @@ namespace Visual {
         private void txtTelefono_KeyPress (object sender, KeyPressEventArgs e) {
             char c = e.KeyChar;
             if (!char.IsDigit (c) && (e.KeyChar != Convert.ToChar (Keys.Back))) {
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char c = e.KeyChar;
+            if (!char.IsLetter(c) && !char.IsDigit(c) && (e.KeyChar != Convert.ToChar(Keys.Back)))
+            {
                 e.Handled = true;
                 return;
             }

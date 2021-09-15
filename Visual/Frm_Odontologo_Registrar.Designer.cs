@@ -235,6 +235,7 @@ namespace Visual
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(243, 22);
             this.txtCorreo.TabIndex = 19;
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
             // txtTelefono
             // 
@@ -333,7 +334,7 @@ namespace Visual
             this.label11.TabIndex = 28;
             this.label11.Text = "INGRESO DE DATOS DEL ODONTOLOGO";
             // 
-            // FrmOdontologoEGGM
+            // Frm_Odontologo_Registrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -360,7 +361,7 @@ namespace Visual
             this.Controls.Add(this.txtCedula);
             this.Controls.Add(this.dgvHorarioOdontologo);
             this.Controls.Add(this.btnSeleccionar);
-            this.Name = "FrmOdontologoEGGM";
+            this.Name = "Frm_Odontologo_Registrar";
             this.Text = "FrmOdontologo";
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarioOdontologo)).EndInit();
             this.ResumeLayout(false);
