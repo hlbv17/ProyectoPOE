@@ -47,6 +47,7 @@ namespace Control {
 
         public void ConsultarOdontologos (DateTime fecha, DateTime hora, ComboBox cmbHora, ComboBox cmbOdontologo) {
             string dia = DayOfWeek (fecha);
+            Console.Write (dia);
             if (cmbHora.Text != "--Seleccionar--") {
                 cmbOdontologo.Items.Add ("--Seleccionar--");
                 cmbOdontologo.SelectedIndex = 0;
