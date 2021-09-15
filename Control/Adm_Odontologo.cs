@@ -149,13 +149,16 @@ namespace Control {
 
                 dateTimePicker1.Value = odontologo.FechaNacimiento;
 
+
                 string horario = odontologo.Horario.Tipo;
+
                 //Console.WriteLine (odontologo.Horario.Tipo);
                 admhorario.LlenarGridHorarioAc (dgvHorarioOdontologo, horario);
+
                 idodo.Text = Convert.ToString (odontologo.Id_Odontologo);
 
-
-
+                
+               
 
 
             } else {
@@ -170,7 +173,7 @@ namespace Control {
         //    odontologos.Add(od);
         //    // guardarDBB(od);
         //}
-
+       
         public void guardarActualizar (int id_Odontologo, string nombre, string cedula, string especialidad, char sexo, DateTime fechaNacimiento, string correo, string telefono, int consultorio, Horario e) {
             Odontologo od = null;
             int hora = 0, espe = 0;
@@ -196,8 +199,11 @@ namespace Control {
             } else if (e.Tipo == "Fines de semana") {
                 hora = 86596;
             }
-
+          
             odontologos.Add (od);
+           
+            //Console.WriteLine (odontologo.Horario.Tipo);
+          
             ACtDBB (od, hora, espe);
         }
 
@@ -236,6 +242,7 @@ namespace Control {
 
         public void ACtDBB (Odontologo od, int tipo, int espe) {
             string mensaje = "";
+
             datosodo.ACtualizar2 (od, tipo, espe);
             mensaje = datosodo.ACtualizar (od);
             if (mensaje [0] == '1')
@@ -259,7 +266,7 @@ namespace Control {
                 MessageBox.Show ("Error: " + mensaje);
 
         }
-
+        //FILTRO CEDULA---------------------------------------------------------------------------------
         public void llenarGridT (DataGridView dgvOdontologo, string cedulas) {
             consultarDBBFC (cedulas);
             int i = 0;
@@ -269,7 +276,7 @@ namespace Control {
                 dgvOdontologo.Rows.Add (i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado (datosodo.ConsultarEstadoOdontologo (x.Id_Odontologo)), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);
             }
         }
-
+        //lLENAR GRID INICIAL---------------------------------------------------------------------------------
         public void llenarGrid (DataGridView dgvOdontologo) {
             consultarDBB ();
             int i = 0;
@@ -278,7 +285,17 @@ namespace Control {
                 dgvOdontologo.Rows.Add (i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado (datosodo.ConsultarEstadoOdontologo (x.Id_Odontologo)), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);
             }
         }
+        //LLENAR GRID DE FILTRO POR CAMPOS-------------------------------------
+         public void llenarGridFiltrar (DataGridView dgvOdontologo, string jornada, string especialidad, int consultorio) {
+        dgvOdontologo.Rows.Clear ();
+        consultarDBBFiltrar (jornada, especialidad, consultorio);
+        int i = 1;
 
+            foreach (Odontologo x in odontologos) {
+                dgvOdontologo.Rows.Add (i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado (datosodo.ConsultarEstadoOdontologo (x.Id_Odontologo)), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);
+                i++;
+            }
+        }
         private void consultarDBB () {
             odontologos.Clear ();
             odontologos = datosodo.ConsultarPersonaOdontTodos ();
@@ -286,16 +303,7 @@ namespace Control {
                 MessageBox.Show ("Error: Se se consultaron los datos");
         }
 
-        public void llenarGridFiltrar (DataGridView dgvOdontologo, string jornada, string especialidad, int consultorio) {
-            dgvOdontologo.Rows.Clear ();
-            consultarDBBFiltrar (jornada, especialidad, consultorio);
-            int i = 1;
-
-            foreach (Odontologo x in odontologos) {
-                dgvOdontologo.Rows.Add (i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado (datosodo.ConsultarEstadoOdontologo (x.Id_Odontologo)), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);
-                i++;
-            }
-        }
+       
 
         private void consultarDBBFiltrar (string jornada, string especialidad, int consultorio) {
             odontologos.Clear ();
@@ -314,9 +322,19 @@ namespace Control {
             dgvOdontologo.Rows.RemoveAt (posicion);
             int id = odontologos [posicion].Id_Odontologo;
             string cedula = odontologos [posicion].Cedula;
+            string estado = "";
+            estado= odontologos[posicion].Estado(odontologos[posicion].Id_Odontologo);
+            if (estado == "Ocupado")
+            {
+                MessageBox.Show("Error: no se puede Eliminar");
+            }
+            else if (estado == "Disponible")
+            {
+                     Eliminar (id, cedula);
+                     odontologos.RemoveAt (posicion);
+            }
 
-            Eliminar (id, cedula);
-            odontologos.RemoveAt (posicion);
+           
 
         }
 

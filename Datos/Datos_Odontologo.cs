@@ -474,6 +474,7 @@ namespace Datos {
         public string ACtualizar (Odontologo odo) {
             string sql1 = "UPDATE Persona set  cedula = '" + odo.Cedula + "', nombres = '" + odo.Nombre + "', id_sexo = '" + odo.Sexo + "', fechaNacimiento = '" + odo.FechaNacimiento.ToString("yyyy-MM-dd") + "', correo = '" + odo.Correo + "', telefono = '" + odo.Telefono +
             "' WHERE cedula = " + odo.Cedula;
+            Console.WriteLine(sql1);
             string mensaje = "";
             mensaje = con.Conectar ();
             if (mensaje [0] == '1') {
