@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Datos {
     public class Datos_Odontologo {
-        
+
         List<Odontologo> odontologo = new List<Odontologo> ();
         Conexion con = new Conexion ();
         SqlCommand cmd = new SqlCommand ();
@@ -20,7 +20,7 @@ namespace Datos {
             string stmt = "SELECT COUNT(*) FROM Persona";
             int count = 0;
 
-  
+
             Console.WriteLine (stmt);
             string mensaje = "";
             mensaje = con.Conectar ();
@@ -50,7 +50,7 @@ namespace Datos {
             "INNER JOIN HorarioDias HD ON H.id_horario = HD.id_horario \n" +
             "INNER JOIN Dias D ON HD.id_dias = D.id_dias \n" +
             "WHERE D.dia = '" + dia + "' \n" +
-            "AND '" + hora.ToString("HH:mm") + "'  BETWEEN D.horaEntrada AND D.horaSalida; ";
+            "AND '" + hora.ToString ("HH:mm") + "'  BETWEEN D.horaEntrada AND D.horaSalida; ";
             SqlDataReader dr = null;
             Console.WriteLine (sql);
             string mensaje = "";
@@ -130,9 +130,9 @@ namespace Datos {
                     cmd.CommandText = cossultaprueba;
                     dr = cmd.ExecuteReader ();
                     if (dr.Read ()) {
-                        o = new Odontologo();
-                        o.Id_Odontologo = Convert.ToInt32((dr["id_persona"].ToString()));
-                        o2 = consultarodontologo2(o.Id_Odontologo);
+                        o = new Odontologo ();
+                        o.Id_Odontologo = Convert.ToInt32 ((dr ["id_persona"].ToString ()));
+                        o2 = consultarodontologo2 (o.Id_Odontologo);
 
                         o.Nombre = dr ["nombres"].ToString ();
                         string sexo = dr ["id_sexo"].ToString ();
@@ -140,7 +140,7 @@ namespace Datos {
                         o.FechaNacimiento = Convert.ToDateTime (dr ["fechaNacimiento"].ToString ());
                         o.Correo = dr ["correo"].ToString ();
                         o.Telefono = dr ["telefono"].ToString ();
-                        o.Cedula = dr["cedula"].ToString();
+                        o.Cedula = dr ["cedula"].ToString ();
                         o.Consultorio = o2.Consultorio;
                         o.Especialidad = o2.Especialidad;
                         o.Horario = o2.Horario;
@@ -152,7 +152,7 @@ namespace Datos {
                     Console.WriteLine ("Error al consultar en la tabla persona " + ex.Message);
                 }
             }
-            
+
             con.Cerrar ();
             return o;
         }
@@ -205,9 +205,9 @@ namespace Datos {
         // Method: insertarOdontologo
         public String insertarOdontologo (Odontologo odo, int especialidad, int horario) {
             Odontologo o = null;
-           o= consultaropersona(odo.Cedula);
-            string sql = "INSERT INTO Odontologo(id_odontologo, id_horario, id_especialidad, consultorio) VALUES(" + o.Id_Odontologo +
-                 ", '" + horario + "', '" + especialidad + "','" + odo.Consultorio + "')";
+            o = consultaropersona (odo.Cedula);
+            string sql = "INSERT INTO Odontologo(id_odontologo, id_horario, id_especialidad, consultorio) " +
+                "VALUES('" + o.Id_Odontologo + "', '" + horario + "', '" + especialidad + "','" + odo.Consultorio + "')";
             Console.WriteLine (sql);
             string mensaje = "";
             mensaje = con.Conectar ();
@@ -218,7 +218,7 @@ namespace Datos {
                     cmd.ExecuteNonQuery ();
                     return "1";
                 } catch (Exception ex) {
-                    Console.WriteLine ("Error al consultar en la tabla odontologo" + ex.Message);
+                    Console.WriteLine ("--------------Error al insertar en la tabla odontologo----------" + ex.Message);
                     return "0" + ex.Message;
                 }
             }
@@ -246,13 +246,13 @@ namespace Datos {
                         //o = new Odontologo (0, "", 0, null, "", 'F', "", DateTime.Now, "", "");
                         Datos_Especialidad espec = new Datos_Especialidad ();
                         Datos_Horario datosHorario = new Datos_Horario ();
-                        o.Id_Odontologo = Convert.ToInt32(dr["id_odontologo"]);
-                        o2 = consultarodontologp(o.Id_Odontologo);
+                        o.Id_Odontologo = Convert.ToInt32 (dr ["id_odontologo"]);
+                        o2 = consultarodontologp (o.Id_Odontologo);
                         int especilidad, horario;
                         especilidad = Convert.ToInt32 (dr ["id_especialidad"].ToString ());
                         string es = espec.consultarEspecialidad (especilidad);
                         horario = Convert.ToInt32 (dr ["id_horario"].ToString ());
-                        
+
                         o.Especialidad = es;
                         o.Horario = datosHorario.consultarTipodeHoraario (horario);
                         o.Cedula = o2.Cedula;
@@ -262,7 +262,7 @@ namespace Datos {
                         o.FechaNacimiento = o2.FechaNacimiento;
                         o.Telefono = o2.Telefono;
                         o.Nombre = o2.Nombre;
-                        p.Add(o);
+                        p.Add (o);
                     }
                 } catch (Exception ex) {
                     Console.WriteLine ("Error al consultar en la tabla persona " + ex.Message);
@@ -270,6 +270,30 @@ namespace Datos {
             }
             con.Cerrar ();
             return p;
+        }
+
+        public int ConsultarEstadoOdontologo (int id_Odontologo) {
+            int x = -1;
+            string sql = "Select COUNT (id_odontologo) as numero from Cita where id_odontologo = '" + id_Odontologo + "'";
+            SqlDataReader dr = null;
+            Console.WriteLine (sql);
+            string mensaje = "";
+            mensaje = con.Conectar ();
+            if (mensaje [0] == '1') {
+                try {
+                    cmd.Connection = con.Cn;
+                    cmd.CommandText = sql;
+                    dr = cmd.ExecuteReader ();
+                    if (dr.Read ()) {
+                        x = Convert.ToInt32 (dr ["numero"].ToString ());
+                        Console.WriteLine (x);
+                    }
+                } catch (Exception ex) {
+                    Console.WriteLine ("¡---ERROR---CosultarIdOdontolog en Cita---! " + ex.Message);
+                }
+            }
+
+            return x;
         }
 
         // Method: ConsultaparaEditar
@@ -336,9 +360,9 @@ namespace Datos {
                         o.Sexo = sexo [0];
                         o.FechaNacimiento = Convert.ToDateTime (dr ["fechaNacimiento"].ToString ());
                         o.Correo = dr ["correo"].ToString ();
-                        o.Telefono = dr ["telefono"].ToString();
-                        o.Cedula = dr["cedula"].ToString();
-                        o.Id_persona = Convert.ToInt32(dr["id_persona"].ToString());
+                        o.Telefono = dr ["telefono"].ToString ();
+                        o.Cedula = dr ["cedula"].ToString ();
+                        o.Id_persona = Convert.ToInt32 (dr ["id_persona"].ToString ());
                         p.Add (o);
                     }
                 } catch (Exception ex) {
@@ -349,91 +373,80 @@ namespace Datos {
             return o;
         }
 
-        public Odontologo consultarodontologo2(int cedula)
-        {
-            List<Persona> p = new List<Persona>();
-            List<Dias> dia = new List<Dias>();
+        public Odontologo consultarodontologo2 (int cedula) {
+            List<Persona> p = new List<Persona> ();
+            List<Dias> dia = new List<Dias> ();
             Odontologo o = null;
             string sql = "Select * from Odontologo where id_odontologo = " + cedula;
             SqlDataReader dr = null;
-            Console.WriteLine(odontologo);
-            
+            Console.WriteLine (odontologo);
+
             string mensaje = "";
-            mensaje = con.Conectar();
-            if (mensaje[0] == '1')
-            {
-                try
-                {
+            mensaje = con.Conectar ();
+            if (mensaje [0] == '1') {
+                try {
                     cmd.Connection = con.Cn;
                     cmd.CommandText = sql;
-                    dr = cmd.ExecuteReader();
-                    if (dr.Read())
-                    {
-                        o = new Odontologo();
-                        Datos_Especialidad espec = new Datos_Especialidad();
-                        Datos_Horario datosHorario = new Datos_Horario();
-                        o.Id_Odontologo = Convert.ToInt32(dr["id_odontologo"]);
+                    dr = cmd.ExecuteReader ();
+                    if (dr.Read ()) {
+                        o = new Odontologo ();
+                        Datos_Especialidad espec = new Datos_Especialidad ();
+                        Datos_Horario datosHorario = new Datos_Horario ();
+                        o.Id_Odontologo = Convert.ToInt32 (dr ["id_odontologo"]);
                         int especilidad, horario;
-                        especilidad = Convert.ToInt32(dr["id_especialidad"].ToString());
-                        string es = espec.consultarEspecialidad(especilidad);
-                        horario = Convert.ToInt32(dr["id_horario"].ToString());
+                        especilidad = Convert.ToInt32 (dr ["id_especialidad"].ToString ());
+                        string es = espec.consultarEspecialidad (especilidad);
+                        horario = Convert.ToInt32 (dr ["id_horario"].ToString ());
 
                         o.Especialidad = es;
-                        o.Horario = datosHorario.consultarTipodeHoraario(horario);
-                        
-                        o.Consultorio = Convert.ToInt32(dr["consultorio"].ToString());
+                        o.Horario = datosHorario.consultarTipodeHoraario (horario);
+
+                        o.Consultorio = Convert.ToInt32 (dr ["consultorio"].ToString ());
                     }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error al consultar en la tabla odontologp " + ex.Message);
+                } catch (Exception ex) {
+                    Console.WriteLine ("Error al consultar en la tabla odontologp " + ex.Message);
                 }
             }
-            con.Cerrar();
-            Console.WriteLine(o.ToString());
+            con.Cerrar ();
+            Console.WriteLine (o.ToString ());
             return o;
         }
 
         // method 
-        public Odontologo consultaropersona(string cedula)
-        {
-            List<Persona> p = new List<Persona>();
-            List<Dias> dia = new List<Dias>();
+        public Odontologo consultaropersona (string cedula) {
+            List<Persona> p = new List<Persona> ();
+            List<Dias> dia = new List<Dias> ();
 
             Odontologo o = null;
             string sql = "Select * from Persona where cedula = '" + cedula + "'";
             SqlDataReader dr = null;
-            Console.WriteLine(odontologo);
-            o = new Odontologo(0, "", 0, null, "", 'F', "", DateTime.Now, "", "");
+            Console.WriteLine (odontologo);
+            //o = new Odontologo (0, "", 0, null, "", 'F', "", DateTime.Now, "", "");
             string mensaje = "";
-            mensaje = con.Conectar();
-            if (mensaje[0] == '1')
-            {
-                try
-                {
+            mensaje = con.Conectar ();
+            if (mensaje [0] == '1') {
+                try {
                     cmd.Connection = con.Cn;
                     cmd.CommandText = sql;
-                    dr = cmd.ExecuteReader();
-                    if (dr.Read())
-                    {
-                        o.Id_Odontologo =Convert.ToInt32(dr["id_persona"].ToString());
-                        o.Nombre = dr["nombres"].ToString();
-                        string sexo = dr["id_sexo"].ToString();
-                        o.Sexo = sexo[0];
-                        o.FechaNacimiento = Convert.ToDateTime(dr["fechaNacimiento"].ToString());
-                        o.Correo = dr["correo"].ToString();
-                        o.Telefono = dr["telefono"].ToString();
-                        o.Cedula = dr["cedula"].ToString();
-                        p.Add(o);
+                    dr = cmd.ExecuteReader ();
+                    if (dr.Read ()) {
+                        o = new Odontologo ();
+                        o.Id_Odontologo = Convert.ToInt32 (dr ["id_persona"].ToString ());
+                        o.Nombre = dr ["nombres"].ToString ();
+                        string sexo = dr ["id_sexo"].ToString ();
+                        o.Sexo = sexo [0];
+                        o.FechaNacimiento = Convert.ToDateTime (dr ["fechaNacimiento"].ToString ());
+                        o.Correo = dr ["correo"].ToString ();
+                        o.Telefono = dr ["telefono"].ToString ();
+                        o.Cedula = dr ["cedula"].ToString ();
+                        p.Add (o);
 
                     }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error al consultar en la tabla odontologp " + ex.Message);
+                } catch (Exception ex) {
+                    Console.WriteLine ("Error al consultar en la tabla odontologp " + ex.Message);
                 }
             }
-            con.Cerrar();
+            con.Cerrar ();
             return o;
         }
 
@@ -459,7 +472,7 @@ namespace Datos {
 
         // Method: ACtualizar
         public string ACtualizar (Odontologo odo) {
-            string sql1 = "UPDATE Persona set  cedula = '" + odo.Cedula + "', nombres = '" + odo.Nombre + "', id_sexo = '" + odo.Sexo + "', fechaNacimiento = '" + odo.FechaNacimiento + "', correo = '" +odo.Correo  + "', telefono = '" + odo.Telefono +
+            string sql1 = "UPDATE Persona set  cedula = '" + odo.Cedula + "', nombres = '" + odo.Nombre + "', id_sexo = '" + odo.Sexo + "', fechaNacimiento = '" + odo.FechaNacimiento.ToString("yyyy-MM-dd") + "', correo = '" + odo.Correo + "', telefono = '" + odo.Telefono +
             "' WHERE cedula = " + odo.Cedula;
             string mensaje = "";
             mensaje = con.Conectar ();
@@ -470,7 +483,7 @@ namespace Datos {
                     cmd.ExecuteNonQuery ();
                     return "1";
                 } catch (Exception ex) {
-                    Console.WriteLine ("Error al consultar en la tabla persona" + ex.Message);
+                    Console.WriteLine ("--------------Error al actualizar en la tabla persona----------" + ex.Message);
                     return "0" + ex.Message;
                 }
             }
@@ -482,7 +495,7 @@ namespace Datos {
         public string ACtualizar2 (Odontologo odo, int tipo, int espe) {
             Datos_Horario datosHorario = new Datos_Horario ();
             Datos_Especialidad espec = new Datos_Especialidad ();
-            string sql1 = "UPDATE Odontologo set  id_odontologo = '" + odo.Id_Odontologo + "', id_especialidad = '" + espe + "', id_horario = '" + tipo + "', consultorio = '" + odo.Consultorio + "'"+
+            string sql1 = "UPDATE Odontologo set  id_odontologo = '" + odo.Id_Odontologo + "', id_especialidad = '" + espe + "', id_horario = '" + tipo + "', consultorio = '" + odo.Consultorio + "'" +
                 " WHERE id_odontologo = " + odo.Id_Odontologo;
             string mensaje = "";
             mensaje = con.Conectar ();
@@ -520,16 +533,16 @@ namespace Datos {
                         o = new Odontologo (0, "", 0, null, "", 'F', "", DateTime.Now, "", "");
                         Datos_Especialidad espec = new Datos_Especialidad ();
                         Datos_Horario datosHorario = new Datos_Horario ();
-                        o.Id_Odontologo = Convert.ToInt32(dr["id_odontologo"]);
+                        o.Id_Odontologo = Convert.ToInt32 (dr ["id_odontologo"]);
                         o2 = consultarodontologp (o.Id_Odontologo);
                         int especilidad, horario;
                         especilidad = Convert.ToInt32 (dr ["id_especialidad"].ToString ());
                         string es = espec.consultarEspecialidad (especilidad);
                         horario = Convert.ToInt32 (dr ["id_horario"].ToString ());
-                        
+
                         o.Especialidad = es;
                         o.Horario = datosHorario.consultarTipodeHoraario (horario);
-                        
+
                         o.Consultorio = Convert.ToInt32 (dr ["consultorio"].ToString ());
                         o.Sexo = o2.Sexo;
                         o.Correo = o2.Correo;
@@ -648,9 +661,9 @@ namespace Datos {
         public List<Odontologo> consultarodontologpFiltro2 (string cedula) {
             List<Odontologo> p = new List<Odontologo> ();
             List<Dias> dia = new List<Dias> ();
-             Odontologo o = null, o2;
-            o2= consultaropersona(cedula);
-           
+            Odontologo o = null, o2;
+            o2 = consultaropersona (cedula);
+
             string sql = "Select * from Odontologo where id_odontologo = '" + o2.Id_Odontologo + "'";
             SqlDataReader dr = null;
             Console.WriteLine (odontologo);

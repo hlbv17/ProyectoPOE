@@ -68,6 +68,7 @@ namespace Control {
         }
 
         public void llenarComboO (DateTime fecha, DateTime hora, ComboBox cmbHora, ComboBox cmbOdontologo) {
+            cmbOdontologo.Items.Clear ();
             ConsultarOdontologos (fecha, hora, cmbHora, cmbOdontologo);
         }
 
@@ -220,13 +221,12 @@ namespace Control {
             } else if (e.Tipo == "Matutino II") {
                 hora = 86593;
             } else if (e.Tipo == "Vespertino I") {
-                hora = 865924;
+                hora = 86594;
             } else if (e.Tipo == "Vespertino II") {
-                hora = 865925;
+                hora = 86595;
             } else if (e.Tipo == "Fines de semana") {
-                hora = 865926;
+                hora = 86596;
             }
-
 
             odontologos.Add (od);
             Console.WriteLine (" " + e.Tipo + " " + especialidad + " " + hora + " " + espe);
@@ -253,7 +253,7 @@ namespace Control {
             else
                 MessageBox.Show ("Error: " + mensaje);
             mensaje2 = datosodo.insertarOdontologo (od, especialidad, horario);
-            if (mensaje [0] == '1')
+            if (mensaje2 [0] == '1')
                 MessageBox.Show ("Ingresp de datos de odontologo correctamente");
             else
                 MessageBox.Show ("Error: " + mensaje);
@@ -262,13 +262,12 @@ namespace Control {
 
         public void llenarGridT (DataGridView dgvOdontologo, string cedulas) {
             consultarDBBFC (cedulas);
-            int i = 1;
+            int i = 0;
 
             foreach (Odontologo x in odontologos) {
-                dgvOdontologo.Rows.Add (i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado (x.Consultorio), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);
                 i++;
+                dgvOdontologo.Rows.Add (i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado (datosodo.ConsultarEstadoOdontologo (x.Id_Odontologo)), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);
             }
-
         }
 
         public void llenarGrid (DataGridView dgvOdontologo) {
@@ -276,7 +275,7 @@ namespace Control {
             int i = 0;
             foreach (Odontologo x in odontologos) {
                 i++;
-                dgvOdontologo.Rows.Add (i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado (x.Consultorio), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);
+                dgvOdontologo.Rows.Add (i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado (datosodo.ConsultarEstadoOdontologo (x.Id_Odontologo)), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);
             }
         }
 
@@ -293,7 +292,7 @@ namespace Control {
             int i = 1;
 
             foreach (Odontologo x in odontologos) {
-                dgvOdontologo.Rows.Add (i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado (x.Consultorio), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);
+                dgvOdontologo.Rows.Add (i, x.Cedula, x.Nombre, x.Sexo, x.Especialidad, x.Estado (datosodo.ConsultarEstadoOdontologo (x.Id_Odontologo)), x.FechaNacimiento, x.Correo, x.Telefono, x.Horario.Tipo);
                 i++;
             }
         }
