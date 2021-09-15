@@ -319,17 +319,19 @@ namespace Control {
         }
 
         public void Eliminar (DataGridView dgvOdontologo, int posicion) {
-            dgvOdontologo.Rows.RemoveAt (posicion);
+           
             int id = odontologos [posicion].Id_Odontologo;
             string cedula = odontologos [posicion].Cedula;
             string estado = "";
-            estado= odontologos[posicion].Estado(odontologos[posicion].Id_Odontologo);
+
+            estado= odontologos[posicion].Estado(datosodo.ConsultarEstadoOdontologo(id));
             if (estado == "Ocupado")
             {
                 MessageBox.Show("Error: no se puede Eliminar");
             }
             else if (estado == "Disponible")
-            {
+            { 
+                dgvOdontologo.Rows.RemoveAt (posicion);
                      Eliminar (id, cedula);
                      odontologos.RemoveAt (posicion);
             }
