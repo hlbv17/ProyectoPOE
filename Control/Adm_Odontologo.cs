@@ -49,6 +49,7 @@ namespace Control {
             string dia = DayOfWeek (fecha);
             Console.Write (dia);
             if (cmbHora.Text != "--Seleccionar--") {
+                cmbOdontologo.Items.Clear();
                 cmbOdontologo.Items.Add ("--Seleccionar--");
                 cmbOdontologo.SelectedIndex = 0;
                 odontologos = datosOdonto.ConsultarOdontologos (dia, hora);
