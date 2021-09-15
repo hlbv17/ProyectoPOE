@@ -48,13 +48,6 @@ namespace Visual
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
-            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_odontologo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.col_consultorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnModificar = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.errorP = new System.Windows.Forms.ErrorProvider(this.components);
@@ -63,6 +56,14 @@ namespace Visual
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
+            this.col_n = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_cedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_odontologo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_consultorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorP)).BeginInit();
             this.panel1.SuspendLayout();
@@ -237,6 +238,7 @@ namespace Visual
             this.dgvCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCitas.ColumnHeadersHeight = 62;
             this.dgvCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_n,
             this.col_id,
             this.col_cedula,
             this.col_paciente,
@@ -250,49 +252,6 @@ namespace Visual
             this.dgvCitas.ReadOnly = true;
             this.dgvCitas.Size = new System.Drawing.Size(376, 158);
             this.dgvCitas.TabIndex = 16;
-            // 
-            // col_id
-            // 
-            this.col_id.HeaderText = "Nº";
-            this.col_id.Name = "col_id";
-            this.col_id.ReadOnly = true;
-            this.col_id.Width = 50;
-            // 
-            // col_cedula
-            // 
-            this.col_cedula.HeaderText = "Cédula";
-            this.col_cedula.Name = "col_cedula";
-            this.col_cedula.ReadOnly = true;
-            // 
-            // col_paciente
-            // 
-            this.col_paciente.HeaderText = "Paciente";
-            this.col_paciente.Name = "col_paciente";
-            this.col_paciente.ReadOnly = true;
-            // 
-            // col_fecha
-            // 
-            this.col_fecha.HeaderText = "Fecha";
-            this.col_fecha.Name = "col_fecha";
-            this.col_fecha.ReadOnly = true;
-            // 
-            // col_hora
-            // 
-            this.col_hora.HeaderText = "Hora";
-            this.col_hora.Name = "col_hora";
-            this.col_hora.ReadOnly = true;
-            // 
-            // col_odontologo
-            // 
-            this.col_odontologo.HeaderText = "Odontólogo";
-            this.col_odontologo.Name = "col_odontologo";
-            this.col_odontologo.ReadOnly = true;
-            // 
-            // col_consultorio
-            // 
-            this.col_consultorio.HeaderText = "Consultorio";
-            this.col_consultorio.Name = "col_consultorio";
-            this.col_consultorio.ReadOnly = true;
             // 
             // btnModificar
             // 
@@ -370,7 +329,57 @@ namespace Visual
             this.label10.Text = "Reagenda Citas";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // FrmEditarCitasHLBV
+            // col_n
+            // 
+            this.col_n.HeaderText = "Nº";
+            this.col_n.Name = "col_n";
+            this.col_n.ReadOnly = true;
+            this.col_n.Width = 50;
+            // 
+            // col_id
+            // 
+            this.col_id.HeaderText = "ID";
+            this.col_id.Name = "col_id";
+            this.col_id.ReadOnly = true;
+            this.col_id.Width = 50;
+            // 
+            // col_cedula
+            // 
+            this.col_cedula.HeaderText = "Cédula";
+            this.col_cedula.Name = "col_cedula";
+            this.col_cedula.ReadOnly = true;
+            // 
+            // col_paciente
+            // 
+            this.col_paciente.HeaderText = "Paciente";
+            this.col_paciente.Name = "col_paciente";
+            this.col_paciente.ReadOnly = true;
+            // 
+            // col_fecha
+            // 
+            this.col_fecha.HeaderText = "Fecha";
+            this.col_fecha.Name = "col_fecha";
+            this.col_fecha.ReadOnly = true;
+            // 
+            // col_hora
+            // 
+            this.col_hora.HeaderText = "Hora";
+            this.col_hora.Name = "col_hora";
+            this.col_hora.ReadOnly = true;
+            // 
+            // col_odontologo
+            // 
+            this.col_odontologo.HeaderText = "Odontólogo";
+            this.col_odontologo.Name = "col_odontologo";
+            this.col_odontologo.ReadOnly = true;
+            // 
+            // col_consultorio
+            // 
+            this.col_consultorio.HeaderText = "Consultorio";
+            this.col_consultorio.Name = "col_consultorio";
+            this.col_consultorio.ReadOnly = true;
+            // 
+            // Frm_Cita_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -398,7 +407,7 @@ namespace Visual
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.splitter1);
-            this.Name = "FrmEditarCitasHLBV";
+            this.Name = "Frm_Cita_Editar";
             this.Text = "FrmEditarCitasHLBV";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorP)).EndInit();
@@ -430,6 +439,12 @@ namespace Visual
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.ErrorProvider errorP;
+        private System.Windows.Forms.TextBox txtRegistro;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_n;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_cedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_paciente;
@@ -437,10 +452,5 @@ namespace Visual
         private System.Windows.Forms.DataGridViewTextBoxColumn col_hora;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_odontologo;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_consultorio;
-        private System.Windows.Forms.TextBox txtRegistro;
-        private System.Windows.Forms.Label lblId;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label10;
     }
 }

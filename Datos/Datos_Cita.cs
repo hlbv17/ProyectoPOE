@@ -18,8 +18,8 @@ namespace Datos {
 
         // Method: insertarCita
         public String insertarCita (Cita c) {
-            string sql = "INSERT INTO Cita (id_odontologo, id_paciente, fecha, hora)" +
-                "VALUES ('" + c.Odontologo.Id_persona + "','" + c.Paciente.Id_persona + "','" + c.Fecha.ToString ("yyyy-MM-dd") + "','" + c.Hora.ToString ("HH:mm") + "')";
+            string sql = "INSERT INTO Cita (id_paciente, id_odontologo, fecha, hora)" +
+                "VALUES ('" + c.Paciente.Id_persona + "','" + c.Odontologo.Id_persona + "','" + c.Fecha.ToString ("yyyy-MM-dd") + "','" + c.Hora.ToString ("HH:mm") + "')";
             Console.WriteLine (sql);
             string mensaje = "";
             mensaje = con.Conectar ();
@@ -30,7 +30,7 @@ namespace Datos {
                     cmd.ExecuteNonQuery ();
                     return "1";
                 } catch (Exception e) {
-                    Console.WriteLine ("Error al insertar en la tabla Cita " + e.Message);
+                    Console.WriteLine ("---------------Error al insertar en la tabla Cita--------------------" + e.Message);
                     return "0" + e.Message;
                 }
             }
@@ -181,6 +181,8 @@ namespace Datos {
                             "AND " + sqlCedula +
                             "AND " + sqlFecha +
                             "AND " + sqlHora;
+                    } else if (n == 0) {
+                        cmd.CommandText = sql;
                     }
                     dr = cmd.ExecuteReader ();
                     while (dr.Read ()) {
@@ -210,29 +212,27 @@ namespace Datos {
             return citas;
         }
 
-        public bool PacienteAtendido(int id)
-        {
+        public bool PacienteAtendido (int id) {
             bool flag = true;
             string sql = "SELECT C.id_cita, A.id_cita as atendido \n" +
                         "FROM Cita C, AtencionMedica A \n" +
                         "WHERE C.id_cita = A.id_cita \n" +
                         "AND C.id_cita = '" + id + "'";
             SqlDataReader dr = null;
-            Console.WriteLine(sql);
+            Console.WriteLine (sql);
             string mensaje = "";
-            mensaje = con.Conectar();
-            if (mensaje[0] == '1')
-            {
+            mensaje = con.Conectar ();
+            if (mensaje [0] == '1') {
                 cmd.Connection = con.Cn;
                 cmd.CommandText = sql;
-                dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
+                dr = cmd.ExecuteReader ();
+                if (dr.Read ()) {
                     flag = true;
+                } else {
+                    flag = false;
                 }
-                flag = false;
             }
-            con.Cerrar();
+            con.Cerrar ();
             return flag;
         }
 
@@ -310,8 +310,8 @@ namespace Datos {
             string sql = "UPDATE Cita \n" +
                          "SET id_paciente = '" + c.Paciente.Id_persona + "' , id_odontologo = '"
                          + c.Odontologo.Id_persona + "'," +
-                         "fecha = '" + c.Fecha + "'," +
-                         "hora = '" + c.Hora + "'\n" +
+                         "fecha = '" + c.Fecha.ToString("yyyy-MM-dd") + "'," +
+                         "hora = '" + c.Hora.ToString("HH:mm") + "'\n" +
                          "WHERE id_cita = '" + c.Id_cita + "'";
             Console.WriteLine (sql);
             mensaje = con.Conectar ();
@@ -322,7 +322,7 @@ namespace Datos {
                     cmd.ExecuteNonQuery ();
                     mensaje = "1";
                 } catch (Exception e) {
-                    Console.WriteLine ("Error al actualizar en la tabla Cita " + e.Message);
+                    Console.WriteLine ("--------Error al actualizar en la tabla Cita -----------" + e.Message);
                     mensaje = "0" + e.Message;
                 }
             }

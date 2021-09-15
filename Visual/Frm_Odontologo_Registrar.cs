@@ -46,13 +46,14 @@ namespace Visual
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
             try
             {
                 string nombre = textNombre.Text.Trim(), cedula = txtCedula.Text.Trim(), correo = txtCorreo.Text.Trim(), telefono = txtTelefono.Text.Trim(), especialidad = cmbEspecialidad.Text, mD = label5.Text;
-                char sexo = Convert.ToChar(cmbSexo.Text);
-                int consultorio = Convert.ToInt32(cmbConsultorio.Text);
-                int w = +admodo.Contarbasedato();
-                DateTime fechaNac = dateTimePicker1.Value.Date;
+            char sexo = Convert.ToChar(cmbSexo.Text);
+            int consultorio = Convert.ToInt32(cmbConsultorio.Text);
+            int w = +admodo.Contarbasedato();
+            DateTime fechaNac = dateTimePicker1.Value.Date;
 
                 admodo.guardarprueba(w, nombre, cedula, especialidad, sexo, fechaNac, correo, telefono, consultorio, admhorario.HorarioOdont[0], label5);
                 MessageBox.Show(admodo.mostrardatos(), "DATOS GUARDADOS");

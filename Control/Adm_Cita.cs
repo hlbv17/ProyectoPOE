@@ -202,7 +202,7 @@ namespace Control {
         public bool AtencionExistente (DataGridView dgvCitas, int posicion) {
             int id = Convert.ToInt32 (dgvCitas.Rows [posicion].Cells ["col_id"].Value);
             bool flag = true;
-            if (dCita.PacienteAtendido (id) == false) {
+            if (dCita.PacienteAtendido (id) == true) {
                 flag = true;
             } else {
                 flag = false;
@@ -244,6 +244,7 @@ namespace Control {
             ComboBox cmbHora, ComboBox cmbOdontologo, Label lblConsultorio) {
             if (posicion >= 0) {
                 foreach (Cita c in citas) {
+                    Console.WriteLine (c);
                     if (c.Id_cita.CompareTo (id) == 0) {
                         lblID.Text = c.Id_cita.ToString ();
                         txtCedula.Text = c.Paciente.Cedula.ToString ();
@@ -256,7 +257,6 @@ namespace Control {
                         cmbOdontologo.SelectedItem = c.Odontologo.Nombre.ToString ();
                         lblConsultorio.Text = c.Odontologo.Consultorio.ToString ();
                     }
-
                 }
             }
         }

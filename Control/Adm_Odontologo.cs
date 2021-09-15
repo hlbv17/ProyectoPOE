@@ -47,6 +47,7 @@ namespace Control {
 
         public void ConsultarOdontologos (DateTime fecha, DateTime hora, ComboBox cmbHora, ComboBox cmbOdontologo) {
             string dia = DayOfWeek (fecha);
+            Console.Write (dia);
             if (cmbHora.Text != "--Seleccionar--") {
                 cmbOdontologo.Items.Add ("--Seleccionar--");
                 cmbOdontologo.SelectedIndex = 0;
@@ -66,6 +67,7 @@ namespace Control {
         }
 
         public void llenarComboO (DateTime fecha, DateTime hora, ComboBox cmbHora, ComboBox cmbOdontologo) {
+            cmbOdontologo.Items.Clear ();
             ConsultarOdontologos (fecha, hora, cmbHora, cmbOdontologo);
         }
 
@@ -84,7 +86,7 @@ namespace Control {
         public void consultarOdo (string cedula, TextBox txtNombre, TextBox txtCorreo, TextBox txttelfono) {
             if (!String.IsNullOrEmpty (cedula))
                 odontologo = datosOdon.ConsultarPersonaOdont (cedula);
-            if (odontologo.Nombre != "") {
+            if (odontologo!= null) {
                 MessageBox.Show ("Existe odontologo con esta cedula sus datos son los siguientes " + cedula + " " + odontologo.Nombre);
 
             } else {
@@ -109,6 +111,7 @@ namespace Control {
         public void consultarOdoParaActualizar (string cedula, TextBox txtCedula, TextBox txtNombre, TextBox txtCorreo, TextBox txttelfono, ComboBox cmbConsultorio, ComboBox cmbEspecialidad, ComboBox cmbSexo, DateTimePicker dateTimePicker1, DataGridView dgvHorarioOdontologo, Label idodo) {
             if (!String.IsNullOrEmpty (cedula))
                 odontologo = datosOdon.ConsultarPersonaOdont (cedula);
+            
             if (odontologo != null) {
                 txtCedula.Text = odontologo.Cedula;
 
@@ -122,15 +125,22 @@ namespace Control {
                 string espe = odontologo.Especialidad;
                 char se = odontologo.Sexo;
                 c = odontologo.Consultorio;
-                cmbConsultorio.SelectedIndex = c - 1;
-                if (espe == "Peridoncia") {
-                    cmbEspecialidad.SelectedIndex = 1;
-                } else if (espe == "Ortodoncia") {
+                cmbConsultorio.SelectedIndex = c-1;
+                if (espe == "Periodoncia")
+                {  cmbEspecialidad.SelectedIndex = 1;}
+                else if (espe == "Ortodoncia")
+                {
                     cmbEspecialidad.SelectedIndex = 0;
-                } else if (espe == "Endodoncia") {
+                }
+                else if (espe == "Endodoncia")
+                {
                     cmbEspecialidad.SelectedIndex = 2;
                 }
-                if (se == 'F') {
+                else if (espe == "Odontopediatría")
+                {
+                    cmbEspecialidad.SelectedIndex = 3;
+                }
+                    if (se == 'F') {
                     cmbSexo.SelectedIndex = 0;
                 } else {
                     cmbSexo.SelectedIndex = 1;
@@ -139,7 +149,7 @@ namespace Control {
                 dateTimePicker1.Value = odontologo.FechaNacimiento;
 
                 string horario = odontologo.Horario.Tipo;
-                Console.WriteLine (horario);
+                //Console.WriteLine (odontologo.Horario.Tipo);
                 admhorario.LlenarGridHorarioAc (dgvHorarioOdontologo, horario);
                 idodo.Text = Convert.ToString (odontologo.Id_Odontologo);
 
@@ -175,15 +185,15 @@ namespace Control {
                 espe = 4;
             } else { espe = 0; }
             if (e.Tipo == "Matutino I") {
-                hora = 1;
+                hora = 86592;
             } else if (e.Tipo == "Matutino II") {
-                hora = 2;
+                hora = 86593;
             } else if (e.Tipo == "Vespertino I") {
-                hora = 3;
+                hora = 86594;
             } else if (e.Tipo == "Vespertino II") {
-                hora = 4;
+                hora = 86595;
             } else if (e.Tipo == "Fines de semana") {
-                hora = 5;
+                hora = 86596;
             }
 
             odontologos.Add (od);
@@ -206,15 +216,15 @@ namespace Control {
             } else { espe = 0; }
 
             if (e.Tipo == "Matutino I") {
-                hora = 1;
+                hora = 86592;
             } else if (e.Tipo == "Matutino II") {
-                hora = 2;
+                hora = 86593;
             } else if (e.Tipo == "Vespertino I") {
-                hora = 3;
+                hora = 865924;
             } else if (e.Tipo == "Vespertino II") {
-                hora = 4;
+                hora = 865925;
             } else if (e.Tipo == "Fines de semana") {
-                hora = 5;
+                hora = 865926;
             }
 
 

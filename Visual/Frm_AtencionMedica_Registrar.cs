@@ -9,12 +9,12 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace Visual {
-    public partial class Frm_AtencionMedica_Registrar_ROPB : Form {
+    public partial class Frm_AtencionMedica_Registrar : Form {
 
 
         Adm_AtencionMedica adm = Adm_AtencionMedica.GetAdm ();
 
-        public Frm_AtencionMedica_Registrar_ROPB () {
+        public Frm_AtencionMedica_Registrar () {
             InitializeComponent ();
             adm.LlenarComboHoraAutomatico (dtp_Fecha, cmb_Hora, 1);
             adm.LlenarComboCuadrantePieza (cmb_CuadrantePieza);

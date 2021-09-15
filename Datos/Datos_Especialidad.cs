@@ -10,7 +10,7 @@ namespace Datos {
         Conexion con = new Conexion ();
         SqlCommand cmd = new SqlCommand ();
         public string consultarEspecialidad (int especialidad) {
-            string sql = "Select * from Especialidad2 where id_especialidad = " + especialidad;
+            string sql = "Select * from Especialidad where id_especialidad =  " + especialidad;
             SqlDataReader dr = null; //tabla virtual
             Console.WriteLine (sql);
             string mensaje = "";
@@ -24,10 +24,11 @@ namespace Datos {
                         e = Convert.ToString (dr ["especialidad"].ToString ());
                     }
                 } catch (Exception ex) {
-                    Console.WriteLine ("Erro al consultar las Tabla Horario, Dias, HorarioDias" + ex.Message);
+                    Console.WriteLine ("Erro al consultar las Tabla Especialidad" + ex.Message);
                 }
             }
             con.Cerrar ();
+            Console.WriteLine(e);
             return e;
         }
 

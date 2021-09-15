@@ -89,7 +89,7 @@ namespace Control {
         }
 
         //3)llena el grid de odontologo, con los datos seleccionados de en la tabla de Horario inicial (2) 
-        public void llenarGridOdo (DataGridView dgvHorarioOdontologo, DataGridView dgvHorario) {
+        public void  llenarGridOdo (DataGridView dgvHorarioOdontologo, DataGridView dgvHorario) {
             Horario horarioOdon = new Horario ();
             List<Horario> ho = new List<Horario> ();
             List<Dias> d = new List<Dias> ();
@@ -111,7 +111,7 @@ namespace Control {
                         di.HoraSalida = Convert.ToDateTime (row.Cells [3].Value);
                         d.Add (di);
                         horarioOdon.Dias = d;
-                        HorarioOdont.Add (horarioOdon);
+                        horarioOdont.Add (horarioOdon);
 
                     }
 
@@ -131,7 +131,7 @@ namespace Control {
                             horarioOdon.Dias [i].Dia = Convert.ToString (row.Cells [1].Value);
                             horarioOdon.Dias [i].HoraEntrada = Convert.ToDateTime (row.Cells [2].Value);
                             horarioOdon.Dias [i].HoraSalida = Convert.ToDateTime (row.Cells [3].Value);
-                            HorarioOdont.Add (horarioOdon);
+                            horarioOdont.Add (horarioOdon);
 
                         }
                         i++;
@@ -145,16 +145,16 @@ namespace Control {
 
             }
 
-
+            
         }
 
         //llena el grid del Formulario de horario.
         public void LlenarGriDE (DataGridView dgvHorarioOdontologo) {
 
             int i = 0;
-            //consultarBDD();
+            
             dgvHorarioOdontologo.Rows.Clear ();
-
+            Console.WriteLine(HorarioOdont.ToString()); ;
             foreach (Horario x in HorarioOdont) {
                 dgvHorarioOdontologo.Rows.Add (x.Tipo, x.Dias [i].Dia, x.Dias [i].HoraEntrada.ToString ("HH:ss"), x.Dias [i].HoraSalida.ToString ("HH:ss"));
                 i++;

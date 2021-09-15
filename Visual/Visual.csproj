@@ -134,29 +134,29 @@
     <Compile Include="Frm_Cita_Reporte.Designer.cs">
       <DependentUpon>Frm_Cita_Reporte.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Buscar_ROPB.cs">
+    <Compile Include="Frm_AtencionMedica_Busca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Buscar_ROPB.Designer.cs">
-      <DependentUpon>Frm_AtencionMedica_Buscar_ROPB.cs</DependentUpon>
+    <Compile Include="Frm_AtencionMedica_Busca.Designer.cs">
+      <DependentUpon>Frm_AtencionMedica_Busca.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Editar_ROPB.cs">
+    <Compile Include="Frm_AtencionMedica_Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Editar_ROPB.Designer.cs">
-      <DependentUpon>Frm_AtencionMedica_Editar_ROPB.cs</DependentUpon>
+    <Compile Include="Frm_AtencionMedica_Editar.Designer.cs">
+      <DependentUpon>Frm_AtencionMedica_Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Eliminar_ROPB.cs">
+    <Compile Include="Frm_AtencionMedica_Eliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Eliminar_ROPB.Designer.cs">
-      <DependentUpon>Frm_AtencionMedica_Eliminar_ROPB.cs</DependentUpon>
+    <Compile Include="Frm_AtencionMedica_Eliminar.Designer.cs">
+      <DependentUpon>Frm_AtencionMedica_Eliminar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Registrar_ROPB.cs">
+    <Compile Include="Frm_AtencionMedica_Registrar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Frm_AtencionMedica_Registrar_ROPB.Designer.cs">
-      <DependentUpon>Frm_AtencionMedica_Registrar_ROPB.cs</DependentUpon>
+    <Compile Include="Frm_AtencionMedica_Registrar.Designer.cs">
+      <DependentUpon>Frm_AtencionMedica_Registrar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -205,17 +205,17 @@
     <EmbeddedResource Include="Frm_Cita_Reporte.resx">
       <DependentUpon>Frm_Cita_Reporte.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_AtencionMedica_Buscar_ROPB.resx">
-      <DependentUpon>Frm_AtencionMedica_Buscar_ROPB.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_AtencionMedica_Busca.resx">
+      <DependentUpon>Frm_AtencionMedica_Busca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_AtencionMedica_Editar_ROPB.resx">
-      <DependentUpon>Frm_AtencionMedica_Editar_ROPB.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_AtencionMedica_Editar.resx">
+      <DependentUpon>Frm_AtencionMedica_Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_AtencionMedica_Eliminar_ROPB.resx">
-      <DependentUpon>Frm_AtencionMedica_Eliminar_ROPB.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_AtencionMedica_Eliminar.resx">
+      <DependentUpon>Frm_AtencionMedica_Eliminar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Frm_AtencionMedica_Registrar_ROPB.resx">
-      <DependentUpon>Frm_AtencionMedica_Registrar_ROPB.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_AtencionMedica_Registrar.resx">
+      <DependentUpon>Frm_AtencionMedica_Registrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

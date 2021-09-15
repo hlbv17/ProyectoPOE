@@ -9,20 +9,20 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace Visual {
-    public partial class Frm_AtencionMedica_Eliminar_ROPB : Form {
-
-
+    public partial class Frm_AtencionMedica_Editar : Form {
 
         Adm_AtencionMedica adm = Adm_AtencionMedica.GetAdm ();
-        Frm_AtencionMedica_Buscar_ROPB frmBuscar;
+        Frm_AtencionMedica_Busca frmBuscar;
 
-        public Frm_AtencionMedica_Eliminar_ROPB (DateTime fecha, string hora, string paciente, Frm_AtencionMedica_Buscar_ROPB frmB) {
+        public Frm_AtencionMedica_Editar (DateTime fecha, string hora, string paciente, Frm_AtencionMedica_Busca frmB) {
             InitializeComponent ();
             //adm.LlenarComboHora (cmb_Hora);
             adm.LlenarComboHoraAutomatico (dtp_Fecha, cmb_Hora, 2);
             adm.LlenarComboPacienteAutomatico (dtp_Fecha, cmb_Hora, cmb_Paciente, 2); // 2: ALL
             adm.LlenarComboCuadrantePieza (cmb_CuadrantePieza);
+            adm.LlenarComboCuadrantePieza (cmb_CuadrantePieza_Editar);
             adm.LlenarComboNombrePieza (cmb_NombrePieza);
+            adm.LlenarComboNombrePieza (cmb_NombrePieza_Editar);
             dtp_Fecha.Value = fecha;
             cmb_Hora.Text = hora;
             cmb_Paciente.Text = paciente;
@@ -31,22 +31,26 @@ namespace Visual {
 
         private void dtp_Fecha_ValueChanged (object sender, EventArgs e) {
             // Method
-            adm.LlenarDatosEliminar (dtp_Fecha, cmb_Hora, cmb_Paciente, cmb_CuadrantePieza, cmb_NombrePieza, txt_MotivoConsulta, txt_Diagnostico);
+            adm.LlenarDatosEditar (dtp_Fecha, cmb_Hora, cmb_Paciente, cmb_CuadrantePieza, cmb_NombrePieza, txt_MotivoConsulta, txt_Diagnostico, cmb_CuadrantePieza_Editar, cmb_NombrePieza_Editar, txt_MotivoConsulta_Editar, txt_Diagnostico_Editar);
         }
 
         private void cmb_Paciente_SelectedValueChanged (object sender, EventArgs e) {
             adm.LlenarLabelOdontologo (dtp_Fecha, cmb_Hora, cmb_Paciente, lbl_Odontologo);
             // Method
-            adm.LlenarDatosEliminar (dtp_Fecha, cmb_Hora, cmb_Paciente, cmb_CuadrantePieza, cmb_NombrePieza, txt_MotivoConsulta, txt_Diagnostico);
+            adm.LlenarDatosEditar (dtp_Fecha, cmb_Hora, cmb_Paciente, cmb_CuadrantePieza, cmb_NombrePieza, txt_MotivoConsulta, txt_Diagnostico, cmb_CuadrantePieza_Editar, cmb_NombrePieza_Editar, txt_MotivoConsulta_Editar, txt_Diagnostico_Editar);
         }
 
         private void cmb_CuadrantePieza_SelectedValueChanged (object sender, EventArgs e) {
             adm.LlenarLabelNumeroPieza (cmb_CuadrantePieza, cmb_NombrePieza, lbl_NumeroPieza);
         }
 
-        private void btn_Eliminar_Click (object sender, EventArgs e) {
-            bool frmEliminar = adm.Eliminar (dtp_Fecha, cmb_Hora, cmb_Paciente, cmb_CuadrantePieza, cmb_NombrePieza, txt_MotivoConsulta, txt_Diagnostico);
-            if (frmEliminar && frmBuscar != null) { // Atualiza DataGridView
+        private void cmb_CuadrantePieza_Editar_SelectedValueChanged (object sender, EventArgs e) {
+            adm.LlenarLabelNumeroPieza (cmb_CuadrantePieza_Editar, cmb_NombrePieza_Editar, lbl_NumeroPieza_Editar);
+        }
+
+        private void btn_Guardar_Editar_Click (object sender, EventArgs e) {
+            bool frmEditar = adm.GuardarEditar (dtp_Fecha, cmb_Hora, cmb_Paciente, cmb_CuadrantePieza, cmb_NombrePieza, txt_MotivoConsulta, txt_Diagnostico, cmb_CuadrantePieza_Editar, cmb_NombrePieza_Editar, txt_MotivoConsulta_Editar, txt_Diagnostico_Editar, errorProvider1, txt_Registro, lbl_Odontologo, lbl_NumeroPieza_Editar);
+            if (frmEditar && frmBuscar != null) { // Atualiza DataGridView
                 if (frmBuscar.buscarGlobal == 0) {
                     frmBuscar.btn_Limpiar_Click (sender, e);
                 } else {
@@ -54,7 +58,6 @@ namespace Visual {
                 }
             }
         }
-
 
     }
 }

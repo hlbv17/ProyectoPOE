@@ -101,13 +101,13 @@ namespace Visual {
         }
 
         private void mni_AM_Registrar_Click (object sender, EventArgs e) {
-            Frm_AtencionMedica_Registrar_ROPB frm = new Frm_AtencionMedica_Registrar_ROPB ();
+            Frm_AtencionMedica_Registrar frm = new Frm_AtencionMedica_Registrar ();
             frm.ShowDialog ();
         }
 
         private void mni_AM_Editar_Click (object sender, EventArgs e) {
             if (admAM.ContarLista () > 0) {
-                Frm_AtencionMedica_Editar_ROPB frm = new Frm_AtencionMedica_Editar_ROPB (DateTime.Now, "---Seleccione---", "---Seleccione---", null);
+                Frm_AtencionMedica_Editar frm = new Frm_AtencionMedica_Editar (DateTime.Now, "---Seleccione---", "---Seleccione---", null);
                 frm.ShowDialog ();
             } else {
                 MessageBox.Show ("No hay registro de Atenciones Médicas", "Error!");
@@ -116,7 +116,7 @@ namespace Visual {
 
         private void mni_AM_Eliminar_Click (object sender, EventArgs e) {
             if (admAM.ContarLista () > 0) {
-                Frm_AtencionMedica_Eliminar_ROPB frm = new Frm_AtencionMedica_Eliminar_ROPB (DateTime.Now, "---Seleccione---", "---Seleccione---", null);
+                Frm_AtencionMedica_Eliminar frm = new Frm_AtencionMedica_Eliminar (DateTime.Now, "---Seleccione---", "---Seleccione---", null);
                 frm.ShowDialog ();
             } else {
                 MessageBox.Show ("No hay registro de Atenciones Médicas", "Error!");
@@ -125,7 +125,7 @@ namespace Visual {
 
         private void mni_AM_Consultar_Click (object sender, EventArgs e) {
             if (admAM.ContarLista () > 0) {
-                Frm_AtencionMedica_Buscar_ROPB frm = new Frm_AtencionMedica_Buscar_ROPB ("");
+                Frm_AtencionMedica_Busca frm = new Frm_AtencionMedica_Busca ("");
                 frm.ShowDialog ();
             } else {
                 MessageBox.Show ("No hay registro de Atenciones Médicas", "Error!");
