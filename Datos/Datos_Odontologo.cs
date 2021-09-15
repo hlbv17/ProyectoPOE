@@ -50,7 +50,7 @@ namespace Datos {
             "INNER JOIN HorarioDias HD ON H.id_horario = HD.id_horario \n" +
             "INNER JOIN Dias D ON HD.id_dias = D.id_dias \n" +
             "WHERE D.dia = '" + dia + "' \n" +
-            "AND '" + hora + "'  BETWEEN D.horaEntrada AND D.horaSalida; ";
+            "AND '" + hora.ToString("HH:mm") + "'  BETWEEN D.horaEntrada AND D.horaSalida; ";
             SqlDataReader dr = null;
             Console.WriteLine (sql);
             string mensaje = "";
