@@ -43,7 +43,7 @@ namespace Datos {
                               " Persona.correo, Persona.id_sexo, Paciente.id_paciente, Paciente.discapacidad,"
                             + " Paciente.id_etapaEdad" +
                         " FROM Persona INNER JOIN" +
-                             " Paciente ON Persona.id_persona = Paciente.id_persona" +
+                             " Paciente ON Persona.id_persona = Paciente.id_paciente" +
                         " WHERE(Persona.cedula ='" + cedula + "')";
 
             SqlDataReader dr = null; //tabla virtual
