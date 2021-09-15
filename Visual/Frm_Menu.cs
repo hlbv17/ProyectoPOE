@@ -42,7 +42,8 @@ namespace Visual {
         }
 
         private void acercaDeToolStripMenuItem_Click (object sender, EventArgs e) {
-
+            Frm_About frm = new Frm_About ();
+            frm.ShowDialog ();
         }
 
         private void registrarToolStripMenuItem1_Click (object sender, EventArgs e) {
@@ -132,5 +133,9 @@ namespace Visual {
             }
         }
 
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

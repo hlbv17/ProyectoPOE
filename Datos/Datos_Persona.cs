@@ -25,7 +25,7 @@ namespace Datos {
                     return "1";
 
                 } catch (Exception e) {
-                    Console.WriteLine ("Error al insertar en la tabla auto " + e.Message);
+                    Console.WriteLine ("-----------------Error al insertar en la tabla auto " + e.Message);
                     return "0" + e.Message;
                 }
             }
