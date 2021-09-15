@@ -132,7 +132,7 @@ namespace Datos {
                         listaHclinicas.Add (hclinic);//añadir a la list
                     }
                 } catch (Exception ex) {
-                    Console.WriteLine ("Error al consultar en las tablas " + ex.Message);
+                    Console.WriteLine ("Error----------------- al consultar en las tablas " + ex.Message);
                 }
             }
             con.Cerrar ();
@@ -215,9 +215,9 @@ namespace Datos {
             string sql = "SELECT Persona.cedula, Persona.nombres, Persona.fechaNacimiento, Persona.telefono, Persona.correo, Paciente.discapacidad, Antecedentes.antecedenteFamiliar, Antecedentes.antecedentePersonal," +
                   " Persona.id_sexo" +
                     " FROM Antecedentes INNER JOIN" +
-                    " HistoriaClinica ON Antecedentes.id_antecedentes = HistoriaClinica.id_antecedentes INNER JOIN" +
-                    " Paciente ON HistoriaClinica.id_paciente = Paciente.id_paciente INNER JOIN" +
-                    " Persona ON Paciente.id_paciente  = Persona.id_persona INNER JOIN" +
+                    " Historia_Clinica ON Antecedentes.id_antecedentes = Historia_Clinica.id_antecedentes INNER JOIN" +
+                    " Paciente ON Historia_Clinica.id_paciente = Paciente.id_paciente INNER JOIN" +
+                    " Persona ON Paciente.id_persona = Persona.id_persona INNER JOIN" +
                     " Sexo ON Persona.id_sexo = Sexo.id_sexo" +
                     " WHERE (Persona.cedula = '" + cedula + "')";
             SqlDataReader dr = null; //tabla virtual

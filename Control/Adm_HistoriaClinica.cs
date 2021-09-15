@@ -313,6 +313,6 @@ namespace Control {
                 MessageBox.Show ("No existe Historia Clinica con la cedula registrada asociada");
             }
         }
-    
+
     }
 }

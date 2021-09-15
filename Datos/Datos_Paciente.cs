@@ -42,8 +42,8 @@ namespace Datos {
             string sql = "SELECT Persona.id_persona, Persona.cedula, Persona.nombres, Persona.fechaNacimiento, Persona.telefono," +
                               " Persona.correo, Persona.id_sexo, Paciente.id_paciente, Paciente.discapacidad,"
                             + " Paciente.id_etapaEdad" +
-                        " FROM Paciente INNER JOIN" +
-                             " Persona ON Paciente.id_paciente = Persona.id_persona" +
+                        " FROM Persona INNER JOIN" +
+                             " Paciente ON Persona.id_persona = Paciente.id_persona" +
                         " WHERE(Persona.cedula ='" + cedula + "')";
 
             SqlDataReader dr = null; //tabla virtual
@@ -165,7 +165,7 @@ namespace Datos {
         // Method: 
         public bool ConsultarPacienteCedula (string cedula) {
             bool flag = true;
-            string sql = "Select PE.id_persona, PE.cedula, PE.id_sexo, PE.nombre, PE.fechaNacimiento, PA. discapacidad " +
+            string sql = "Select PE.id_persona, PE.cedula, PE.id_sexo, PE.nombres, PE.fechaNacimiento, PA. discapacidad " +
                 "FROM Persona PE " +
                 "INNER JOIN Paciente PA ON PE.id_persona = PA.id_paciente" +
                 "WHERE PE.cedula = '" + cedula + "'";
