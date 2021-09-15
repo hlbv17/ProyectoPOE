@@ -52,7 +52,7 @@ namespace Datos {
                         pa = new Paciente ();
                         pa.Id_persona = Convert.ToInt32 (dr ["id_persona"]);
                         pa.Cedula = dr ["cedula"].ToString ();
-                        pa.Nombre = dr ["nombre"].ToString ();
+                        pa.Nombre = dr ["nombres"].ToString ();
                         pa.FechaNacimiento = DateTime.Parse (dr ["fechaNacimiento"].ToString ());
                         pa.Telefono = dr ["telefono"].ToString ();
                         pa.Correo = dr ["correo"].ToString ();
@@ -92,7 +92,7 @@ namespace Datos {
 
         public String Actualizar (Paciente paciente, string cedula) {
             string sql = "UPDATE  Persona " +
-                " SET nombre= '" + paciente.Nombre + "',fechaNacimiento= '" + paciente.FechaNacimiento.ToString ("yyyy-MM-dd") +
+                " SET nombres= '" + paciente.Nombre + "',fechaNacimiento= '" + paciente.FechaNacimiento.ToString ("yyyy-MM-dd") +
                 "', telefono ='" + paciente.Telefono + "',correo='" + paciente.Correo + "',id_sexo='" + paciente.Sexo +
                 "' WHERE cedula = '" + cedula + "'";
             Console.WriteLine (sql);
