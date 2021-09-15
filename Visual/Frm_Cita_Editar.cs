@@ -54,7 +54,7 @@ namespace Visual {
             string hora = cmbHora.Text;
             DateTime fecha = dtpFecha.Value.Date;
             DateTime dHora = DateTime.Parse (hora, System.Globalization.CultureInfo.CurrentCulture);
-            //cmbOdontologo.Items.Clear();
+            cmbOdontologo.Items.Clear();
             admO.llenarComboO (fecha, dHora, cmbHora, cmbOdontologo);
         }
 

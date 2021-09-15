@@ -26,8 +26,10 @@ namespace Visual {
         }
 
         private void editarToolStripMenuItem2_Click (object sender, EventArgs e) {
-            Frm_Cita_Editar frmE = new Frm_Cita_Editar ();
-            frmE.ShowDialog ();
+            Frm_Cita_Filtrar frmF = new Frm_Cita_Filtrar();
+            frmF.ShowDialog();
+            /*Frm_Cita_Editar frmE = new Frm_Cita_Editar ();
+            frmE.ShowDialog ();*/
         }
 
         private void consultarToolStripMenuItem2_Click (object sender, EventArgs e) {
