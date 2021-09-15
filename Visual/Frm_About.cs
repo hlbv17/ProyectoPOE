@@ -12,5 +12,9 @@ namespace Visual {
         public Frm_About () {
             InitializeComponent ();
         }
+
+        private void btn_Cerrar_Click (object sender, EventArgs e) {
+            this.Close ();
+        }
     }
 }
