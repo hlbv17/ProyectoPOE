@@ -13,7 +13,7 @@ namespace Datos {
 
 
         public String insertar (Persona persona) {   //Persona
-            string sql = "INSERT INTO Persona (cedula, nombre, fechaNacimiento, telefono, correo, id_sexo) VALUES('" + persona.Cedula + "','" + persona.Nombre + "','" + persona.FechaNacimiento.ToString ("yyyy-MM-dd") + "','" + persona.Telefono + "','" + persona.Correo + "','" + persona.Sexo + "')";
+            string sql = "INSERT INTO Persona (cedula, nombres, fechaNacimiento, telefono, correo, id_sexo) VALUES('" + persona.Cedula + "','" + persona.Nombre + "','" + persona.FechaNacimiento.ToString ("yyyy-MM-dd") + "','" + persona.Telefono + "','" + persona.Correo + "','" + persona.Sexo + "')";
             Console.WriteLine (sql);
             string mensaje = "";
             mensaje = con.Conectar ();
@@ -25,7 +25,7 @@ namespace Datos {
                     return "1";
 
                 } catch (Exception e) {
-                    Console.WriteLine ("Error al insertar en la tabla auto " + e.Message);
+                    Console.WriteLine ("-----------------Error al insertar en la tabla auto " + e.Message);
                     return "0" + e.Message;
                 }
             }

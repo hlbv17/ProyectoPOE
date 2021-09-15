@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Frm_About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_About.Designer.cs">
+      <DependentUpon>Frm_About.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Odontologo_Editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_About.resx">
+      <DependentUpon>Frm_About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_Odontologo_Editar.resx">
       <DependentUpon>Frm_Odontologo_Editar.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,7 +287,11 @@
     <None Include="Resources\q3.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\2020-06-30 09.30.41 1.jpg" />
     <Content Include="Resources\Inicio.png" />
+    <None Include="Resources\WhatsApp Image 2021-09-14 at 23.52.47.jpeg" />
+    <None Include="Resources\WhatsApp Image 2021-09-14 at 23.51.34.jpeg" />
+    <None Include="Resources\WhatsApp Image 2021-09-14 at 23.51.05.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
