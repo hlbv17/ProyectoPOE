@@ -167,7 +167,7 @@ namespace Datos {
             bool flag = true;
             string sql = "Select PE.id_persona, PE.cedula, PE.id_sexo, PE.nombres, PE.fechaNacimiento, PA. discapacidad " +
                 "FROM Persona PE " +
-                "INNER JOIN Paciente PA ON PE.id_persona = PA.id_paciente" +
+                "INNER JOIN Paciente PA ON PE.id_persona = PA.id_paciente " +
                 "WHERE PE.cedula = '" + cedula + "'";
             SqlDataReader dr = null;
             Console.WriteLine (sql);
