@@ -50,7 +50,7 @@ namespace Datos {
             "INNER JOIN HorarioDias HD ON H.id_horario = HD.id_horario \n" +
             "INNER JOIN Dias D ON HD.id_dias = D.id_dias \n" +
             "WHERE D.dia = '" + dia + "' \n" +
-            "AND '" + hora + "'  BETWEEN D.horaEntrada AND D.horaSalida; ";
+            "AND '" + hora.ToString("HH:mm") + "'  BETWEEN D.horaEntrada AND D.horaSalida; ";
             SqlDataReader dr = null;
             Console.WriteLine (sql);
             string mensaje = "";
@@ -81,7 +81,7 @@ namespace Datos {
         // Method: ConsultarOdontologo
         public Odontologo ConsultarOdontologo (string nombre) {
             Odontologo o = null;
-            string sql = "SELECT PE.id_persona, PE.cedula, PE.id_sexo, PE.nombres, PE.fecha_nacimiento," +
+            string sql = "SELECT PE.id_persona, PE.cedula, PE.id_sexo, PE.nombres, PE.fechaNacimiento," +
             "O.consultorio \n" +
             "FROM Persona PE \n" +
             "INNER JOIN Odontologo O ON PE.id_persona = O.id_odontologo \n" +
@@ -101,7 +101,7 @@ namespace Datos {
                         o.Cedula = dr ["cedula"].ToString ();
                         o.Sexo = Convert.ToChar (dr ["id_sexo"]);
                         o.Nombre = dr ["nombres"].ToString ();
-                        o.FechaNacimiento = Convert.ToDateTime (dr ["fecha_nacimiento"]);
+                        o.FechaNacimiento = Convert.ToDateTime (dr ["fechaNacimiento"]);
                         o.Consultorio = Convert.ToInt32 (dr ["consultorio"]);
                     }
                 } catch (Exception ex) {

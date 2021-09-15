@@ -132,7 +132,7 @@ namespace Datos {
 
             Paciente p = null;
             string sql = "Select PE.id_persona, PE.cedula, PE.id_sexo, PE.nombres, PE.fechaNacimiento, " +
-                "PA. discapacidad \n" +
+                "PA.discapacidad \n" +
                 "FROM Persona PE \n" +
                 "INNER JOIN Paciente PA ON PE.id_persona = PA.id_paciente \n" +
                 "WHERE PE.cedula = '" + cedula + "'";
@@ -155,7 +155,7 @@ namespace Datos {
                         p.Discapacidad = dr ["discapacidad"].ToString ();
                     }
                 } catch (Exception ex) {
-                    Console.WriteLine ("Error al consultar en la tabla paciente " + ex.Message);
+                    Console.WriteLine ("------------Error al consultar en la tabla paciente---------------" + ex.Message);
                 }
             }
             con.Cerrar ();

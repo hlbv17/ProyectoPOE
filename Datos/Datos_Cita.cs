@@ -18,8 +18,8 @@ namespace Datos {
 
         // Method: insertarCita
         public String insertarCita (Cita c) {
-            string sql = "INSERT INTO Cita (id_odontologo, id_paciente, fecha, hora)" +
-                "VALUES ('" + c.Odontologo.Id_persona + "','" + c.Paciente.Id_persona + "','" + c.Fecha.ToString ("yyyy-MM-dd") + "','" + c.Hora.ToString ("HH:mm") + "')";
+            string sql = "INSERT INTO Cita (id_paciente, id_odontologo, fecha, hora)" +
+                "VALUES ('" + c.Paciente.Id_persona + "','" + c.Odontologo.Id_persona + "','" + c.Fecha.ToString ("yyyy-MM-dd") + "','" + c.Hora.ToString ("HH:mm") + "')";
             Console.WriteLine (sql);
             string mensaje = "";
             mensaje = con.Conectar ();
@@ -30,7 +30,7 @@ namespace Datos {
                     cmd.ExecuteNonQuery ();
                     return "1";
                 } catch (Exception e) {
-                    Console.WriteLine ("Error al insertar en la tabla Cita " + e.Message);
+                    Console.WriteLine ("---------------Error al insertar en la tabla Cita--------------------" + e.Message);
                     return "0" + e.Message;
                 }
             }
