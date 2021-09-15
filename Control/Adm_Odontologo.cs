@@ -67,6 +67,7 @@ namespace Control {
         }
 
         public void llenarComboO (DateTime fecha, DateTime hora, ComboBox cmbHora, ComboBox cmbOdontologo) {
+            cmbOdontologo.Items.Clear ();
             ConsultarOdontologos (fecha, hora, cmbHora, cmbOdontologo);
         }
 

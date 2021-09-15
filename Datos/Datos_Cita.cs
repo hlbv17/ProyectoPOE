@@ -310,8 +310,8 @@ namespace Datos {
             string sql = "UPDATE Cita \n" +
                          "SET id_paciente = '" + c.Paciente.Id_persona + "' , id_odontologo = '"
                          + c.Odontologo.Id_persona + "'," +
-                         "fecha = '" + c.Fecha + "'," +
-                         "hora = '" + c.Hora + "'\n" +
+                         "fecha = '" + c.Fecha.ToString("yyyy-MM-dd") + "'," +
+                         "hora = '" + c.Hora.ToString("HH:mm") + "'\n" +
                          "WHERE id_cita = '" + c.Id_cita + "'";
             Console.WriteLine (sql);
             mensaje = con.Conectar ();
@@ -322,7 +322,7 @@ namespace Datos {
                     cmd.ExecuteNonQuery ();
                     mensaje = "1";
                 } catch (Exception e) {
-                    Console.WriteLine ("Error al actualizar en la tabla Cita " + e.Message);
+                    Console.WriteLine ("--------Error al actualizar en la tabla Cita -----------" + e.Message);
                     mensaje = "0" + e.Message;
                 }
             }
