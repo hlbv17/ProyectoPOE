@@ -379,8 +379,9 @@ namespace Control {
             sfd.Title = "Dentalig: Odontologo - Guardar";
             DialogResult dr = sfd.ShowDialog ();
             if (dr == DialogResult.OK) {
+                string folder = sfd.FileName;
                 //string folder = sfd.FileName; // Dirección a guardar pdf
-                PdfWriter pdfWriter = new PdfWriter ("Reporte_Odontologo.pdf");  // seleccionar donde guardar ¿?
+                PdfWriter pdfWriter = new PdfWriter (folder);  // seleccionar donde guardar ¿?
                                                                                  //PdfWriter pdfWriter = new PdfWriter(folder);  // seleccionar donde guardar ¿?
                 PdfDocument pdfDocument = new PdfDocument (pdfWriter);
                 Document doc = new Document (pdfDocument, PageSize.A4.Rotate ());
@@ -391,8 +392,8 @@ namespace Control {
                 var titulo = new Paragraph ("Reporte de Odontologos");
                 titulo.SetTextAlignment (TextAlignment.CENTER);
                 titulo.SetFontSize (12);
-                string [] columnas = { "#", "#Cedula", "Nombre", "Odontólogo", "Especialidad", "Consultorio", "Jornada", "Sexo", "FechaNacimiento", "NombrePieza", "Correo", "Telefono" };
-                float [] espacio = { 1, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4 };
+                string [] columnas = { "#", "#Cedula", "Nombre", "Sexo", "Especialidad", "Consultorio", "Jornada", "FechaNacimiento", "Correo", "Telefono" };
+                float [] espacio = { 1, 4, 4, 4, 4, 4, 4, 4, 4, 4};
                 Table tabla = new Table (UnitValue.CreatePercentArray (espacio));
                 tabla.SetWidth (UnitValue.CreatePercentValue (100));
 
@@ -409,13 +410,11 @@ namespace Control {
                     tabla.AddCell (new Cell ().Add (new Paragraph (element.Cedula).SetFont (fontContenido)));
                     tabla.AddCell (new Cell ().Add (new Paragraph (element.Nombre).SetFont (fontContenido)));
                     tabla.AddCell (new Cell ().Add (new Paragraph (element.Sexo + " ").SetFont (fontContenido)));
-                    tabla.AddCell (new Cell ().Add (new Paragraph (element.Consultorio + "").SetFont (fontContenido)));
                     tabla.AddCell (new Cell ().Add (new Paragraph (element.Especialidad).SetFont (fontContenido)));
-
+                    tabla.AddCell (new Cell ().Add (new Paragraph (element.Consultorio + "").SetFont (fontContenido)));
                     tabla.AddCell (new Cell ().Add (new Paragraph (element.Horario.Tipo).SetFont (fontContenido)));
                     tabla.AddCell (new Cell ().Add (new Paragraph (element.FechaNacimiento.ToString ("dd/MM/yyy")).SetFont (fontContenido)));
                     tabla.AddCell (new Cell ().Add (new Paragraph (element.Correo).SetFont (fontContenido)));
-
                     tabla.AddCell (new Cell ().Add (new Paragraph (element.Telefono).SetFont (fontContenido)));
 
                 }

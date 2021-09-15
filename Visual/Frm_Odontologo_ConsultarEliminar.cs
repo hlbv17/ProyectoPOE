@@ -65,15 +65,17 @@ namespace Visual {
             string cedula1 = txtCedula.Text.Trim ();
             string jornada = cmbjornada.Text, especialidad = cmbEspecialidad.Text;
             int consultorio;
+            int consul = 0;
             try {
-                int consul = Convert.ToInt32 (cmbConsultorio.Text);
+                if (cmbConsultorio.Text != "") {
+                    consul = Convert.ToInt32 (cmbConsultorio.Text);
+                }
                 if (posicion >= 0) {
                     cedula1 = admodo.Actualizar (posicion);
                 }
                 admodo.pdf (jornada, especialidad, consul);
             } catch (Exception ex) {
                 consultorio = 0;
-
                 if (posicion >= 0) {
                     cedula1 = admodo.Actualizar (posicion);
                 }
