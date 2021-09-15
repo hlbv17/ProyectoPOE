@@ -35,14 +35,11 @@ namespace Model {
         public Horario Horario { get => horario; set => horario = value; }                  // Getter & Setter: horario
 
         // Methodd: Estado
-        public String Estado (int consultorio) {
-            string estado;
-            Random r = new Random ();
-            int e;
-            e = r.Next (1, 6);
-            if (consultorio == e) {
+        public string Estado (int e) {
+            string estado = "";
+            if (e == 0 ) {
                 estado = "Disponible";
-            } else {
+            } else if (e > 0) {
                 estado = "Ocupado";
             }
             return estado;
