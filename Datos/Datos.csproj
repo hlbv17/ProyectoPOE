@@ -53,7 +53,6 @@
     <Compile Include="Datos_AtencionMedica.cs" />
     <Compile Include="Datos_PiezaDental.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Reporte_HistoriaClinica.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Model\Model.csproj">

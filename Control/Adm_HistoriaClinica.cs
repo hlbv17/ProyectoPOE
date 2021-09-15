@@ -223,63 +223,74 @@ namespace Control {
 
         public void ReporteiText (char csexo, string cedula, DateTime fechaDesde, DateTime fechaHasta, int index, int rbindex) {
             listahClinica.Clear ();
-            PdfWriter pdfWriter = new PdfWriter ("Reporte_Historia_Clinica.pdf");
-            PdfDocument pdfDocument = new PdfDocument (pdfWriter);
-            Document document = new Document (pdfDocument, PageSize.A4.Rotate ());
-            document.SetMargins ((float)2.54, (float)2.54, (float)2.54, (float)2.54);
 
-            var titulo = new Paragraph ("Reporte de Historia Clinica");
-            titulo.SetTextAlignment (TextAlignment.CENTER);
-            titulo.SetFontSize (16);
-            titulo.SetFontColor (ColorConstants.BLACK);
-            titulo.SetBold ();
+            SaveFileDialog sfd = new SaveFileDialog ();
+            sfd.Filter = "Pdf File |*.pdf";
+            sfd.InitialDirectory = Environment.GetFolderPath (Environment.SpecialFolder.MyDocuments); // Se abre escritori por defecto
+            sfd.Title = "Dentalig: Histori Clínica - Guardar";
+            DialogResult dr = sfd.ShowDialog ();
+
+            if (dr == DialogResult.OK) {
+
+                string folder = sfd.FileName; // Dirección a guardar pdf
+                PdfWriter pdfWriter = new PdfWriter (folder);
+                PdfDocument pdfDocument = new PdfDocument (pdfWriter);
+                Document document = new Document (pdfDocument, PageSize.A4.Rotate ());
+                document.SetMargins ((float)2.54, (float)2.54, (float)2.54, (float)2.54);
+
+                var titulo = new Paragraph ("Reporte de Historia Clinica");
+                titulo.SetTextAlignment (TextAlignment.CENTER);
+                titulo.SetFontSize (16);
+                titulo.SetFontColor (ColorConstants.BLACK);
+                titulo.SetBold ();
 
 
-            var dfecha = DateTime.Now.ToString ("dd-MM-yyyy");
-            var dhora = DateTime.Now.ToString ("hh:mm");
-            var fecha = new Paragraph ("Fecha: " + dfecha + "\n" + "Hora: " + dhora);
-            fecha.SetBold ();
-            fecha.SetFontSize (12);
+                var dfecha = DateTime.Now.ToString ("dd-MM-yyyy");
+                var dhora = DateTime.Now.ToString ("hh:mm");
+                var fecha = new Paragraph ("Fecha: " + dfecha + "\n" + "Hora: " + dhora);
+                fecha.SetBold ();
+                fecha.SetFontSize (12);
 
 
 
-            PdfFont fontColumnas = PdfFontFactory.CreateFont (StandardFonts.HELVETICA_BOLD);
-            PdfFont fontContenido = PdfFontFactory.CreateFont (StandardFonts.HELVETICA);
-            string [] columnas = { "HistClin", "Cedula", "Nombres", "Sexo", "F. Nacimiento", "Discapacidad", "Etapa_Edad", "Ant.Personales", "Ant.Familiares", "N° Atenc.Medi" };
-            float [] espacio = { 1, 4, 4, 4, 4, 4, 4, 4, 4, 4 }; //revisar con nuemero de columnas?
-            Table tabla = new Table (UnitValue.CreatePercentArray (espacio));
-            tabla.SetWidth (UnitValue.CreatePercentValue (100));
+                PdfFont fontColumnas = PdfFontFactory.CreateFont (StandardFonts.HELVETICA_BOLD);
+                PdfFont fontContenido = PdfFontFactory.CreateFont (StandardFonts.HELVETICA);
+                string [] columnas = { "HistClin", "Cedula", "Nombres", "Sexo", "F. Nacimiento", "Discapacidad", "Etapa_Edad", "Ant.Personales", "Ant.Familiares", "N° Atenc.Medi" };
+                float [] espacio = { 1, 4, 4, 4, 4, 4, 4, 4, 4, 4 }; //revisar con nuemero de columnas?
+                Table tabla = new Table (UnitValue.CreatePercentArray (espacio));
+                tabla.SetWidth (UnitValue.CreatePercentValue (100));
 
-            foreach (string element in columnas) {
-                tabla.AddHeaderCell (new Cell ().Add (new Paragraph (element).SetFont (fontColumnas)));
-            }
+                foreach (string element in columnas) {
+                    tabla.AddHeaderCell (new Cell ().Add (new Paragraph (element).SetFont (fontColumnas)));
+                }
 
-            listahClinica = datosHistClin.ConsultarXsexoXCedulaXFechas (csexo, cedula, fechaDesde, fechaHasta, index, rbindex);
+                listahClinica = datosHistClin.ConsultarXsexoXCedulaXFechas (csexo, cedula, fechaDesde, fechaHasta, index, rbindex);
 
-            int i = 0;
-            foreach (HistoriaClinica element in listahClinica) {
-                ++i;
+                int i = 0;
+                foreach (HistoriaClinica element in listahClinica) {
+                    ++i;
 
-                tabla.AddCell (new Cell ().Add (new Paragraph (element.Id_hclinica.ToString ()).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (element.Paciente.Cedula).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (element.Paciente.Nombre).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (element.Paciente.LeerSexo ()).SetFont (fontContenido)));//mirar bien
-                tabla.AddCell (new Cell ().Add (new Paragraph (element.Paciente.FechaNacimiento.ToString ("dd/MM/yyyy")).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (element.Paciente.Discapacidad).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (element.Paciente.Etapa).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (element.Antecedente.Antecedenteper).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (element.Antecedente.AntecedenteFam).SetFont (fontContenido)));
-                tabla.AddCell (new Cell ().Add (new Paragraph (element.AtencionMedica.Count ().ToString ()).SetFont (fontContenido)));
-            }
-            document.Add (fecha);
-            document.Add (titulo);
-            document.Add (tabla);
-            document.Close ();
+                    tabla.AddCell (new Cell ().Add (new Paragraph (element.Id_hclinica.ToString ()).SetFont (fontContenido)));
+                    tabla.AddCell (new Cell ().Add (new Paragraph (element.Paciente.Cedula).SetFont (fontContenido)));
+                    tabla.AddCell (new Cell ().Add (new Paragraph (element.Paciente.Nombre).SetFont (fontContenido)));
+                    tabla.AddCell (new Cell ().Add (new Paragraph (element.Paciente.LeerSexo ()).SetFont (fontContenido)));//mirar bien
+                    tabla.AddCell (new Cell ().Add (new Paragraph (element.Paciente.FechaNacimiento.ToString ("dd/MM/yyyy")).SetFont (fontContenido)));
+                    tabla.AddCell (new Cell ().Add (new Paragraph (element.Paciente.Discapacidad).SetFont (fontContenido)));
+                    tabla.AddCell (new Cell ().Add (new Paragraph (element.Paciente.Etapa).SetFont (fontContenido)));
+                    tabla.AddCell (new Cell ().Add (new Paragraph (element.Antecedente.Antecedenteper).SetFont (fontContenido)));
+                    tabla.AddCell (new Cell ().Add (new Paragraph (element.Antecedente.AntecedenteFam).SetFont (fontContenido)));
+                    tabla.AddCell (new Cell ().Add (new Paragraph (element.AtencionMedica.Count ().ToString ()).SetFont (fontContenido)));
+                }
+                document.Add (fecha);
+                document.Add (titulo);
+                document.Add (tabla);
+                document.Close ();
 
-            if (document != null)
-                MessageBox.Show ("Reporte generado con exito :)\n\n El reporte se encuentra en la carpeta del proyecto actual: /ProyectoPOE/VISUAL/bin/Debug");
-            else {
-                MessageBox.Show ("Error al generar reporte");
+                if (document != null)
+                    MessageBox.Show ("Reporte generado con exito :)\n\n El reporte se encuentra en la ruta: \n" + folder);
+                else {
+                    MessageBox.Show ("Error al generar reporte");
+                }
             }
         }
 
