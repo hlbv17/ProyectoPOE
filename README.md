@@ -1,7 +1,7 @@
 # ProyectoPOE
 Dentalig - Sistema de gestión de consultorio odontológico.
 
-Este programa usa iText 7.1.14 instalar en el paquete Control.
+Este programa usa iText 7.1.14 instalado en el paquete Control.
 
 Requerimientos antes de abrir la Solución en Visual Studio:
   * Tener instalado Adboe Reader.
